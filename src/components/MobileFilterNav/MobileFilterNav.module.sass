@@ -1,0 +1,22 @@
+@import ../../styles/helpers
+.nav
+    display: none
+    margin-top: 32px
+    +m
+        display: flex
+.link
+    flex: 1
+    padding: 8px 16px
+    border-radius: 8px
+    +base1-s
+    color: $n4
+    transition: all .2s
+    &:hover,
+    &.active
+        color: $n7
+        +dark
+            color: $n1
+    &.active
+        background: $n3
+        +dark
+            background: $n6

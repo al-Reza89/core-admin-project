@@ -1,0 +1,48 @@
+@import ../../../../styles/helpers
+
+.chart
+    width: auto
+    height: 230px
+    +x
+        margin-left: -12px
+    +t
+        max-width: 310px
+        margin: 0 auto
+    +m
+        padding-left: 10px
+
+.legend
+    display: flex
+    justify-content: space-between
+    margin-top: -20px
+    svg
+        margin-bottom: 12px
+    .indicator
+        position: relative
+        display: flex
+        align-items: center
+        gap: 5px
+        &:before
+            content: ""
+            position: absolute
+            top: 50%
+            left: 0
+            width: 16px
+            height: 20px
+            transform: translateY(-50%)
+            border-radius: 4px
+         
+        
+.title-green:before
+    background-color: $p2 !important
+
+.title-purple:before
+    background-color: $p1 !important
+
+.title
+    font-weight: 500
+    padding-left: 20px
+
+.percent
+    +caption2
+    color: $n4

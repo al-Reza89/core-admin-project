@@ -1,0 +1,62 @@
+@import ../../../styles/helpers
+
+
+
+.row
+    display: flex
+    margin-top: 40px
+    +t
+        display: block
+    +m
+        margin-top: 32px
+
+.col
+    &:first-child
+        flex-grow: 1
+        padding-right: 64px
+        +d
+            padding-right: 48px
+        +t
+            padding-right: 0
+    &:nth-child(2)
+        flex-shrink: 0
+        width: 308px
+        +t
+            width: 100%
+            margin-top: 32px
+
+.subtitle
+    margin-bottom: 32px
+    +t
+        margin-bottom: 24px
+    +m
+        margin-bottom: 12px
+
+
+.features
+    +m
+        margin-top: 12px
+    li
+        font-weight: 500
+        position: relative
+        padding-left: 40px
+        color: $n5
+        +dark
+            color: $n3
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            width: 24px
+            height: 24px
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M20.707 6.293a1 1 0 0 1 0 1.414l-8.586 8.586a3 3 0 0 1-4.243 0l-3.586-3.586a1 1 0 0 1 1.414-1.414l3.586 3.586a1 1 0 0 0 1.414 0l8.586-8.586a1 1 0 0 1 1.414 0z' fill='%23b5e4ca'/%3E%3C/svg%3E") no-repeat 50% 50% / 100% auto
+        &:not(:last-child)
+            margin-bottom: 20px
+            padding-bottom: 20px
+            border-bottom: 1px solid $n3
+            +m
+                margin-bottom: 16px
+                padding-bottom: 16px
+            +dark
+                border-color: $n6

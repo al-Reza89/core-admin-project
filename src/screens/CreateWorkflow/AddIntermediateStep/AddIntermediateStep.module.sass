@@ -1,0 +1,29 @@
+@import ../../../styles/helpers
+
+.card>div
+    margin-bottom: 0
+.removeAll
+    display: flex
+    margin-top: 10px
+.steps
+    margin-top: 24px
+    display: flex
+    flex-direction: column
+    gap: 10px
+.step
+    display: flex
+    gap: 10px
+
+.step>div
+    flex: 1
+
+.field
+    &:not(:last-child)
+        margin-bottom: 32px
+        +d
+            margin-bottom: 24px
+
+.close
+    fill: $n8
+    +dark
+        fill: $n
