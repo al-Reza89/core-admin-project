@@ -119,7 +119,7 @@ const MessageCenter = () => {
 
   return (
     <div className={cn(styles.wrapper, { [styles.active]: visible })}>
-      <Users
+      {/* <Users
         className={styles.users}
         items={users}
         setVisible={setVisible}
@@ -136,7 +136,8 @@ const MessageCenter = () => {
         actions={actions}
         parameters={parameters}
         messages={messages}
-      />
+      /> */}
+      hello
     </div>
   );
 };

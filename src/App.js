@@ -1,173 +1,191 @@
-import { Routes, Route } from 'react-router-dom';
-import './styles/app.sass';
-import Page from './components/Page';
-import Home from './screens/Home';
-import ProductsDashboard from './screens/ProductsDashboard';
-import NewProduct from './screens/NewProduct';
-import Drafts from './screens/Drafts';
-import Released from './screens/Released';
-import Comments from './screens/Comments';
-import Scheduled from './screens/Scheduled';
-import Customers from './screens/Customers';
-import CustomerList from './screens/CustomerList';
-import Promote from './screens/Promote';
-import Notification from './screens/Notification';
-import Settings from './screens/Settings';
-import UpgradeToPro from './screens/UpgradeToPro';
-import MessageCenter from './screens/MessageCenter';
-import ExploreCreators from './screens/ExploreCreators';
-import AffiliateCenter from './screens/AffiliateCenter';
-import SignUp from './screens/SignUp';
-import SignIn from './screens/SignIn';
-import Earning from './screens/Earning';
-import Refunds from './screens/Refunds';
-import Payouts from './screens/Payouts';
-import Statements from './screens/Statements';
-import Shop from './screens/Shop';
-import PageList from './screens/PageList';
+import { Routes, Route } from "react-router-dom";
+import "./styles/app.sass";
+import Page from "./components/Page";
+import Home from "./screens/Home";
+import ProductsDashboard from "./screens/ProductsDashboard";
+import NewProduct from "./screens/NewProduct";
+import Drafts from "./screens/Drafts";
+import Released from "./screens/Released";
+import Comments from "./screens/Comments";
+import Scheduled from "./screens/Scheduled";
+import Customers from "./screens/Customers";
+import CustomerList from "./screens/CustomerList";
+import Promote from "./screens/Promote";
+import Notification from "./screens/Notification";
+import Settings from "./screens/Settings";
+import UpgradeToPro from "./screens/UpgradeToPro";
+import MessageCenter from "./screens/MessageCenter";
+import ExploreCreators from "./screens/ExploreCreators";
+import AffiliateCenter from "./screens/AffiliateCenter";
+import SignUp from "./screens/SignUp";
+import SignIn from "./screens/SignIn";
+import Earning from "./screens/Earning";
+import Refunds from "./screens/Refunds";
+import Payouts from "./screens/Payouts";
+import Statements from "./screens/Statements";
+import Shop from "./screens/Shop";
+import PageList from "./screens/PageList";
 // Our pages
-import Home2 from './screens/Home2';
-import Workflows from './screens/Workflows';
-import OpsCenter from './screens/OpsCenter';
-import WorkflowLog from './screens/WorkflowLog';
-import WorkflowRun from './screens/WorkflowRun';
-import NewWorkflow from './screens/NewWorkflow';
-import CreateWorkflow from './screens/CreateWorkflow';
+import Home2 from "./screens/Home2";
+import Workflows from "./screens/Workflows";
+import OpsCenter from "./screens/OpsCenter";
+import WorkflowLog from "./screens/WorkflowLog";
+import WorkflowRun from "./screens/WorkflowRun";
+import NewWorkflow from "./screens/NewWorkflow";
+import CreateWorkflow from "./screens/CreateWorkflow";
+import Scheduled2 from "./screens/Scheduled2";
+import ChatOptionButton from "./screens/ChatOptionButton";
 
 function App() {
   return (
     <Routes>
-      <Route path='/'>
+      <Route path="/">
         <Route
           index
           element={
-            <Page title='Dashboard'>
+            <Page title="Dashboard">
               <Home />
             </Page>
           }
         />
         <Route
-          path='home'
+          path="home"
           element={
-            <Page title='Home'>
+            <Page title="Home">
               <Home2 />
             </Page>
           }
         />
         <Route
-          path='workflows'
+          path="workflows"
           element={
-            <Page title='Workflows'>
+            <Page title="Workflows">
               <Workflows />
             </Page>
           }
         />
         <Route
-          path='new-workflow'
+          path="new-workflow"
           element={
-            <Page title='New Workflow'>
+            <Page title="New Workflow">
               <NewWorkflow />
             </Page>
           }
         />
         <Route
-          path='create-workflow'
+          path="create-workflow"
           element={
-            <Page title='Create Workflow'>
+            <Page title="Create Workflow">
               <CreateWorkflow />
             </Page>
           }
         />
         <Route
-          path='ops-center'
+          path="ops-center"
           element={
-            <Page title='Ops Center'>
+            <Page title="Ops Center">
               <OpsCenter />
             </Page>
           }
         />
         <Route
-          path='ops-center/:id'
+          path="ops-center/:id"
           element={
-            <Page title='Workflow Logs' showBackBtn>
+            <Page title="Workflow Logs" showBackBtn>
               <WorkflowLog />
             </Page>
           }
         />
         <Route
-          path='run-time/:id'
+          path="run-time/:id"
           element={
-            <Page title='Procure to Pay' showBackBtn>
+            <Page title="Procure to Pay" showBackBtn>
               <WorkflowRun />
             </Page>
           }
         />
         <Route
-          path='products/dashboard'
+          path="products/dashboard"
           element={
-            <Page title='Products dashboard'>
+            <Page title="Products dashboard">
               <ProductsDashboard />
             </Page>
           }
         />
         <Route
-          path='products/add'
+          path="products/add"
           element={
-            <Page title='New product'>
+            <Page title="New product">
               <NewProduct />
             </Page>
           }
         />
         <Route
-          path='products/drafts'
+          path="products/drafts"
           element={
-            <Page title='Drafts'>
+            <Page title="Drafts">
               <Drafts />
             </Page>
           }
         />
         <Route
-          path='products/released'
+          path="products/released"
           element={
-            <Page title='Released'>
+            <Page title="Released">
               <Released />
             </Page>
           }
         />
         <Route
-          path='products/comments'
+          path="products/comments"
           element={
-            <Page title='Comments'>
+            <Page title="Comments">
               <Comments />
             </Page>
           }
         />
         <Route
-          path='products/scheduled'
+          path="products/scheduled"
           element={
-            <Page title='Scheduled'>
+            <Page title="Scheduled">
               <Scheduled />
             </Page>
           }
         />
         <Route
-          path='customers/overview'
+          path="products/scheduled2"
           element={
-            <Page title='Customers'>
+            <Page>
+              <Scheduled2 />
+            </Page>
+          }
+        />
+        <Route
+          path="products/scheduled2/:id"
+          element={
+            <Page>
+              <ChatOptionButton />
+            </Page>
+          }
+        />
+        <Route
+          path="customers/overview"
+          element={
+            <Page title="Customers">
               <Customers />
             </Page>
           }
         />
         <Route
-          path='customers/customer-list'
+          path="customers/customer-list"
           element={
-            <Page title='Customer list'>
+            <Page title="Customer list">
               <CustomerList />
             </Page>
           }
         />
         <Route
-          path='shop'
+          path="shop"
           element={
             <Page wide>
               <Shop />
@@ -175,96 +193,96 @@ function App() {
           }
         />
         <Route
-          path='income/earning'
+          path="income/earning"
           element={
-            <Page title='Earning'>
+            <Page title="Earning">
               <Earning />
             </Page>
           }
         />
         <Route
-          path='income/refunds'
+          path="income/refunds"
           element={
-            <Page title='Refunds'>
+            <Page title="Refunds">
               <Refunds />
             </Page>
           }
         />
         <Route
-          path='income/payouts'
+          path="income/payouts"
           element={
-            <Page title='Payouts'>
+            <Page title="Payouts">
               <Payouts />
             </Page>
           }
         />
         <Route
-          path='income/statements'
+          path="income/statements"
           element={
-            <Page title='Statements'>
+            <Page title="Statements">
               <Statements />
             </Page>
           }
         />
         <Route
-          path='promote'
+          path="promote"
           element={
-            <Page title='Promote'>
+            <Page title="Promote">
               <Promote />
             </Page>
           }
         />
         <Route
-          path='notification'
+          path="notification"
           element={
-            <Page title='Notification'>
+            <Page title="Notification">
               <Notification />
             </Page>
           }
         />
         <Route
-          path='settings'
+          path="settings"
           element={
-            <Page title='Settings'>
+            <Page title="Settings">
               <Settings />
             </Page>
           }
         />
         <Route
-          path='upgrade-to-pro'
+          path="upgrade-to-pro"
           element={
-            <Page title='Upgrade to Pro'>
+            <Page title="Upgrade to Pro">
               <UpgradeToPro />
             </Page>
           }
         />
         <Route
-          path='message-center'
+          path="message-center"
           element={
-            <Page title='Message center'>
+            <Page title="Message center">
               <MessageCenter />
             </Page>
           }
         />
         <Route
-          path='explore-creators'
+          path="explore-creators"
           element={
-            <Page title='Explore creators'>
+            <Page title="Explore creators">
               <ExploreCreators />
             </Page>
           }
         />
         <Route
-          path='affiliate-center'
+          path="affiliate-center"
           element={
-            <Page title='Affiliate center'>
+            <Page title="Affiliate center">
               <AffiliateCenter />
             </Page>
           }
         />
-        <Route path='sign-up' element={<SignUp />} />
-        <Route path='sign-in' element={<SignIn />} />
-        <Route path='pagelist' element={<PageList />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="sign-in" element={<SignIn />} />
+        <Route path="pagelist" element={<PageList />} />
       </Route>
     </Routes>
   );

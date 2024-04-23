@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import cn from 'classnames';
-import styles from './Header.module.sass';
-import { Link } from 'react-router-dom';
-import Icon from '../Icon';
-import Messages from './Messages';
+import React, { useState } from "react";
+import cn from "classnames";
+import styles from "./Header.module.sass";
+import { Link } from "react-router-dom";
+import Icon from "../Icon";
+import Messages from "./Messages";
 // import Notification from './Notification';
-import User from './User';
-import Dropdown from './Dropdown';
-import { useRecoilValue } from 'recoil';
-import { showHeaderDropdownAtom } from '../../atoms/showHeaderDropdownAtom';
+import User from "./User";
+import Dropdown from "./Dropdown";
+import { useRecoilValue } from "recoil";
+import { showHeaderDropdownAtom } from "../../atoms/showHeaderDropdownAtom";
 
 const Header = ({ onOpen }) => {
   const showHeaderDropdown = useRecoilValue(showHeaderDropdownAtom);
@@ -26,11 +26,11 @@ const Header = ({ onOpen }) => {
         className={cn(styles.buttonSearch, { [styles.active]: visible })}
         onClick={() => setVisible(!visible)}
       >
-        <Icon name='search' size='24' />
+        <Icon name="search" size="24" />
       </button>
       <div className={styles.control} onClick={() => setVisible(false)}>
-        <Link className={cn('button', styles.button)} to='/new-workflow'>
-          <Icon name='add' size='24' />
+        <Link className={cn("button", styles.button)} to="/new-workflow">
+          <Icon name="add" size="24" />
           <span>Workflow</span>
         </Link>
         {/* WILL remove */}
