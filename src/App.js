@@ -161,14 +161,6 @@ function App() {
           }
         />
         <Route
-          path="products/scheduled2/:id"
-          element={
-            <Page>
-              <ChatOptionButton />
-            </Page>
-          }
-        />
-        <Route
           path="customers/overview"
           element={
             <Page title="Customers">
