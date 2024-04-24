@@ -13,7 +13,7 @@ const Scheduled2 = () => {
         onClick={() => setVisibleModalProduct(true)}
         className={cn("button-small", styles.button)}
       >
-        <span>Load more</span>
+        <span>pop up modal</span>
       </button>
       <ModalProduct
         visible={visibleModalProduct}

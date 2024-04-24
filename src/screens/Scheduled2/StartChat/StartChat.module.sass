@@ -1,0 +1,129 @@
+@import ../../../styles/helpers
+
+
+.wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    height: calc(100vh - 148px)
+    width: calc(100vw - 700px)
+    padding: 30px
+
+    +w
+        height: calc(100vh - 146px)
+        width: calc(100vw - 400px)
+    
+    +t
+        height: calc(100vh - 132px)
+        width: calc(100vw - 200px)
+    +m
+        height: calc(100vh - 132px)
+        width: calc(100vw - 100px)
+   
+    .paragraph
+        text-align: center
+    
+
+    .imageWrapper
+        padding-top: 50px
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        gap: 20px
+
+        +w
+            padding-top: 30px
+
+        .mainImage
+            max-width: 200px
+            max-height: 200px 
+            
+        
+        .image
+            max-width: 150px
+            max-height: 150px 
+            opacity: 0.5 
+
+            
+            
+            
+            &:nth-last-child(1)
+                opacity: .5
+                max-height: 75px
+                max-width: 75px
+
+            &:nth-last-child(2)
+                opacity: .6
+                max-height: 120px
+                max-width: 120px
+
+            &:nth-last-child(3)
+                opacity: .8
+                max-height: 150px
+                max-width: 150px
+
+        .imagefirst
+            max-width: 150px
+            max-height: 150px 
+            opacity: 0.9
+
+            &:nth-child(1)
+                opacity: .5
+                max-height: 75px
+                max-width: 75px
+
+            &:nth-child(2)
+                opacity: .6
+                max-height: 120px
+                max-width: 120px
+
+            &:nth-child(3)
+                opacity: .8
+                max-height: 150px
+                max-width: 150px
+            
+
+
+            
+    .buttonWrapper
+        padding-top: 50px
+
+        +w
+            padding-top: 30px
+
+        .button
+            padding-top: 12px
+            padding-bottom: 12px
+            padding-left: 30px
+            padding-right: 30px
+            background: #061763
+            border: 2px solid #123577
+            border-radius: 8px
+            &:hover
+                background: #04083d
+                // color: 
+                border: 2px solid #9ba0c2
+
+                
+            &.selected
+                background: #edf7f6
+                border: 2px solid #9ba0c2
+
+            +dark
+                color: $n
+                background: #3b0a96
+                border: 2px solid #21455c
+                &:hover
+                    background: #320a7e
+                    border: 2px solid #3c7091
+                    color: $n
+                
+                &.selected
+                    background: $n6
+                    border: 2px solid #3c7091
+                    color: $n
+        
+
+     

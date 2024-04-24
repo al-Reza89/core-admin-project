@@ -1,19 +1,57 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./ScheduledModal.module.sass";
+import ModalProduct from "../../../components/ModalProduct";
+import StartChat from "../StartChat";
 
 const buttons = [
-  "Customer Service",
-  "Finance",
-  "Marketing",
-  "HR",
-  "Operations",
-  "IT & Support",
-  "Sales & Account",
+  {
+    id: 1,
+    title: "Customer Service",
+    person: "Servio",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Servio.png",
+  },
+  {
+    id: 2,
+    title: "Finance",
+    person: "Financio",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Financio.png",
+  },
+  {
+    id: 3,
+    title: "Marketing",
+    person: "Marketo",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Markeo.png",
+  },
+  {
+    id: 4,
+    title: "HR",
+    person: "Talena",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Talena.png",
+  },
+  {
+    id: 5,
+    title: "Operations",
+    person: "Opera",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Opera.png",
+  },
+  {
+    id: 6,
+    title: "IT & Support",
+    person: "Servio",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Servio.png",
+  },
+  {
+    id: 7,
+    title: "Sales & Account",
+    person: "Revo",
+    image: "https://www.wiyse.com/images/v5-img/ai-workers/Revo.png",
+  },
 ];
 
 const ScheduledModal = () => {
   const [selectedButton, setSelectedButton] = useState(null);
+  const [visibleModalProduct, setVisibleModalProduct] = useState(false);
 
   const handleButtonClick = (button) => {
     setSelectedButton(button);
@@ -26,8 +64,9 @@ const ScheduledModal = () => {
       // navigate(`/products/scheduledModal/${formattedButton}`, {
       //   state: selectedButton,
       // });
+
+      setVisibleModalProduct(true);
     } else {
-      // Handle case where no button is selected
       console.log("Please select a button before proceeding.");
       alert("Please select a button before proceeding.");
     }
@@ -59,7 +98,7 @@ const ScheduledModal = () => {
               })}
               onClick={() => handleButtonClick(button)}
             >
-              {button}
+              {button.title}
             </button>
           ))}
         </div>
@@ -69,6 +108,14 @@ const ScheduledModal = () => {
           <span>Next</span>
         </button>
       </div>
+      <ModalProduct
+        visible={visibleModalProduct}
+        onClose={() => setVisibleModalProduct(false)}
+        modalChild={
+          <StartChat selectedButton={selectedButton} buttons={buttons} />
+        }
+        editOption={false}
+      />
     </div>
   );
 };
