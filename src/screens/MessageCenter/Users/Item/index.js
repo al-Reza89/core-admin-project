@@ -1,5 +1,5 @@
-import cn from 'classnames';
-import styles from './Item.module.sass';
+import cn from "classnames";
+import styles from "./Item.module.sass";
 
 const Item = ({ item, setVisible, activeId, setActiveId, setSelectedUser }) => {
   const handleClick = (id) => {
@@ -20,9 +20,9 @@ const Item = ({ item, setVisible, activeId, setActiveId, setSelectedUser }) => {
         setSelectedUser(item);
       }}
     >
-      <div className={styles.avatar}>
+      {/* <div className={styles.avatar}>
         <img src={item.avatar} alt='Avatar' />
-      </div>
+      </div> */}
       <div className={styles.details}>
         <div className={styles.head}>
           <div className={styles.man}>{item.man}</div>

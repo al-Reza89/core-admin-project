@@ -87,9 +87,77 @@ const users = [
     new: false,
     online: false,
   },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
 ];
 
 const messages = [
+  {
+    id: 0,
+    man: "Orval Casper",
+    avatar: "/images/content/avatar-1.jpg",
+    time: "11:59AM",
+    content:
+      'When do you release the coded for the Fleet - Travel kit? <a href="https://ui8.net" target="_blank" rel="noopener noreferrer">https://ui8.net/product-link</a>',
+  },
+  {
+    id: 1,
+    man: "Britney Beer",
+    avatar: "/images/content/avatar.jpg",
+    time: "11:59AM",
+    content:
+      'Hi @orval, thanks for contacting.<br>Yes, I’m working on it. It would be released next 2 weeks. You could check the progress here: <a href="https://ui8.net" target="_blank" rel="noopener noreferrer">https://ui8.net/progress</a><br></br>Thanks for your patience and understanding. <span role="img" aria-label="pray">🙌</span><br> Regards,<br></br>Br',
+  },
+  {
+    id: 0,
+    man: "Orval Casper",
+    avatar: "/images/content/avatar-1.jpg",
+    time: "11:59AM",
+    content:
+      'When do you release the coded for the Fleet - Travel kit? <a href="https://ui8.net" target="_blank" rel="noopener noreferrer">https://ui8.net/product-link</a>',
+  },
+  {
+    id: 1,
+    man: "Britney Beer",
+    avatar: "/images/content/avatar.jpg",
+    time: "11:59AM",
+    content:
+      'Hi @orval, thanks for contacting.<br>Yes, I’m working on it. It would be released next 2 weeks. You could check the progress here: <a href="https://ui8.net" target="_blank" rel="noopener noreferrer">https://ui8.net/progress</a><br></br>Thanks for your patience and understanding. <span role="img" aria-label="pray">🙌</span><br> Regards,<br></br>Br',
+  },
   {
     id: 0,
     man: "Orval Casper",
@@ -118,8 +186,11 @@ const MessageCenter = () => {
   };
 
   return (
-    <div className={cn(styles.wrapper, { [styles.active]: visible })}>
-      {/* <Users
+    <div
+      style={{}}
+      className={cn(styles.wrapper, { [styles.active]: visible })}
+    >
+      <Users
         className={styles.users}
         items={users}
         setVisible={setVisible}
@@ -128,6 +199,7 @@ const MessageCenter = () => {
         onSubmit={() => handleSubmit()}
         setSelectedUser={setSelectedUser}
       />
+
       <Messages
         selectedUser={selectedUser}
         className={styles.messages}
@@ -136,8 +208,7 @@ const MessageCenter = () => {
         actions={actions}
         parameters={parameters}
         messages={messages}
-      /> */}
-      hello
+      />
     </div>
   );
 };

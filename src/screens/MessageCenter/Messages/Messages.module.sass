@@ -13,16 +13,30 @@
 .wrapper
     position: relative
     height: calc(100% - 104px)
-    padding: 96px 24px
+    padding: 60px 24px
     +t
         height: calc(100% - 88px)
     +m
         height: calc(100% - 72px)
         padding: 64px 16px 72px
 
+    .boxContainer
+
+        .command
+            background: $n3
+        
+            +dark
+                background: $n6
+            
+            &:hover
+                background: #ccc6c6
+                +dark
+                    background: #1d1849
+
+
 .button
     position: absolute
-    top: 24px
+    top: 16px
     left: 50%
     transform: translateX(-50%)
     +m

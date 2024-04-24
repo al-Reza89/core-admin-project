@@ -194,3 +194,22 @@ $shades4: rgba(#000000, .5)
 =dark-common
     @at-root .dark-mode &
         @content
+
+
+::-webkit-scrollbar 
+    width: 4px // Set the width of the scrollbar
+    background-color: transparent // Make the scrollbar track transparent
+
+
+
+
+// Customize the appearance of the scrollbar thumb
+::-webkit-scrollbar-thumb 
+    background-color: #ebeaec // Change the color of the scrollbar thumb
+    border-radius: 4px // Optionally, round the scrollbar thumb
+    opacity: 0 // Set the scrollbar thumb to be semi-transparent
+    transition: opacity 0.3s // Add a transition effect for smooth appearance
+    +dark
+        background-color: #38175a
+        
+
