@@ -33,7 +33,7 @@ const messages = [
   },
   {
     id: 5,
-    text: "What about you?  sdfffffff fsdddddddd",
+    text: "",
     time: "12:04",
     user: "user1",
   },
@@ -43,20 +43,7 @@ const messages = [
     time: "12:05",
     user: "user2",
   },
-  {
-    id: 6,
-    text: "I'm good too",
-    time: "12:05",
-    user: "user2",
-  },
-  {
-    id: 6,
-    text: "I'm good too fsdklkf kf lf lsfddslfdslkdsjlkjkdfkldslfkjllkf Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium recusandae illo natus, sit soluta eaque, voluptas repudiandae voluptates autem suscipit nostrum obcaecati quod tenetur magnam. Impedit velit repudiandae ipsam facilis! ",
-    time: "12:05",
-    user: "user2",
-  },
 ];
-
 const ChatUi = () => {
   // Sort messages based on the time slot
   const sortedMessages = messages.sort(
@@ -85,7 +72,20 @@ const ChatUi = () => {
           })}
         >
           <div className={styles.messageContent}>
-            <p>{message.text}</p>
+            {message.text ? (
+              <p>{message.text}</p>
+            ) : (
+              <p
+                style={{
+                  display: "inline-block",
+                  marginRight: "5px",
+                  transition: "transform 1s ease-in-out",
+                  animation: "moveDot 3s infinite",
+                }}
+              >
+                • • •
+              </p>
+            )}
           </div>
           {/* Avatar positioned based on user */}
           {message.user === "user1" ? (
@@ -107,12 +107,33 @@ const ChatUi = () => {
                 alt="User Avatar"
                 className={styles.avatarRight}
               />
-
               {/* <div className={styles.markRight}>Pause generating</div> */}
             </div>
           )}
         </div>
       ))}
+      <style jsx>
+        {`
+          @keyframes moveDot {
+            0% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+
+          .${styles.dotAnimation} {
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 1s ease-in-out;
+            animation: moveDot 3s infinite;
+          }
+        `}
+      </style>
     </div>
   );
 };
