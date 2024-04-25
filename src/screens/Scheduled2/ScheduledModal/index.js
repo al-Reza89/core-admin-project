@@ -77,7 +77,6 @@ const ScheduledModal = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={cn("h4", styles.title)}>Get Started with Wiyse</div>
-
           <div className={styles.paragraph}>
             Tell us what department do you work in so we can assign you the
             right AI worker.

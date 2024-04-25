@@ -3,7 +3,6 @@ import cn from "classnames";
 import styles from "./Users.module.sass";
 import Form from "../../../components/Form";
 import Item from "./Item";
-import { FaBars } from "react-icons/fa";
 
 const Users = ({
   className,
@@ -23,30 +22,16 @@ const Users = ({
           position: "relative",
         }}
       >
-        <p
-          style={{
-            textAlign: "center",
-            fontSize: "14px",
-            fontWeight: "500",
-            paddingBottom: "15px",
-          }}
-        >
-          History
-        </p>
         <div
           style={{
-            display: "flex",
-            justifyContent: "end",
-            position: "absolute",
-            right: "0",
-            top: "0",
+            textAlign: "center",
+            fontSize: "20px",
+            fontWeight: "800",
+            paddingBottom: "15px",
           }}
+          className={styles.history}
         >
-          <FaBars
-            style={{
-              cursor: "pointer",
-            }}
-          />
+          History
         </div>
       </div>
 

@@ -31,85 +31,85 @@ const Messages = ({
 
         <div className={styles.list}>
           {clickedMessage !== true && (
-            <div
-              style={{
-                paddingTop: "280px",
-              }}
-            >
+            <div style={{}}>
+              <div className={cn("h4", styles.title)}>
+                How can I help you today?
+              </div>
+              <div className={styles.paragraph}>
+                Automate Document Processing: Train Financio to process
+                receiving or extraction of financial documents from different
+                sources. Reading those documents to extract data, data
+                processing and verification, followed by result presentation.
+              </div>
               <div
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "25px",
+                  display: "flex",
+                  gap: "20px",
                   padding: "20px",
-                  justifyItems: "center",
+                  flexDirection: "row",
                 }}
                 className={styles.boxContainer}
               >
-                <div
+                <button
                   onClick={() => setClickedMessage(true)}
+                  className={cn("button", styles.buttonAi)}
                   style={{
-                    fontSize: "14px",
-                    paddingTop: "10px",
-                    paddingBottom: "10px",
-                    width: "100%",
                     paddingLeft: "20px",
+                    width: "100%",
                     paddingRight: "20px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
                   }}
-                  className={styles.command}
                 >
                   Use a pre-built document processing workflow
-                </div>
-                <div
-                  style={{
-                    fontSize: "14px",
-                    width: "100%",
-                    paddingTop: "10px",
-                    paddingBottom: "10px",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
-                  }}
+                </button>
+                <button
                   onClick={() => setClickedMessage(true)}
-                  className={styles.command}
-                >
-                  <p>Create a new document processing workflow</p>
-                </div>
-                <div
+                  className={cn("button", styles.buttonAi)}
                   style={{
-                    fontSize: "14px",
-                    width: "100%",
-                    paddingTop: "10px",
-                    paddingBottom: "10px",
                     paddingLeft: "20px",
+                    width: "100%",
                     paddingRight: "20px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
                   }}
-                  onClick={() => setClickedMessage(true)}
-                  className={styles.command}
                 >
-                  <p>Use a pre-built Financial workflow template</p>
-                </div>
-                <div
+                  Create a new document processing workflow
+                </button>
+              </div>
+              <div className={styles.paragraph}>
+                Automate any Financial workflow: Train Financio to automate
+                tasks, routing work items, setting up approval processes, and
+                integrating with various systems to streamline end-to-end
+                processes.{" "}
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "20px",
+                  padding: "20px",
+                  flexDirection: "row",
+                }}
+                className={styles.boxContainer}
+              >
+                <button
+                  onClick={() => setClickedMessage(true)}
+                  className={cn("button", styles.buttonAi)}
                   style={{
-                    fontSize: "14px",
-                    width: "100%",
-                    paddingTop: "10px",
-                    paddingBottom: "10px",
                     paddingLeft: "20px",
+                    width: "100%",
                     paddingRight: "20px",
-                    borderRadius: "5px",
-                    cursor: "pointer",
                   }}
-                  onClick={() => setClickedMessage(true)}
-                  className={styles.command}
                 >
-                  <p>Build a new financial workflow</p>
-                </div>
+                  Use a pre-built Financial workflow template
+                </button>
+                <button
+                  onClick={() => setClickedMessage(true)}
+                  className={cn("button", styles.buttonAi)}
+                  style={{
+                    paddingLeft: "20px",
+                    width: "100%",
+                    paddingRight: "20px",
+                  }}
+                >
+                  Build a new financial workflow
+                </button>
               </div>
             </div>
           )}

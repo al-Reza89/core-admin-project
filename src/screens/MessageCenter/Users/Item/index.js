@@ -20,14 +20,7 @@ const Item = ({ item, setVisible, activeId, setActiveId, setSelectedUser }) => {
         setSelectedUser(item);
       }}
     >
-      {/* <div className={styles.avatar}>
-        <img src={item.avatar} alt='Avatar' />
-      </div> */}
       <div className={styles.details}>
-        <div className={styles.head}>
-          <div className={styles.man}>{item.man}</div>
-          <div className={styles.time}>{item.time}</div>
-        </div>
         <div
           className={styles.message}
           dangerouslySetInnerHTML={{ __html: item.content }}
