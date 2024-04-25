@@ -125,13 +125,6 @@ const ChatUi = () => {
               opacity: 0;
             }
           }
-
-          .${styles.dotAnimation} {
-            display: inline-block;
-            margin-right: 5px;
-            transition: transform 1s ease-in-out;
-            animation: moveDot 3s infinite;
-          }
         `}
       </style>
     </div>
