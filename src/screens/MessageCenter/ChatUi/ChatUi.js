@@ -63,7 +63,7 @@ const ChatUi = () => {
         <div
           style={{
             maxWidth: "65%",
-            minWidth: "20%",
+            minWidth: "30%",
           }}
           key={message.id}
           className={cn(styles.message, {
@@ -78,7 +78,7 @@ const ChatUi = () => {
               <p
                 style={{
                   display: "inline-block",
-                  marginRight: "5px",
+                  paddingLeft: "35px",
                   transition: "transform 1s ease-in-out",
                   animation: "moveDot 3s infinite",
                 }}

@@ -25,9 +25,9 @@ const Messages = ({
         setVisible={setVisible}
       />
       <div className={styles.wrapper}>
-        <button className={cn("button-stroke button-small", styles.button)}>
+        {/* <button className={cn("button-stroke button-small", styles.button)}>
           Load conversation
-        </button>
+        </button> */}
 
         <div className={styles.list}>
           {clickedMessage !== true && (
