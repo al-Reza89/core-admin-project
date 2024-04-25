@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./Messages.module.sass";
 import Panel from "./Panel";
-import Message from "./Message";
 import Send from "./Send";
 import ChatUi from "../ChatUi/ChatUi";
 
