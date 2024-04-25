@@ -21,11 +21,25 @@
         height: calc(100vh - 132px)
         width: calc(100vw - 100px)
    
-    .paragraph
+    .container
         text-align: center
+        .title
+            margin-bottom: 12px
+            text-align: center
+            +m
+                font-size: 24px
+        .paragraph
+            text-align: center
+            margin-bottom: 10px
+            padding-top: 10px
+            +title1-m
+            color: $n4
+            +m
+                font-size: 14px
     
 
     .imageWrapper
+        position: relative
         padding-top: 50px
         display: flex
         flex-direction: row
@@ -37,8 +51,15 @@
             padding-top: 30px
 
         .mainImage
-            max-width: 200px
-            max-height: 200px 
+            max-width: 130px
+            max-height: 130px
+        
+        .backgroundSVG
+            position: absolute
+            opacity: 1
+            top: -10
+            left: -10
+            z-index: -1
             
         
         .image
@@ -83,47 +104,13 @@
                 opacity: .8
                 max-height: 150px
                 max-width: 150px
+    
             
 
 
-            
-    .buttonWrapper
-        padding-top: 50px
-
-        +w
-            padding-top: 30px
-
-        .button
-            padding-top: 12px
-            padding-bottom: 12px
-            padding-left: 30px
-            padding-right: 30px
-            background: #061763
-            border: 2px solid #123577
-            border-radius: 8px
-            &:hover
-                background: #04083d
-                // color: 
-                border: 2px solid #9ba0c2
-
-                
-            &.selected
-                background: #edf7f6
-                border: 2px solid #9ba0c2
-
-            +dark
-                color: $n
-                background: #3b0a96
-                border: 2px solid #21455c
-                &:hover
-                    background: #320a7e
-                    border: 2px solid #3c7091
-                    color: $n
-                
-                &.selected
-                    background: $n6
-                    border: 2px solid #3c7091
-                    color: $n
-        
 
      
+.buttonWrapper
+    padding-top: 50px
+    display: flex
+    justify-content: center

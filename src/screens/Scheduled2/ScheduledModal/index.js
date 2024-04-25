@@ -76,11 +76,12 @@ const ScheduledModal = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h1>Get Started with Wiyse.</h1>
-          <p className={styles.paragraph}>
+          <div className={cn("h4", styles.title)}>Get Started with Wiyse</div>
+
+          <div className={styles.paragraph}>
             Tell us what department do you work in so we can assign you the
             right AI worker.
-          </p>
+          </div>
         </div>
         <div
           style={{
@@ -93,19 +94,29 @@ const ScheduledModal = () => {
           {buttons.map((button, index) => (
             <button
               key={index}
-              className={cn(styles.button, {
+              className={cn(styles.head, {
                 [styles.selected]: selectedButton === button,
               })}
               onClick={() => handleButtonClick(button)}
             >
-              {button.title}
+              <div className={styles.value}>{button.title}</div>
             </button>
           ))}
         </div>
       </div>
       <div className={styles.buttonWrapper}>
-        <button className="button" onClick={handleNextButtonClick}>
-          <span>Next</span>
+        <button
+          className={cn("button", styles.button)}
+          onClick={handleNextButtonClick}
+        >
+          <span
+            style={{
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          >
+            Next
+          </span>
         </button>
       </div>
       <ModalProduct

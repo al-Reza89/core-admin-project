@@ -1,28 +1,33 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./StartChat.module.sass";
+import { useNavigate } from "react-router-dom";
 
 const StartChat = ({ selectedButton, buttons }) => {
-  const filteredButtons = buttons.filter(
-    (button) => button.title !== selectedButton.title
-  );
+  const navigate = useNavigate();
 
-  const midpoint = Math.ceil(filteredButtons.length / 2);
+  // const filteredButtons = buttons.filter(
+  //   (button) => button.title !== selectedButton.title
+  // );
 
-  const buttons1 = filteredButtons.slice(0, midpoint);
-  const buttons2 = filteredButtons.slice(midpoint);
+  // const midpoint = Math.ceil(filteredButtons.length / 2);
+
+  // const buttons1 = filteredButtons.slice(0, midpoint);
+  // const buttons2 = filteredButtons.slice(midpoint);
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.paragraph}>
-        <h1>Say Hi to {selectedButton.person} </h1>
-        <p>
+      <div className={styles.container}>
+        <div className={cn("h4", styles.title)}>
+          Say Hi to {selectedButton.person}{" "}
+        </div>
+        <div className={styles.paragraph}>
           {selectedButton.person} is purpose build for enterprise{" "}
           {selectedButton.title} teams
-        </p>
+        </div>
       </div>
       <div className={styles.imageWrapper}>
-        {buttons1.map((button) => {
+        {/* {buttons1.map((button) => {
           if (button.title !== selectedButton.title) {
             return (
               <img
@@ -34,13 +39,18 @@ const StartChat = ({ selectedButton, buttons }) => {
             );
           }
           return null;
-        })}
+        })} */}
         <img
           src={selectedButton.image}
           alt={selectedButton.title}
           className={styles.mainImage}
         />
-        {buttons2.map((button) => {
+        <img
+          src="/pricing-illustration.svg"
+          alt="Background"
+          className={styles.backgroundSVG}
+        />
+        {/* {buttons2.map((button) => {
           if (button.title !== selectedButton.title) {
             return (
               <img
@@ -52,11 +62,21 @@ const StartChat = ({ selectedButton, buttons }) => {
             );
           }
           return null;
-        })}
+        })} */}
       </div>
       <div className={styles.buttonWrapper}>
-        <button className={cn("button-small", styles.button)}>
-          <span>Start Chat</span>
+        <button
+          className={cn("button", styles.button)}
+          onClick={() => navigate("/message-center")}
+        >
+          <span
+            style={{
+              paddingLeft: "15px",
+              paddingRight: "15px",
+            }}
+          >
+            Start Chat
+          </span>
         </button>
       </div>
     </div>
