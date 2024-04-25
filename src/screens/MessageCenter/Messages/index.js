@@ -33,7 +33,7 @@ const Messages = ({
           {clickedMessage !== true && (
             <div
               style={{
-                paddingTop: "250px",
+                paddingTop: "280px",
               }}
             >
               <div
@@ -73,6 +73,7 @@ const Messages = ({
                     borderRadius: "5px",
                     cursor: "pointer",
                   }}
+                  onClick={() => setClickedMessage(true)}
                   className={styles.command}
                 >
                   <p>Create a new document processing workflow</p>
@@ -88,6 +89,7 @@ const Messages = ({
                     borderRadius: "5px",
                     cursor: "pointer",
                   }}
+                  onClick={() => setClickedMessage(true)}
                   className={styles.command}
                 >
                   <p>Use a pre-built Financial workflow template</p>
@@ -103,6 +105,7 @@ const Messages = ({
                     borderRadius: "5px",
                     cursor: "pointer",
                   }}
+                  onClick={() => setClickedMessage(true)}
                   className={styles.command}
                 >
                   <p>Build a new financial workflow</p>
