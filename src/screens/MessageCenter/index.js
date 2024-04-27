@@ -186,10 +186,7 @@ const MessageCenter = () => {
   };
 
   return (
-    <div
-      style={{}}
-      className={cn(styles.wrapper, { [styles.active]: visible })}
-    >
+    <div style={{}} className={cn(styles.wrapper)}>
       {/* <Users
         className={styles.users}
         items={users}
