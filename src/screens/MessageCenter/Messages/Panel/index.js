@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Panel.module.sass";
+import cn from "classnames";
+import Icon from "../../../../components/Icon";
 
 const Panel = ({ selectedUser }) => {
   return (
@@ -21,6 +23,36 @@ const Panel = ({ selectedUser }) => {
             <div className={styles.parameter}>{selectedUser.content}</div>
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          paddingRight: "20px",
+          gap: "10px",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+      >
+        <button
+          style={{
+            height: "40px",
+            padding: "0 20px",
+          }}
+          className={cn("button", styles.button)}
+        >
+          <span style={{}}>New Chat</span>
+        </button>
+
+        <img
+          src="icons/history.svg"
+          alt="person"
+          style={{
+            width: "45px",
+            height: "45px",
+            objectFit: "cover",
+            cursor: "pointer",
+          }}
+        />
       </div>
     </div>
   );

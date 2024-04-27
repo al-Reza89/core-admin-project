@@ -190,7 +190,7 @@ const MessageCenter = () => {
       style={{}}
       className={cn(styles.wrapper, { [styles.active]: visible })}
     >
-      <Users
+      {/* <Users
         className={styles.users}
         items={users}
         setVisible={setVisible}
@@ -198,7 +198,7 @@ const MessageCenter = () => {
         setSearch={setSearch}
         onSubmit={() => handleSubmit()}
         setSelectedUser={setSelectedUser}
-      />
+      /> */}
 
       <Messages
         selectedUser={selectedUser}
