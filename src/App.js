@@ -34,6 +34,7 @@ import WorkflowRun from "./screens/WorkflowRun";
 import NewWorkflow from "./screens/NewWorkflow";
 import CreateWorkflow from "./screens/CreateWorkflow";
 import Scheduled2 from "./screens/Scheduled2";
+import AiWorker from "./screens/AiWorker";
 
 function App() {
   return (
@@ -151,13 +152,10 @@ function App() {
             </Page>
           }
         />
+        <Route path="products/scheduled2" element={<Scheduled2 />} />
         <Route
-          path="products/scheduled2"
-          element={
-            <Page>
-              <Scheduled2 />
-            </Page>
-          }
+          path="products/scheduled2/:aiWorkerName"
+          element={<AiWorker />}
         />
         <Route
           path="customers/overview"

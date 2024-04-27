@@ -2,8 +2,11 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Code.module.sass";
 import Loader from "../../../components/Loader";
+import { useNavigate } from "react-router-dom";
 
 const Code = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.code}>
       <div className={styles.body}>
@@ -51,7 +54,10 @@ const Code = () => {
         <div className={styles.errorNote}>
           The code you entered is incorrect.
         </div>
-        <button className={cn("button", styles.button)}>
+        <button
+          onClick={() => navigate("/products/scheduled2")}
+          className={cn("button", styles.button)}
+        >
           <Loader className={styles.loader} white />
           <span>Continue</span>
         </button>
