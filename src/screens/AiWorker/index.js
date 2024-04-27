@@ -19,7 +19,8 @@ const AiWorker = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "40px",
+        height: "100vh",
+        width: "100vw",
       }}
     >
       <StartChat buttons={aiWorkersButtons} selectedButton={selectedButton} />

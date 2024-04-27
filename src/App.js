@@ -248,7 +248,7 @@ function App() {
         <Route
           path="message-center"
           element={
-            <Page>
+            <Page title="Message center">
               <MessageCenter />
             </Page>
           }
