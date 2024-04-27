@@ -13,13 +13,20 @@ const SignIn = () => {
     <div className={styles.login} style={{ minHeight: heightWindow }}>
       <div className={styles.wrapper}>
         <Link className={styles.logo} to="/">
-          <Image
+          {/* <Image
             className={styles.pic}
             src="/images/logo-dark.png"
             srcDark="/images/logo-light.png"
             alt="Core"
+          /> */}
+          <Image
+            className={styles.pic}
+            src="/images/Wiyse_Logo_White.svg"
+            srcDark="/images/Wiyse_Logo_White.svg"
+            alt="Core"
           />
         </Link>
+
         <div className={cn("h2", styles.title)}>Sign in</div>
         <div className={styles.head}>
           <div className={styles.subtitle}>Sign up with Open account</div>
