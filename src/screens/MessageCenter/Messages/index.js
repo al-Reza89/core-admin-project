@@ -63,7 +63,7 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  <p className={styles.paragraph}>
+                  <p style={{}} className={styles.paragraph}>
                     Automate Document Processing: Train Financio to process
                     receiving or extraction of financial documents from
                     different sources. Reading those documents to extract data,
