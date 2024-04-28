@@ -78,7 +78,16 @@
         font-size: 14px
 
 .buttonAi
-    background: $n6
+    +dark 
+        background: $n6
+        &:hover
+            background: $p1
+    
+    
     +w
         font-size: 13px
-        
+
+.divider
+    border-right: 2px solid $n3
+    +dark
+        border-color: $n6

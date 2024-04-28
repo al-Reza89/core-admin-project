@@ -31,85 +31,122 @@ const Messages = ({
 
         <div className={styles.list}>
           {clickedMessage !== true && (
-            <div style={{}}>
-              <div className={cn("h4", styles.title)}>
+            <div
+              style={{
+                paddingTop: "40px",
+              }}
+            >
+              <div
+                style={{
+                  paddingBottom: "20px",
+                }}
+                className={cn("h4", styles.title)}
+              >
                 How can I help you today?
               </div>
-              <div className={styles.paragraph}>
-                Automate Document Processing: Train Financio to process
-                receiving or extraction of financial documents from different
-                sources. Reading those documents to extract data, data
-                processing and verification, followed by result presentation.
-              </div>
               <div
                 style={{
                   display: "flex",
                   gap: "20px",
-                  padding: "20px",
-                  flexDirection: "row",
+                  width: "100%",
                 }}
-                className={styles.boxContainer}
               >
-                <button
-                  onClick={() => setClickedMessage(true)}
-                  className={cn("button", styles.buttonAi)}
+                <div
                   style={{
-                    paddingLeft: "20px",
+                    display: "flex",
                     width: "100%",
-                    paddingRight: "20px",
+                    flexDirection: "column",
+                    gap: "20px",
                   }}
                 >
-                  Use a pre-built document processing workflow
-                </button>
-                <button
-                  onClick={() => setClickedMessage(true)}
-                  className={cn("button", styles.buttonAi)}
+                  <p className={styles.paragraph}>
+                    Automate Document Processing: Train Financio to process
+                    receiving or extraction of financial documents from
+                    different sources. Reading those documents to extract data,
+                    data processing and verification, followed by result
+                    presentation.
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "20px",
+                      padding: "20px",
+                    }}
+                    className={styles.boxContainer}
+                  >
+                    <button
+                      onClick={() => setClickedMessage(true)}
+                      className={cn("button", styles.buttonAi)}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Use a pre-built document processing workflow
+                    </button>
+                    <button
+                      onClick={() => setClickedMessage(true)}
+                      className={cn("button", styles.buttonAi)}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Create a new document processing workflow
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.divider} style={{}}></div>
+                <div
                   style={{
-                    paddingLeft: "20px",
+                    display: "flex",
                     width: "100%",
-                    paddingRight: "20px",
+                    flexDirection: "column",
+                    gap: "20px",
                   }}
                 >
-                  Create a new document processing workflow
-                </button>
-              </div>
-              <div className={styles.paragraph}>
-                Automate any Financial workflow: Train Financio to automate
-                tasks, routing work items, setting up approval processes, and
-                integrating with various systems to streamline end-to-end
-                processes.{" "}
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  padding: "20px",
-                  flexDirection: "row",
-                }}
-                className={styles.boxContainer}
-              >
-                <button
-                  onClick={() => setClickedMessage(true)}
-                  className={cn("button", styles.buttonAi)}
-                  style={{
-                    paddingLeft: "20px",
-                    width: "100%",
-                    paddingRight: "20px",
-                  }}
-                >
-                  Use a pre-built Financial workflow template
-                </button>
-                <button
-                  onClick={() => setClickedMessage(true)}
-                  className={cn("button", styles.buttonAi)}
-                  style={{
-                    paddingLeft: "20px",
-                    width: "100%",
-                    paddingRight: "20px",
-                  }}
-                >
-                  Build a new financial workflow
-                </button>
+                  <p style={{}} className={styles.paragraph}>
+                    Automate any Financial workflow: Train Financio to automate
+                    tasks, routing work items, setting up approval processes,
+                    and integrating with various systems to streamline
+                    end-to-end processes.
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "20px",
+                      padding: "20px",
+                    }}
+                    className={styles.boxContainer}
+                  >
+                    <button
+                      onClick={() => setClickedMessage(true)}
+                      className={cn("button", styles.buttonAi)}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Use a pre-built Financial workflow template.
+                    </button>
+                    <button
+                      onClick={() => setClickedMessage(true)}
+                      className={cn("button", styles.buttonAi)}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Build a new financial workflow
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           )}

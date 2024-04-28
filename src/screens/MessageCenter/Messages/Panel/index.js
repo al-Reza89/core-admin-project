@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Panel.module.sass";
 import cn from "classnames";
 import Icon from "../../../../components/Icon";
+import { AiOutlineHistory } from "react-icons/ai";
+import { FaHistory } from "react-icons/fa";
 
 const Panel = ({ selectedUser }) => {
   return (
@@ -42,17 +44,9 @@ const Panel = ({ selectedUser }) => {
         >
           <span style={{}}>New Chat</span>
         </button>
-
-        <img
-          src="icons/history.svg"
-          alt="person"
-          style={{
-            width: "45px",
-            height: "45px",
-            objectFit: "cover",
-            cursor: "pointer",
-          }}
-        />
+        <div className={styles.file}>
+          <FaHistory className={styles.historyIcon} />
+        </div>
       </div>
     </div>
   );

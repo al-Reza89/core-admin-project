@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MessageCenter.module.sass";
 import cn from "classnames";
-import Users from "./Users";
+// import Users from "./Users";
 import Messages from "./Messages";
 
 const actions = [
@@ -178,12 +178,12 @@ const messages = [
 
 const MessageCenter = () => {
   const [visible, setVisible] = useState(false);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [selectedUser, setSelectedUser] = useState(users[0]);
 
-  const handleSubmit = (e) => {
-    alert();
-  };
+  // const handleSubmit = (e) => {
+  //   alert();
+  // };
 
   return (
     <div style={{}} className={cn(styles.wrapper)}>
