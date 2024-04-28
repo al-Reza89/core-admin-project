@@ -2,11 +2,12 @@ import React from "react";
 import cn from "classnames";
 import styles from "./SignIn.module.sass";
 import { use100vh } from "react-div-100vh";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../components/TextInput";
 import Image from "../../components/Image";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const heightWindow = use100vh();
 
   return (
@@ -64,7 +65,12 @@ const SignIn = () => {
             required
             icon="lock"
           />
-          <button className={cn("button", styles.button)}>Sign in</button>
+          <button
+            onClick={() => navigate("/products/scheduled2")}
+            className={cn("button", styles.button)}
+          >
+            Sign in
+          </button>
           <div className={styles.note}>
             This site is protected by reCAPTCHA and the Google Privacy Policy.
           </div>
