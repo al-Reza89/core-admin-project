@@ -4,8 +4,11 @@ import cn from "classnames";
 import Icon from "../../../../components/Icon";
 import { AiOutlineHistory } from "react-icons/ai";
 import { FaHistory } from "react-icons/fa";
+import Filters from "../../../../components/Filters";
+import Form from "../../../../components/Form";
+import HistoryBox from "../HistoryBox";
 
-const Panel = ({ selectedUser }) => {
+const Panel = ({ selectedUser, items, setSelectedUser, setVisible }) => {
   return (
     <div className={styles.panel}>
       <div className={styles.line}>
@@ -44,9 +47,18 @@ const Panel = ({ selectedUser }) => {
         >
           <span style={{}}>New Chat</span>
         </button>
-        <div className={styles.file}>
-          <FaHistory className={styles.historyIcon} />
-        </div>
+
+        <Filters
+          className={styles.filters}
+          title="Chat History"
+          customeIcon={true}
+        >
+          <HistoryBox
+            users={items}
+            setVisible={setVisible}
+            setSelectedUser={setSelectedUser}
+          />
+        </Filters>
       </div>
     </div>
   );

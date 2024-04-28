@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./MessageCenter.module.sass";
 import cn from "classnames";
-// import Users from "./Users";
+import Users from "./Users";
 import Messages from "./Messages";
 
 const actions = [
@@ -73,6 +73,33 @@ const users = [
     id: 4,
     man: "Servio",
     avatar: "/images/peoples/Servio.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
+    time: "07:01AM",
+    content: "When do you release the coded for the Fleet - Travel kit?",
+    new: false,
+    online: false,
+  },
+  {
+    id: 4,
+    man: "Talena",
+    avatar: "/images/peoples/Talena.png",
     time: "07:01AM",
     content: "When do you release the coded for the Fleet - Travel kit?",
     new: false,
@@ -198,6 +225,8 @@ const MessageCenter = () => {
       /> */}
 
       <Messages
+        items={users}
+        setSelectedUser={setSelectedUser}
         selectedUser={selectedUser}
         className={styles.messages}
         visible={visible}

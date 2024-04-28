@@ -13,12 +13,16 @@ const Messages = ({
   parameters,
   messages,
   selectedUser,
+  setSelectedUser,
+  items,
 }) => {
   const [clickedMessage, setClickedMessage] = useState(false);
 
   return (
     <div className={cn(className, styles.messages, { [styles.show]: visible })}>
       <Panel
+        items={items}
+        setSelectedUser={setSelectedUser}
         selectedUser={selectedUser}
         actions={actions}
         parameters={parameters}

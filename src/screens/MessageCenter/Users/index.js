@@ -19,23 +19,10 @@ const Users = ({
     <div className={cn(className, styles.users)}>
       <div
         style={{
-          position: "relative",
+          paddingTop: "20px",
         }}
+        className={styles.list}
       >
-        <div
-          style={{
-            textAlign: "center",
-            fontSize: "20px",
-            fontWeight: "800",
-            paddingBottom: "15px",
-          }}
-          className={styles.history}
-        >
-          History
-        </div>
-      </div>
-
-      <div className={styles.list}>
         {items.map((x, index) => (
           <Item
             setSelectedUser={setSelectedUser}
@@ -47,16 +34,6 @@ const Users = ({
           />
         ))}
       </div>
-      <Form
-        className={styles.form}
-        value={search}
-        setValue={setSearch}
-        onSubmit={onSubmit}
-        placeholder="Search message"
-        type="text"
-        name="search"
-        icon="search"
-      />
     </div>
   );
 };
