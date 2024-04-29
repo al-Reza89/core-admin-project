@@ -3,7 +3,7 @@ import cn from "classnames";
 import styles from "./Messages.module.sass";
 import Panel from "./Panel";
 import Send from "./Send";
-import ChatUi from "../ChatUi/ChatUi";
+import DocumentWorkflow from "../DocumentWorkflow";
 
 const Messages = ({
   className,
@@ -157,7 +157,7 @@ const Messages = ({
           {/* {messages.map((x, index) => (
             <Message item={x} key={index} />
           ))} */}
-          {clickedMessage && <ChatUi />}
+          {clickedMessage && <DocumentWorkflow />}
         </div>
         <Send />
       </div>
