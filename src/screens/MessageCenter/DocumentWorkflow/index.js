@@ -7,7 +7,7 @@ import SetepWorkflow from "./SetupWorkflow";
 import PreviewWorkflow from "./PreviewWorkflow";
 
 const DocumentWorkflow = () => {
-  const { currentStep } = useSteps();
+  const { currentStep, moveToNextStep } = useSteps();
   console.log("currentSteps", currentStep);
 
   return (
@@ -17,7 +17,7 @@ const DocumentWorkflow = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100%",
-        paddingTop: "100px",
+        paddingTop: currentStep === 1 ? "100px" : "0px",
         width: "100%",
       }}
     >
@@ -56,6 +56,11 @@ const DocumentWorkflow = () => {
               alt="User Avatar"
               className={styles.avatarLeft}
             />
+            {currentStep === 2 && (
+              <div onClick={moveToNextStep} className={styles.markLeft}>
+                {"  "} Generate Steps
+              </div>
+            )}
           </div>
         </div>
       </div>
