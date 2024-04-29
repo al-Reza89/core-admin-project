@@ -2,8 +2,14 @@ import React from "react";
 import cn from "classnames";
 import styles from "./DocumentWorkflow.module.sass";
 import UploadDocument from "./UploadDocument";
+import { useSteps } from "../../../context/StepContext";
+import SetepWorkflow from "./SetupWorkflow";
+import PreviewWorkflow from "./PreviewWorkflow";
 
 const DocumentWorkflow = () => {
+  const { currentStep } = useSteps();
+  console.log("currentSteps", currentStep);
+
   return (
     <div
       style={{
@@ -33,7 +39,9 @@ const DocumentWorkflow = () => {
         >
           <div className={styles.messageContent}>
             <div className={styles.uploadFileDocument}>
-              <UploadDocument />
+              {currentStep === 1 && <UploadDocument />}
+              {currentStep === 2 && <SetepWorkflow />}
+              {currentStep === 3 && <PreviewWorkflow />}
             </div>
           </div>
           <div
