@@ -14,7 +14,7 @@ import { products } from "../../mocks/products";
 
 const sorting = ["list", "grid"];
 
-const Drafts = () => {
+const Drafts = ({ isPanel }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [search, setSearch] = useState("");
 
@@ -95,7 +95,7 @@ const Drafts = () => {
           )}
         </div>
       </Card>
-      <Panel />
+      {isPanel && <Panel />}
     </>
   );
 };

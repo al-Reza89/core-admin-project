@@ -61,6 +61,12 @@ const DocumentWorkflow = () => {
                 {"  "} Generate Steps
               </div>
             )}
+            {currentStep === 3 && (
+              <div>
+                <div className={styles.markLeft}>{"  "} Start Preview</div>
+                <div className={styles.markLeft2}>{"  "} Regenerage Steps</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
