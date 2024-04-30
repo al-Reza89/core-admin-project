@@ -35,6 +35,7 @@ import NewWorkflow from "./screens/NewWorkflow";
 import CreateWorkflow from "./screens/CreateWorkflow";
 import Scheduled2 from "./screens/Scheduled2";
 import AiWorker from "./screens/AiWorker";
+import MessageCenterPage from "./components/messageCenterPage";
 
 function App() {
   return (
@@ -248,9 +249,12 @@ function App() {
         <Route
           path="message-center"
           element={
-            <Page title="Message center">
+            // <Page title="Message center">
+            <MessageCenterPage>
               <MessageCenter />
-            </Page>
+            </MessageCenterPage>
+
+            // </Page>
           }
         />
         <Route

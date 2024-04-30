@@ -4,6 +4,7 @@ import styles from "./Messages.module.sass";
 import Panel from "./Panel";
 import Send from "./Send";
 import DocumentWorkflow from "../DocumentWorkflow";
+import PrebuildTemplate from "../PrebuildTemplate";
 
 const Messages = ({
   className,
@@ -16,7 +17,7 @@ const Messages = ({
   setSelectedUser,
   items,
 }) => {
-  const [clickedMessage, setClickedMessage] = useState(false);
+  const [clickedMessage, setClickedMessage] = useState(null);
 
   return (
     <div className={cn(className, styles.messages, { [styles.show]: visible })}>
@@ -34,19 +35,22 @@ const Messages = ({
         </button> */}
 
         <div className={styles.list}>
-          {clickedMessage !== true && (
+          {clickedMessage === null && (
             <div
               style={{
                 paddingTop: "40px",
               }}
             >
+              <div style={{}} className={cn("h4", styles.title)}>
+                Lets build your first financial app?
+              </div>
               <div
                 style={{
                   paddingBottom: "20px",
                 }}
-                className={cn("h4", styles.title)}
+                className={styles.paragraph}
               >
-                How can I help you today?
+                Lets build your first financial app?
               </div>
               <div
                 style={{
@@ -54,6 +58,7 @@ const Messages = ({
                   gap: "20px",
                   width: "100%",
                 }}
+                className={styles.boxWrapper}
               >
                 <div
                   style={{
@@ -63,13 +68,13 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  <p style={{}} className={styles.paragraph}>
+                  {/* <p style={{}} className={styles.paragraph}>
                     Automate Document Processing: Train Financio to process
                     receiving or extraction of financial documents from
                     different sources. Reading those documents to extract data,
                     data processing and verification, followed by result
                     presentation.
-                  </p>
+                  </p> */}
                   <div
                     style={{
                       display: "flex",
@@ -79,7 +84,7 @@ const Messages = ({
                     }}
                     className={styles.boxContainer}
                   >
-                    <button
+                    {/* <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -89,9 +94,9 @@ const Messages = ({
                       }}
                     >
                       Use a pre-built document processing workflow
-                    </button>
+                    </button> */}
                     <button
-                      onClick={() => setClickedMessage(true)}
+                      onClick={() => setClickedMessage("pre-build")}
                       className={cn("button", styles.buttonAi)}
                       style={{
                         paddingLeft: "20px",
@@ -99,11 +104,11 @@ const Messages = ({
                         paddingRight: "20px",
                       }}
                     >
-                      Create a new document processing workflow
+                      Choose from pre-build app template
                     </button>
                   </div>
                 </div>
-                <div className={styles.divider} style={{}}></div>
+                {/* <div className={styles.divider} style={{}}></div> */}
                 <div
                   style={{
                     display: "flex",
@@ -112,12 +117,12 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  <p style={{}} className={styles.paragraph}>
+                  {/* <p style={{}} className={styles.paragraph}>
                     Automate any Financial workflow: Train Financio to automate
                     tasks, routing work items, setting up approval processes,
                     and integrating with various systems to streamline
                     end-to-end processes.
-                  </p>
+                  </p> */}
                   <div
                     style={{
                       display: "flex",
@@ -127,7 +132,7 @@ const Messages = ({
                     }}
                     className={styles.boxContainer}
                   >
-                    <button
+                    {/* <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -137,9 +142,9 @@ const Messages = ({
                       }}
                     >
                       Use a pre-built Financial workflow template.
-                    </button>
+                    </button> */}
                     <button
-                      onClick={() => setClickedMessage(true)}
+                      onClick={() => setClickedMessage("financial-app")}
                       className={cn("button", styles.buttonAi)}
                       style={{
                         paddingLeft: "20px",
@@ -147,7 +152,7 @@ const Messages = ({
                         paddingRight: "20px",
                       }}
                     >
-                      Build a new financial workflow
+                      Build a new financial app
                     </button>
                   </div>
                 </div>
@@ -157,7 +162,10 @@ const Messages = ({
           {/* {messages.map((x, index) => (
             <Message item={x} key={index} />
           ))} */}
-          {clickedMessage && <DocumentWorkflow />}
+          {clickedMessage === "financial-app" && <DocumentWorkflow />}
+          {clickedMessage === "pre-build" && (
+            <PrebuildTemplate setClickedMessage={setClickedMessage} />
+          )}
         </div>
         <Send />
       </div>
