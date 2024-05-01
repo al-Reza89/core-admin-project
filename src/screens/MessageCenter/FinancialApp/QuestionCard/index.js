@@ -15,7 +15,7 @@ const QuestionCard = ({
   isInput,
   setIsInput,
 }) => {
-  const [textareaHeight, setTextareaHeight] = useState("46px");
+  const [textareaHeight, setTextareaHeight] = useState("50px");
 
   const maxTextareaHeight = "200px"; // Change as per your requirement
 
