@@ -41,12 +41,34 @@
     flex-grow: 1
     maximum-height: 100px
 
-.input
+// .input
+//     width: 100%
+//     height: 48px
+//     overflow: auto
+//     display: block
+//     padding: 0 96px 0 10px
+//     border-radius: 12px
+//     border: 2px solid $n3
+//     background: $n2
+//     +base1-s
+//     color: $n7
+//     &::placeholder
+//         color: $n4
+//     &:focus
+//         border-color: rgba($p1, .35)
+//         background: $n
+//     +dark
+//         background: $n6
+//         border-color: $n6
+//         color: $n1
+//         &:focus
+//             background: $n8
+
+.input 
     width: 100%
-    height: 48px
-    overflow: auto
-    display: block
-    padding: 0 96px 0 10px
+    display: inline-block
+    // height: 10px
+    padding: 10px 90px 14px 10px
     border-radius: 12px
     border: 2px solid $n3
     background: $n2
@@ -61,6 +83,7 @@
         background: $n6
         border-color: $n6
         color: $n1
+
         &:focus
             background: $n8
 
@@ -68,4 +91,4 @@
     position: absolute
     top: 50%
     right: 4px
-    transform: translateY(-50%)
+    transform: translateY(-60%)
