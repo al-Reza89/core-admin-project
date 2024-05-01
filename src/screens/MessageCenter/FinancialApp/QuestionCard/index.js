@@ -15,20 +15,31 @@ const QuestionCard = ({
   isInput,
   setIsInput,
 }) => {
-  const [textareaHeight, setTextareaHeight] = useState("50px");
+  const [textareaHeight, setTextareaHeight] = useState("46px");
 
+  // const minTextareaHeight = "50px"; // Change as per your requirement
   const maxTextareaHeight = "200px"; // Change as per your requirement
+
+  // const handleTextareaChange = (e) => {
+  //   setInput(e.target.value);
+  //   const height = e.target.scrollHeight;
+  //   setTextareaHeight(
+  //     height > parseInt(maxTextareaHeight)
+  //       ? `${maxTextareaHeight}`
+  //       : height > parseInt(textareaHeight)
+  //       ? `${height}px`
+  //       : textareaHeight
+  //   );
+  // };
 
   const handleTextareaChange = (e) => {
     setInput(e.target.value);
     const height = e.target.scrollHeight;
-    setTextareaHeight(
+    const newHeight =
       height > parseInt(maxTextareaHeight)
         ? `${maxTextareaHeight}`
-        : height > parseInt(textareaHeight)
-        ? `${height}px`
-        : textareaHeight
-    );
+        : `${height}px`;
+    setTextareaHeight(newHeight);
   };
 
   const scrollbarStyles = {
