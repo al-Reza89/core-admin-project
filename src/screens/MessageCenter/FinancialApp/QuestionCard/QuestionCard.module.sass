@@ -1,0 +1,56 @@
+@import "../../../../styles/helpers"
+
+.card
+    background: $n1
+    border-radius: 8px
+    padding-left: 8px
+    padding-right: 8px
+    padding-top: 4px
+    +m
+        padding: 16px
+    +dark
+        background: $n7
+
+.head
+    display: flex
+    align-items: center
+    margin-bottom: 0
+
+    +m
+        margin-bottom: 14px
+
+.title
+    margin-right: auto
+    +m
+        line-height: 40px
+.description
+    +caption1
+    color: $n4
+    +t
+        font-size: 15px
+    +dark
+        color: $shades1
+
+.inputfield
+    padding-top: 14px
+    padding-bottom: 14px
+    width: 100%
+
+.input 
+    width: 100%
+    height: 40px
+    padding: 0 10px
+    border-radius: 12px
+    border: 2px solid $n3
+    background: $n2
+    +base1-s
+    color: $n7
+    &::placeholder
+        color: $n4
+    &:focus
+        border-color: rgba($p1, .35)
+        background: $n
+    +dark
+        background: $n6
+        border-color: $n6
+        color: $n1

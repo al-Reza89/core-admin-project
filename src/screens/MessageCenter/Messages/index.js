@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cn from "classnames";
 import styles from "./Messages.module.sass";
 import Panel from "./Panel";
 import Send from "./Send";
 import DocumentWorkflow from "../DocumentWorkflow";
 import PrebuildTemplate from "../PrebuildTemplate";
+import ChatUi from "../ChatUi/ChatUi";
+import FinancialApp from "../FinancialApp";
+import Loader from "../../../components/Loader";
 
 const Messages = ({
   className,
@@ -18,6 +21,15 @@ const Messages = ({
   items,
 }) => {
   const [clickedMessage, setClickedMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className={cn(className, styles.messages, { [styles.show]: visible })}>
@@ -162,12 +174,30 @@ const Messages = ({
           {/* {messages.map((x, index) => (
             <Message item={x} key={index} />
           ))} */}
-          {clickedMessage === "financial-app" && <DocumentWorkflow />}
+          {clickedMessage === "financial-app" && (
+            <FinancialApp isLoading={isLoading} />
+          )}
           {clickedMessage === "pre-build" && (
             <PrebuildTemplate setClickedMessage={setClickedMessage} />
           )}
         </div>
         <Send />
+        {clickedMessage === "financial-app" && isLoading && (
+          <div className={styles.foot}>
+            <button
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "20px",
+              }}
+              className={cn("button-stroke button-small")}
+            >
+              <Loader className={styles.loader} />
+              <span>Building your workflow</span>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
