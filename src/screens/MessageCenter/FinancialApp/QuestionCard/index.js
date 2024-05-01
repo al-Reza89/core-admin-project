@@ -69,6 +69,7 @@ const QuestionCard = ({
                 height: textareaHeight,
                 maxHeight: maxTextareaHeight,
                 overflowY: "auto",
+                resize: "none",
                 ...scrollbarStyles,
               }}
               placeholder="Type your answer here"
