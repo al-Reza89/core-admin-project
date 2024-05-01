@@ -24,6 +24,7 @@ export const messages = [
         <Questions />
       </div>
     ),
+    button: "Generate Workflow",
     time: "12:02",
     user: "user1",
   },

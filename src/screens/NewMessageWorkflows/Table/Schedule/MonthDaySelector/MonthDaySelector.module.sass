@@ -1,0 +1,53 @@
+@import ../../../../../styles/helpers
+
+.DaySelector
+    width: 280px
+    padding: 24px
+    height: 490px
+    +d
+        width: 100%
+
+.DaySelector__list
+    height: calc(100% - 100px)
+    overflow: auto
+
+.DaySelector__list li
+    padding: 0.5em 0.5em 0.5em
+    cursor: pointer
+    transition: all 0.5s ease-out
+    border-radius: 5px
+    color: $n4
+    &:hover, &.active
+        background-color: $n5
+        color: $n
+
+.top
+    display: flex
+    align-items: center
+    margin-bottom: 24px
+    padding-bottom: 23px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.subtitle
+    margin-right: auto
+    +title1-s
+
+.close
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n3
+    font-size: 0
+    svg
+        fill: $n5
+        transition: transform .2s
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+    &:hover
+        svg
+            transform: rotate(90deg)
+    

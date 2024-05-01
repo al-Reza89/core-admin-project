@@ -1,21 +1,47 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import styles from "./FinancialApp.module.sass";
 import cn from "classnames";
 import { messages } from "../../../utils/messages";
 import { FaCirclePause } from "react-icons/fa6";
 import Loader from "../../../components/Loader";
+import FinalizeAppWorkflow from "./FinalizeAppWorkflow";
 
 const FinancialApp = ({ isLoading }) => {
-  const sortedMessages = messages.sort(
-    (a, b) => new Date(a.time) - new Date(b.time)
-  );
+  const [renderedMessages, setRenderedMessages] = useState([]);
 
-  // Slice the messages array to render only the first two messages
-  const renderedMessages = isLoading
-    ? sortedMessages.slice(0, 2)
-    : sortedMessages;
+  const handleClick = (button) => {
+    console.log("Button clicked:", button);
+    if (button === "Generate Workflow") {
+      setRenderedMessages([
+        ...messages,
+        {
+          id: 4,
+          text: (
+            <div
+              style={{
+                backgroundColor: "#fffffff",
+              }}
+            >
+              <FinalizeAppWorkflow />
+            </div>
+          ),
+          time: "12:03",
+          user: "user1",
+          button: "Preview app UI",
+        },
+      ]);
+    }
+  };
 
-  const lastMessage = renderedMessages.slice(-1)[0]; // Get the last message
+  useEffect(() => {
+    const sortedMessages = messages.sort(
+      (a, b) => new Date(a.time) - new Date(b.time)
+    );
+
+    const rendered = isLoading ? sortedMessages.slice(0, 2) : sortedMessages;
+    setRenderedMessages(rendered);
+  }, [isLoading]);
 
   return (
     <div
@@ -63,9 +89,12 @@ const FinancialApp = ({ isLoading }) => {
                   alt="User Avatar"
                   className={styles.avatarLeft}
                 />
-                {index === renderedMessages.length - 1 && !isLoading && (
-                  <div className={styles.markLeft}>
-                    {"  "} Generate Workflow
+                {message.button && !isLoading && (
+                  <div
+                    onClick={() => handleClick(message.button)}
+                    className={styles.markLeft}
+                  >
+                    {message.button}
                   </div>
                 )}
               </div>
