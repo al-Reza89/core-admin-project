@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Questions.module.sass";
 import cn from "classnames";
-import Card from "../../../../components/Card";
 import Icon from "../../../../components/Icon";
 import QuestionCard from "../QuestionCard";
 

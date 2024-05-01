@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./QuestionCard.module.sass";
 
@@ -15,6 +15,39 @@ const QuestionCard = ({
   isInput,
   setIsInput,
 }) => {
+  const [textareaHeight, setTextareaHeight] = useState("auto");
+
+  const minTextareaHeight = "50px"; // Change as per your requirement
+  const maxTextareaHeight = "200px"; // Change as per your requirement
+
+  const handleTextareaChange = (e) => {
+    setInput(e.target.value);
+    const height = e.target.scrollHeight;
+    setTextareaHeight(
+      height > parseInt(maxTextareaHeight)
+        ? `${maxTextareaHeight}`
+        : height > parseInt(minTextareaHeight)
+        ? `${height}px`
+        : minTextareaHeight
+    );
+  };
+
+  const scrollbarStyles = {
+    WebkitScrollbar: {
+      width: "8px",
+    },
+    WebkitScrollbarTrack: {
+      background: "#f1f1f1",
+    },
+    WebkitScrollbarThumb: {
+      background: "#888",
+      borderRadius: "4px",
+    },
+    WebkitScrollbarThumbHover: {
+      background: "#555",
+    },
+  };
+
   return (
     <div className={cn(styles.card, className)}>
       {title && (
@@ -29,16 +62,18 @@ const QuestionCard = ({
       )}
       {children}
       {isInput === false && (
-        <div style={{}} className={styles.inputfield}>
+        <div className={styles.inputfield}>
           <div className={styles.inputContainer}>
             <textarea
               className={styles.input}
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={handleTextareaChange}
               style={{
-                width: "100%",
+                height: textareaHeight,
+                maxHeight: maxTextareaHeight,
+                overflowY: "auto",
+                ...scrollbarStyles,
               }}
-              type="text"
               placeholder="Type your answer here"
             />
           </div>
