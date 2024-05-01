@@ -58,6 +58,7 @@ const Questions = () => {
             )
           }
         ></QuestionCard>
+
         <QuestionCard
           input={input2}
           setInput={setInput2}

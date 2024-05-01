@@ -36,7 +36,7 @@ const FinancialApp = ({ isLoading }) => {
           <div
             style={{
               minWidth: "20%",
-              maxWidth: "80%",
+              maxWidth: "90%",
               width: "fit-content",
             }}
             key={message.id}

@@ -29,22 +29,19 @@ const QuestionCard = ({
       )}
       {children}
       {isInput === false && (
-        <div
-          style={{
-            width: "100%",
-          }}
-          className={styles.inputfield}
-        >
-          <input
-            className={styles.input}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            style={{
-              width: "100%",
-            }}
-            type="text"
-            placeholder="Type your answer here"
-          />
+        <div style={{}} className={styles.inputfield}>
+          <div className={styles.inputContainer}>
+            <textarea
+              className={styles.input}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              style={{
+                width: "100%",
+              }}
+              type="text"
+              placeholder="Type your answer here"
+            />
+          </div>
         </div>
       )}
     </div>
