@@ -13,7 +13,7 @@ export const messages = [
   },
   {
     id: 2,
-    text: <div>Inventory Management tool for ecommerce with Shopify .</div>,
+    text: <div>Inventory Management tool for ecommerce with Shopify.</div>,
     time: "12:02",
     user: "user2",
   },

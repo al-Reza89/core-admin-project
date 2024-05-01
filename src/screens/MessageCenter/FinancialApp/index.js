@@ -35,7 +35,7 @@ const FinancialApp = ({ isLoading }) => {
         {renderedMessages.map((message) => (
           <div
             style={{
-              minWidth: "60%",
+              minWidth: "20%",
               maxWidth: "80%",
               width: "fit-content",
             }}
@@ -72,7 +72,7 @@ const FinancialApp = ({ isLoading }) => {
                 }}
               >
                 <img
-                  src="images/peoples/Revo.png"
+                  src="images/content/avatar.jpg"
                   alt="User Avatar"
                   className={styles.avatarRight}
                 />

@@ -249,12 +249,17 @@ function App() {
         <Route
           path="message-center"
           element={
-            // <Page title="Message center">
+            <Page title="Message center">
+              <MessageCenter />
+            </Page>
+          }
+        />
+        <Route
+          path="new-message-center"
+          element={
             <MessageCenterPage>
               <MessageCenter />
             </MessageCenterPage>
-
-            // </Page>
           }
         />
         <Route

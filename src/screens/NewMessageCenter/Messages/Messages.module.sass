@@ -1,0 +1,109 @@
+@import ../../../styles/helpers
+
+.messages
+    flex-grow: 1
+    border: 1px solid $n3
+    border-radius: 12px
+    +t
+        height: 100%
+        border: none
+    +dark
+        border-color: $n6
+
+.wrapper
+    position: relative
+    height: calc(100% - 104px)
+    // padding-top: 60px
+    padding-bottom: 50px
+    // padding-left: 50px    
+    +w
+        height: calc(100% - 88px)
+    +m
+        height: calc(100% - 72px)
+        padding: 64px 16px 72px
+
+    .boxContainer
+
+        .command
+            background: $n3
+        
+            +dark
+                background: $n6
+            
+            &:hover
+                background: #ccc6c6
+                +dark
+                    background: #1d1849
+
+
+.button
+    position: absolute
+    top: 16px
+    left: 50%
+    transform: translateX(-50%)
+    +m
+        top: 12px
+
+.list
+    max-height: 100%
+    padding-top: 12px
+    padding-bottom: 20px
+    padding-left: 20px
+    flex-grow: 1
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+
+
+.title
+    margin-bottom: 8px
+    padding-top: 12px
+    text-align: center
+    +w 
+        font-size: 24px
+    +m
+        font-size: 24px
+
+
+.paragraph
+    text-align: center
+    margin-bottom: 50px
+    padding-top: 10px
+    +title1-m
+    color: $n4
+    +w  
+        min-height: 160px
+        font-size: 16px
+        margin-bottom: 4px
+        margin-top: 4px
+    +m  
+        min-height: 160px
+        font-size: 14px
+
+.buttonAi
+    +dark 
+        background: $n6
+        &:hover
+            background: $p1
+    
+    
+    +w
+        font-size: 13px
+
+.divider
+    border-right: 2px solid $n3
+    +dark
+        border-color: $n6
+
+.foot
+    position: absolute
+    z-index: 10
+    bottom: 100px
+    left: 44% 
+    margin-top: 44px
+    text-align: center
+    +m
+        margin-top: 32px
+    .button
+        .loader
+            transform: scale(.8)
+            margin: 0 18px 0 8px

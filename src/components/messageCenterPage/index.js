@@ -22,20 +22,21 @@ const MessageCenterPage = ({ children }) => {
         </Link>
       </div>
       <div
-        className={styles.childrenContainer}
         style={{
           display: "flex",
           justifyContent: "center",
-          height: `calc("100vh"- "160px")`,
         }}
       >
         <div
-          className={styles.children}
+          className={styles.childrenContainer}
           style={{
-            width: "80%",
+            height: `calc("100vh"- "160px")`,
+            width: "1093px",
           }}
         >
-          {children}
+          <div className={styles.children} style={{}}>
+            {children}
+          </div>
         </div>
       </div>
     </div>
