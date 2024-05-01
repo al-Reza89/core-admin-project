@@ -5,11 +5,11 @@ import Image from "../Image";
 
 const MessageCenterPage = ({ children }) => {
   return (
-    <div>
+    <div className={styles.page}>
       <div
         style={{
-          paddingLeft: "20px",
           paddingTop: "20px",
+          paddingLeft: "20px",
         }}
       >
         <Link className={styles.logo} to="/">
@@ -28,14 +28,21 @@ const MessageCenterPage = ({ children }) => {
         }}
       >
         <div
-          className={styles.childrenContainer}
           style={{
-            height: `calc("100vh"- "160px")`,
-            width: "1093px",
+            maxWidth: "100%",
+            padding: "0 40px 40px 40px",
           }}
         >
-          <div className={styles.children} style={{}}>
-            {children}
+          <div
+            className={styles.childrenContainer}
+            style={{
+              height: `calc("100vh"- "160px")`,
+              width: "1093px",
+            }}
+          >
+            <div className={styles.children} style={{}}>
+              {children}
+            </div>
           </div>
         </div>
       </div>

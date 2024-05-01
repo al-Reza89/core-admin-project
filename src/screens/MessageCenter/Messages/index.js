@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./Messages.module.sass";
 import Panel from "./Panel";
 import Send from "./Send";
 import DocumentWorkflow from "../DocumentWorkflow";
-import PrebuildTemplate from "../PrebuildTemplate";
-import ChatUi from "../ChatUi/ChatUi";
-import FinancialApp from "../FinancialApp";
-import Loader from "../../../components/Loader";
 
 const Messages = ({
   className,
@@ -20,16 +16,7 @@ const Messages = ({
   setSelectedUser,
   items,
 }) => {
-  const [clickedMessage, setClickedMessage] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const [clickedMessage, setClickedMessage] = useState(false);
 
   return (
     <div className={cn(className, styles.messages, { [styles.show]: visible })}>
@@ -47,22 +34,19 @@ const Messages = ({
         </button> */}
 
         <div className={styles.list}>
-          {clickedMessage === null && (
+          {clickedMessage !== true && (
             <div
               style={{
                 paddingTop: "40px",
               }}
             >
-              <div style={{}} className={cn("h4", styles.title)}>
-                Lets build your first financial app?
-              </div>
               <div
                 style={{
                   paddingBottom: "20px",
                 }}
-                className={styles.paragraph}
+                className={cn("h4", styles.title)}
               >
-                Lets build your first financial app?
+                How can I help you today?
               </div>
               <div
                 style={{
@@ -70,7 +54,6 @@ const Messages = ({
                   gap: "20px",
                   width: "100%",
                 }}
-                className={styles.boxWrapper}
               >
                 <div
                   style={{
@@ -80,13 +63,13 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  {/* <p style={{}} className={styles.paragraph}>
+                  <p style={{}} className={styles.paragraph}>
                     Automate Document Processing: Train Financio to process
                     receiving or extraction of financial documents from
                     different sources. Reading those documents to extract data,
                     data processing and verification, followed by result
                     presentation.
-                  </p> */}
+                  </p>
                   <div
                     style={{
                       display: "flex",
@@ -96,7 +79,7 @@ const Messages = ({
                     }}
                     className={styles.boxContainer}
                   >
-                    {/* <button
+                    <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -106,9 +89,9 @@ const Messages = ({
                       }}
                     >
                       Use a pre-built document processing workflow
-                    </button> */}
+                    </button>
                     <button
-                      onClick={() => setClickedMessage("pre-build")}
+                      onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
                         paddingLeft: "20px",
@@ -116,11 +99,11 @@ const Messages = ({
                         paddingRight: "20px",
                       }}
                     >
-                      Choose from pre-build app template
+                      Create a new document processing workflow
                     </button>
                   </div>
                 </div>
-                {/* <div className={styles.divider} style={{}}></div> */}
+                <div className={styles.divider} style={{}}></div>
                 <div
                   style={{
                     display: "flex",
@@ -129,12 +112,12 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  {/* <p style={{}} className={styles.paragraph}>
+                  <p style={{}} className={styles.paragraph}>
                     Automate any Financial workflow: Train Financio to automate
                     tasks, routing work items, setting up approval processes,
                     and integrating with various systems to streamline
                     end-to-end processes.
-                  </p> */}
+                  </p>
                   <div
                     style={{
                       display: "flex",
@@ -144,7 +127,7 @@ const Messages = ({
                     }}
                     className={styles.boxContainer}
                   >
-                    {/* <button
+                    <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -154,9 +137,9 @@ const Messages = ({
                       }}
                     >
                       Use a pre-built Financial workflow template.
-                    </button> */}
+                    </button>
                     <button
-                      onClick={() => setClickedMessage("financial-app")}
+                      onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
                         paddingLeft: "20px",
@@ -164,7 +147,7 @@ const Messages = ({
                         paddingRight: "20px",
                       }}
                     >
-                      Build a new financial app
+                      Build a new financial workflow
                     </button>
                   </div>
                 </div>
@@ -174,30 +157,9 @@ const Messages = ({
           {/* {messages.map((x, index) => (
             <Message item={x} key={index} />
           ))} */}
-          {clickedMessage === "financial-app" && (
-            <FinancialApp isLoading={isLoading} />
-          )}
-          {clickedMessage === "pre-build" && (
-            <PrebuildTemplate setClickedMessage={setClickedMessage} />
-          )}
+          {clickedMessage && <DocumentWorkflow />}
         </div>
         <Send />
-        {clickedMessage === "financial-app" && isLoading && (
-          <div className={styles.foot}>
-            <button
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "20px",
-              }}
-              className={cn("button-stroke button-small")}
-            >
-              <Loader className={styles.loader} />
-              <span>Building your workflow</span>
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

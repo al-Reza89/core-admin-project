@@ -212,12 +212,7 @@ const NewMessageCenter = () => {
   // };
 
   return (
-    <div
-      style={{
-        maxWidth: "1023px",
-      }}
-      className={cn(styles.wrapper)}
-    >
+    <div style={{}} className={cn(styles.wrapper)}>
       {/* <Users
         className={styles.users}
         items={users}
