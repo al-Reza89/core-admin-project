@@ -15,9 +15,8 @@ const QuestionCard = ({
   isInput,
   setIsInput,
 }) => {
-  const [textareaHeight, setTextareaHeight] = useState("auto");
+  const [textareaHeight, setTextareaHeight] = useState("50px");
 
-  const minTextareaHeight = "50px"; // Change as per your requirement
   const maxTextareaHeight = "200px"; // Change as per your requirement
 
   const handleTextareaChange = (e) => {
@@ -26,9 +25,9 @@ const QuestionCard = ({
     setTextareaHeight(
       height > parseInt(maxTextareaHeight)
         ? `${maxTextareaHeight}`
-        : height > parseInt(minTextareaHeight)
+        : height > parseInt(textareaHeight)
         ? `${height}px`
-        : minTextareaHeight
+        : textareaHeight
     );
   };
 
