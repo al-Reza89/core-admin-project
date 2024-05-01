@@ -37,7 +37,7 @@ const Messages = ({
           {clickedMessage !== true && (
             <div
               style={{
-                paddingTop: "40px",
+                paddingTop: "150px",
               }}
             >
               <div
@@ -63,13 +63,13 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  <p style={{}} className={styles.paragraph}>
+                  {/* <p style={{}} className={styles.paragraph}>
                     Automate Document Processing: Train Financio to process
                     receiving or extraction of financial documents from
                     different sources. Reading those documents to extract data,
                     data processing and verification, followed by result
                     presentation.
-                  </p>
+                  </p> */}
                   <div
                     style={{
                       display: "flex",
@@ -79,7 +79,7 @@ const Messages = ({
                     }}
                     className={styles.boxContainer}
                   >
-                    <button
+                    {/* <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -89,7 +89,7 @@ const Messages = ({
                       }}
                     >
                       Use a pre-built document processing workflow
-                    </button>
+                    </button> */}
                     <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
@@ -103,7 +103,7 @@ const Messages = ({
                     </button>
                   </div>
                 </div>
-                <div className={styles.divider} style={{}}></div>
+                {/* <div className={styles.divider} style={{}}></div> */}
                 <div
                   style={{
                     display: "flex",
@@ -112,12 +112,12 @@ const Messages = ({
                     gap: "20px",
                   }}
                 >
-                  <p style={{}} className={styles.paragraph}>
+                  {/* <p style={{}} className={styles.paragraph}>
                     Automate any Financial workflow: Train Financio to automate
                     tasks, routing work items, setting up approval processes,
                     and integrating with various systems to streamline
                     end-to-end processes.
-                  </p>
+                  </p> */}
                   <div
                     style={{
                       display: "flex",
@@ -138,7 +138,7 @@ const Messages = ({
                     >
                       Use a pre-built Financial workflow template.
                     </button>
-                    <button
+                    {/* <button
                       onClick={() => setClickedMessage(true)}
                       className={cn("button", styles.buttonAi)}
                       style={{
@@ -148,7 +148,7 @@ const Messages = ({
                       }}
                     >
                       Build a new financial workflow
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
