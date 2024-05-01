@@ -15,6 +15,8 @@ const FinancialApp = ({ isLoading }) => {
     ? sortedMessages.slice(0, 2)
     : sortedMessages;
 
+  const lastMessage = renderedMessages.slice(-1)[0]; // Get the last message
+
   return (
     <div
       style={{
@@ -32,7 +34,7 @@ const FinancialApp = ({ isLoading }) => {
           flexDirection: "column",
         }}
       >
-        {renderedMessages.map((message) => (
+        {renderedMessages.map((message, index) => (
           <div
             style={{
               minWidth: "20%",
@@ -61,6 +63,11 @@ const FinancialApp = ({ isLoading }) => {
                   alt="User Avatar"
                   className={styles.avatarLeft}
                 />
+                {index === renderedMessages.length - 1 && !isLoading && (
+                  <div className={styles.markLeft}>
+                    {"  "} Generate Workflow
+                  </div>
+                )}
               </div>
             )}
             {message.user === "user2" && (
