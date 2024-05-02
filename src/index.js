@@ -5,15 +5,18 @@ import { RecoilRoot } from "recoil";
 
 import App from "./App";
 import { StepsProvider } from "./context/StepContext";
+import { MessageProvider } from "./context/MessageContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <StepsProvider>
-      <RecoilRoot>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </RecoilRoot>
-    </StepsProvider>
+    <MessageProvider>
+      <StepsProvider>
+        <RecoilRoot>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </RecoilRoot>
+      </StepsProvider>
+    </MessageProvider>
   </React.StrictMode>
 );

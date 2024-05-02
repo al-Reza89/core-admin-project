@@ -202,7 +202,7 @@ const messages = [
   },
 ];
 
-const NewMessageCenter = () => {
+const NewMessageCenter = ({ setAvatarVisible, avatarVisible }) => {
   const [visible, setVisible] = useState(false);
   // const [search, setSearch] = useState("");
   const [selectedUser, setSelectedUser] = useState(users[0]);
@@ -233,6 +233,8 @@ const NewMessageCenter = () => {
         actions={actions}
         parameters={parameters}
         messages={messages}
+        setAvatarVisible={setAvatarVisible}
+        avatarVisible={avatarVisible}
       />
     </div>
   );

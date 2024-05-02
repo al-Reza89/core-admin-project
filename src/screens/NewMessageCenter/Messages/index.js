@@ -17,6 +17,8 @@ const Messages = ({
   selectedUser,
   setSelectedUser,
   items,
+  setAvatarVisible,
+  avatarVisible,
 }) => {
   const [clickedMessage, setClickedMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +40,8 @@ const Messages = ({
         actions={actions}
         parameters={parameters}
         setVisible={setVisible}
+        setAvatarVisible={setAvatarVisible}
+        avatarVisible={avatarVisible}
       />
       <div className={styles.wrapper}>
         {/* <button className={cn("button-stroke button-small", styles.button)}>

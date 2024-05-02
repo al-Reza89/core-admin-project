@@ -17,9 +17,8 @@ const Preview = () => {
     <div
       style={{
         width: "1200px",
-        height: "810px",
+        height: "100vh",
         margin: "auto",
-        paddingTop: "50px",
       }}
     >
       <div
@@ -63,20 +62,17 @@ const Preview = () => {
       </div>
       <div
         style={{
+          bottom: "50px",
+          left: "50px",
           position: "absolute",
-          bottom: "0",
-          left: "0",
         }}
       >
         {avatarVisible === false && (
-          <div
-            className=""
-            style={{
-              position: "relative",
-            }}
-          >
-            {/* <MessageCenter /> */}
-            <NewMessageCenter />
+          <div className="" style={{}}>
+            <NewMessageCenter
+              setAvatarVisible={setAvatarVisible}
+              avatarVisible={avatarVisible}
+            />
           </div>
         )}
       </div>

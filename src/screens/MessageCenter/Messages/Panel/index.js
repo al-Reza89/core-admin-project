@@ -7,8 +7,16 @@ import { FaHistory } from "react-icons/fa";
 import Filters from "../../../../components/Filters";
 import Form from "../../../../components/Form";
 import HistoryBox from "../HistoryBox";
+import { RxCross2 } from "react-icons/rx";
 
-const Panel = ({ selectedUser, items, setSelectedUser, setVisible }) => {
+const Panel = ({
+  selectedUser,
+  items,
+  setSelectedUser,
+  setVisible,
+  setAvatarVisible,
+  avatarVisible,
+}) => {
   return (
     <div className={styles.panel}>
       <div className={styles.line}>
@@ -29,37 +37,58 @@ const Panel = ({ selectedUser, items, setSelectedUser, setVisible }) => {
           </div>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          paddingRight: "20px",
-          gap: "10px",
-          alignItems: "center",
-          cursor: "pointer",
-        }}
-      >
-        <button
+      {avatarVisible === false ? (
+        <div
+          onClick={() => setAvatarVisible(true)}
           style={{
-            height: "40px",
-            padding: "0 20px",
+            marginRight: "20px",
+            paddingRight: "10px",
+            paddingLeft: "10px",
+            paddingTop: "10px",
+            paddingBottom: "10px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "#000000",
+            borderRadius: "50%",
+            cursor: "pointer",
           }}
-          className={cn("button", styles.button)}
         >
-          <span style={{}}>New Chat</span>
-        </button>
+          <RxCross2 fill="#6F767E" className={styles.icon} />
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            paddingRight: "20px",
+            gap: "10px",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <button
+            style={{
+              height: "40px",
+              padding: "0 20px",
+            }}
+            className={cn("button", styles.button)}
+          >
+            <span style={{}}>New Chat</span>
+          </button>
 
-        <Filters
-          className={styles.filters}
-          title="Chat History"
-          customeIcon={true}
-        >
-          <HistoryBox
-            users={items}
-            setVisible={setVisible}
-            setSelectedUser={setSelectedUser}
-          />
-        </Filters>
-      </div>
+          <Filters
+            className={styles.filters}
+            title="Chat History"
+            customeIcon={true}
+          >
+            <HistoryBox
+              users={items}
+              setVisible={setVisible}
+              setSelectedUser={setSelectedUser}
+            />
+          </Filters>
+        </div>
+      )}
     </div>
   );
 };
