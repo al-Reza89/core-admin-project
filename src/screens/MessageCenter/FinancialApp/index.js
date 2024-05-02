@@ -6,29 +6,42 @@ import { messages } from "../../../utils/messages";
 import { FaCirclePause } from "react-icons/fa6";
 import Loader from "../../../components/Loader";
 import FinalizeAppWorkflow from "./FinalizeAppWorkflow";
+import AppPreview from "./AppPreview";
 
-const FinancialApp = ({ isLoading }) => {
+const FinancialApp = ({ isLoading, setIsLoading }) => {
   const [renderedMessages, setRenderedMessages] = useState([]);
 
   const handleClick = (button) => {
     console.log("Button clicked:", button);
     if (button === "Generate Workflow") {
       setRenderedMessages([
-        ...messages,
+        ...renderedMessages,
         {
           id: 4,
           text: (
-            <div
-              style={{
-                backgroundColor: "#fffffff",
-              }}
-            >
+            <div style={{}}>
               <FinalizeAppWorkflow />
             </div>
           ),
           time: "12:03",
           user: "user1",
           button: "Preview app UI",
+        },
+      ]);
+    }
+    if (button === "Preview app UI") {
+      setRenderedMessages([
+        ...renderedMessages,
+        {
+          id: 5,
+          text: (
+            <div style={{}}>
+              <AppPreview />
+            </div>
+          ),
+          time: "12:04",
+          user: "user1",
+          // button: "Finalize app",
         },
       ]);
     }

@@ -71,12 +71,12 @@ const ActionInput = ({ value }) => {
           padding: "3px",
           borderRadius: "50%",
           height: "36px",
-          width: editing ? "36px" : "72px",
+          width: editing ? "36px" : "100px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           marginBottom: "25px",
-          marginLeft: "10px",
+          marginLeft: "5px",
           visibility: hovered ? "visible" : "hidden",
         }}
       >

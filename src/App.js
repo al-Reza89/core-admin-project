@@ -37,6 +37,7 @@ import Scheduled2 from "./screens/Scheduled2";
 import AiWorker from "./screens/AiWorker";
 import MessageCenterPage from "./components/messageCenterPage";
 import NewMessageCenter from "./screens/NewMessageCenter";
+import Preview from "./screens/Preview";
 
 function App() {
   return (
@@ -155,6 +156,7 @@ function App() {
           }
         />
         <Route path="products/scheduled2" element={<Scheduled2 />} />
+        <Route path="products/preview" element={<Preview />} />
         <Route
           path="products/scheduled2/:aiWorkerName"
           element={<AiWorker />}
