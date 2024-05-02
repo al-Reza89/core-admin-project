@@ -9,13 +9,25 @@
 .table
     display: table
     width: 100%
+
     +t
         display: block
 
 .row
     display: table-row
-    +t
-        display: none
+    display: flex
+    justify-content: space-between
+    // width: 100%
+    // &:first-child
+    //     width: 40%
+    // &:nth-child(2)
+    //     width: 25%
+    // &:last-child
+    //     width: 25%
+    //     &:after
+    //         right: 12px
+    
+    
 
 .col
     position: relative

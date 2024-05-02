@@ -17,15 +17,23 @@ const Table = ({ items, foot, tableHeader }) => {
 
   return (
     <div className={styles.market}>
-      <div className={styles.table}>
-        <div className={styles.row}>
-          {tableHeader &&
-            tableHeader.map((x, index) => (
-              <div key={index} className={styles.col}>
-                {x.title}
-              </div>
-            ))}
+      <div
+        style={{
+          width: "100%",
+        }}
+        className={styles.table}
+      >
+        <div className={styles.header} style={{}}>
+          <div style={{}} className={styles.row}>
+            {tableHeader &&
+              tableHeader.map((x, index) => (
+                <div key={index} className={styles.col}>
+                  {x.title}
+                </div>
+              ))}
+          </div>
         </div>
+
         {items.map((x, index) => (
           <Row
             item={x}
