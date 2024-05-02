@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import styles from "./Item.module.sass";
+import styles from "./ActionInput.module.sass";
 import cn from "classnames";
-import Balance from "../../../../components/Balance";
 import { GoPencil } from "react-icons/go";
 
-const Item = ({ className, item }) => {
+const ActionInput = ({ value }) => {
   const [hovered, setHovered] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [inputValue, setInputValue] = useState(item.counter || "");
+  const [inputValue, setInputValue] = useState(value || "");
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -33,28 +32,38 @@ const Item = ({ className, item }) => {
   return (
     <div
       onMouseLeave={handleMouseLeave}
-      style={{}}
-      className={cn(styles.item, className)}
+      style={{
+        display: "flex",
+      }}
+      className={cn(styles.item)}
     >
       <div
         onMouseEnter={handleMouseEnter}
         className={styles.counter}
-        style={{ backgroundColor: item.color }}
+        style={{}}
       >
         {editing ? (
-          <input
-            type="text"
+          <textarea
+            className={styles.input}
+            style={{
+              resize: "none",
+            }}
+            placeholder="Type your answer here"
             value={inputValue}
             onChange={handleInputChange}
             onBlur={handleInputBlur}
-            style={{ width: "100%" }}
           />
         ) : (
-          <span>{inputValue}</span>
+          <span
+            style={{
+              maxWidth: "120px",
+              flexShrink: 0,
+            }}
+          >
+            {inputValue}
+          </span>
         )}
-        {/* {item.counter} */}
       </div>
-      {item.value && <Balance className={styles.balance} value={item.value} />}
       <div
         onClick={handleIconClick}
         style={{
@@ -62,7 +71,7 @@ const Item = ({ className, item }) => {
           padding: "3px",
           borderRadius: "50%",
           height: "36px",
-          width: editing ? "72px" : "36px",
+          width: editing ? "36px" : "72px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -77,4 +86,4 @@ const Item = ({ className, item }) => {
   );
 };
 
-export default Item;
+export default ActionInput;

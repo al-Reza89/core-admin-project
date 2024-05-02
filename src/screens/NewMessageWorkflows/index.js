@@ -12,62 +12,47 @@ import Table from "./Table";
 const items = [
   {
     name: {
-      title: "Producre to Pay",
-      description: "Description is goes here",
+      title: "Automated Invoice receive",
+      description: "Description comes here. Description comes here.  ",
     },
-    run_schedule: {
+    action: {
       title: "Weekly",
-      description: "Monday, 09:00 AM, PST",
+      description:
+        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
     },
-    total_runs: {
+    location: {
       color: "#EFEFEF",
-      counter: 33,
-    },
-    tasks_run: 5,
-    success_score: {
-      percentage: "95%",
-      color: "#FFD88D",
-      counter: "95%",
+      counter: "Gmail",
     },
   },
   {
     name: {
-      title: "Producre to Pay",
-      description: "Description is goes here",
+      title: "Automated Invoice receive",
+      description: "Description comes here. Description comes here.  ",
     },
-    run_schedule: {
+    action: {
       title: "Weekly",
-      description: "Monday, 09:00 AM, PST",
+      description:
+        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
     },
-    total_runs: {
+    location: {
       color: "#EFEFEF",
-      counter: 33,
-    },
-    tasks_run: 10,
-    success_score: {
-      percentage: "95%",
-      color: "#FFD88D",
-      counter: "95%",
+      counter: "Gmail",
     },
   },
   {
     name: {
-      title: "Producre to Pay",
-      description: "Description is goes here",
+      title: "Automated Invoice receive",
+      description: "Description comes here. Description comes here.  ",
     },
-    run_schedule: {
+    action: {
       title: "Weekly",
-      description: "Monday, 09:00 AM, PST",
+      description:
+        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
     },
-    total_runs: {
+    location: {
       color: "#EFEFEF",
-      counter: 33,
-    },
-    tasks_run: 5,
-    success_score: {
-      counter: "95%",
-      percentage: "95%",
-      color: "#FFD88D",
+      counter: "Gmail",
     },
   },
 ];

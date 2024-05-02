@@ -12,7 +12,7 @@ const tableHeader = [
     key: "location",
   },
   {
-    title: "Action",
+    title: "Action details",
     key: "action",
   },
 ];
