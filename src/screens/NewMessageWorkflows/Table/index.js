@@ -26,7 +26,7 @@ const Table = ({ items, foot, tableHeader }) => {
               </div>
             ))}
         </div>
-        {/* {items.map((x, index) => (
+        {items.map((x, index) => (
           <Row
             item={x}
             key={index}
@@ -35,10 +35,10 @@ const Table = ({ items, foot, tableHeader }) => {
             onChange={() => handleChange(x.id)}
             index={index}
           />
-        ))} */}
-        {items.map((item, index) => (
-          <TableValue item={item} />
         ))}
+        {/* {items.map((item, index) => (
+          <TableValue item={item} />
+        ))} */}
       </div>
       {foot && (
         <div className={styles.foot}>

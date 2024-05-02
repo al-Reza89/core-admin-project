@@ -9,69 +9,70 @@ import { useRecoilValue } from "recoil";
 import NewMessageWorkflowContextProvider, {
   newMessageWorkflowContext,
 } from "./workflowContext";
+import NewMessageCard from "./NewMessageCard";
 
-// const items = [
-//   {
-//     name: {
-//       title: "Producre to Pay",
-//       description: "Description is goes here",
-//     },
-//     run_schedule: {
-//       title: "Weekly",
-//       description: "Monday, 09:00 AM, PST",
-//     },
-//     total_runs: {
-//       color: "#EFEFEF",
-//       counter: 33,
-//     },
-//     tasks_run: 5,
-//     success_score: {
-//       percentage: "95%",
-//       color: "#FFD88D",
-//       counter: "95%",
-//     },
-//   },
-//   {
-//     name: {
-//       title: "Producre to Pay",
-//       description: "Description is goes here",
-//     },
-//     run_schedule: {
-//       title: "Weekly",
-//       description: "Monday, 09:00 AM, PST",
-//     },
-//     total_runs: {
-//       color: "#EFEFEF",
-//       counter: 33,
-//     },
-//     tasks_run: 10,
-//     success_score: {
-//       percentage: "95%",
-//       color: "#FFD88D",
-//       counter: "95%",
-//     },
-//   },
-//   {
-//     name: {
-//       title: "Producre to Pay",
-//       description: "Description is goes here",
-//     },
-//     run_schedule: {
-//       title: "Weekly",
-//       description: "Monday, 09:00 AM, PST",
-//     },
-//     total_runs: {
-//       color: "#EFEFEF",
-//       counter: 33,
-//     },
-//     tasks_run: 5,
-//     success_score: {
-//       counter: "95%",
-//       percentage: "95%",
-//       color: "#FFD88D",
-//     },
-//   },
-// ];
+const items = [
+  {
+    name: {
+      title: "Producre to Pay",
+      description: "Description is goes here",
+    },
+    run_schedule: {
+      title: "Weekly",
+      description: "Monday, 09:00 AM, PST",
+    },
+    total_runs: {
+      color: "#EFEFEF",
+      counter: 33,
+    },
+    tasks_run: 5,
+    success_score: {
+      percentage: "95%",
+      color: "#FFD88D",
+      counter: "95%",
+    },
+  },
+  {
+    name: {
+      title: "Producre to Pay",
+      description: "Description is goes here",
+    },
+    run_schedule: {
+      title: "Weekly",
+      description: "Monday, 09:00 AM, PST",
+    },
+    total_runs: {
+      color: "#EFEFEF",
+      counter: 33,
+    },
+    tasks_run: 10,
+    success_score: {
+      percentage: "95%",
+      color: "#FFD88D",
+      counter: "95%",
+    },
+  },
+  {
+    name: {
+      title: "Producre to Pay",
+      description: "Description is goes here",
+    },
+    run_schedule: {
+      title: "Weekly",
+      description: "Monday, 09:00 AM, PST",
+    },
+    total_runs: {
+      color: "#EFEFEF",
+      counter: 33,
+    },
+    tasks_run: 5,
+    success_score: {
+      counter: "95%",
+      percentage: "95%",
+      color: "#FFD88D",
+    },
+  },
+];
 const intervals = [
   "Last 24 hours",
   "Last 7 days",
@@ -84,7 +85,7 @@ const NewMessageWorkflows = ({
   showButton,
   foot,
   tableHeader,
-  items,
+  // items,
 }) => {
   const useHeaderDropdownActive = useRecoilValue(headerDropdownAtom);
   const { activeTab, setActiveTab } = useContext(newMessageWorkflowContext);
@@ -92,7 +93,7 @@ const NewMessageWorkflows = ({
   const navigation = ["Active", "Deactive", "Draft"];
 
   return (
-    <Card
+    <NewMessageCard
       className={styles.card}
       title={`${title} Workflows`}
       classTitle="title-primary"
@@ -157,7 +158,7 @@ const NewMessageWorkflows = ({
         ))}
       </div>
       <Table items={items} foot={foot} tableHeader={tableHeader} />
-    </Card>
+    </NewMessageCard>
   );
 };
 
@@ -175,7 +176,7 @@ const NewMessageWorkflowsWrapper = ({
         showButton={showButton}
         foot={foot}
         tableHeader={tableHeader}
-        items={items}
+        // items={items}
       />
     </NewMessageWorkflowContextProvider>
   );

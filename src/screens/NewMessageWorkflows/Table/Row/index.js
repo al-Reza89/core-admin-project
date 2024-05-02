@@ -42,7 +42,7 @@ const Row = ({ item, index }) => {
   return (
     <>
       <div className={styles.row}>
-        <div className={styles.col}>{index + 1}</div>
+        {/* <div className={styles.col}>{index + 1}</div> */}
 
         <div className={styles.col}>
           <div className={styles.item}>
