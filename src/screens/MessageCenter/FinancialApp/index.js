@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./FinancialApp.module.sass";
 import cn from "classnames";
 import { messages } from "../../../utils/messages";
@@ -10,6 +9,11 @@ import AppPreview from "./AppPreview";
 
 const FinancialApp = ({ isLoading, setIsLoading }) => {
   const [renderedMessages, setRenderedMessages] = useState([]);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleClick = (button) => {
     console.log("Button clicked:", button);
@@ -55,6 +59,10 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
     const rendered = isLoading ? sortedMessages.slice(0, 2) : sortedMessages;
     setRenderedMessages(rendered);
   }, [isLoading]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [renderedMessages]);
 
   return (
     <div
@@ -129,6 +137,7 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
             )}
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
     </div>
   );
