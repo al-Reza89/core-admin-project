@@ -37,12 +37,12 @@ const Messages = ({
           {clickedMessage !== true && (
             <div
               style={{
-                paddingTop: "150px",
+                paddingTop: "40px",
               }}
             >
               <div
                 style={{
-                  paddingBottom: "20px",
+                  paddingBottom: "160px",
                 }}
                 className={cn("h4", styles.title)}
               >
