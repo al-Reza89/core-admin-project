@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Preview.module.sass";
 import cn from "classnames";
+import FinancialApp from "../MessageCenter/FinancialApp";
+import NewMessageCenter from "../NewMessageCenter";
+import MessageCenter from "../MessageCenter";
 
 const Preview = () => {
+  const [avatarVisible, setAvatarVisible] = useState(true);
+
+  const handleAvatarClick = () => {
+    // Hide the avatar when clicked
+    setAvatarVisible(false);
+  };
+
   return (
     <div
       style={{
@@ -28,25 +38,47 @@ const Preview = () => {
             height: "100%",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "0",
-            left: "0",
-            padding: "10px",
-          }}
-        >
-          <img
-            src="/images/content/avatar.jpg"
-            alt="User Avatar"
-            className={styles.avatarRight}
+        {avatarVisible && (
+          <div
+            onClick={handleAvatarClick}
             style={{
-              maxWidth: "50px",
-              maxHeight: "50px",
-              borderRadius: "12px",
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              padding: "10px",
             }}
-          />
-        </div>
+          >
+            <img
+              src="/images/content/avatar.jpg"
+              alt="User Avatar"
+              className={styles.avatarRight}
+              style={{
+                maxWidth: "50px",
+                maxHeight: "50px",
+                borderRadius: "12px",
+              }}
+            />
+          </div>
+        )}
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          left: "0",
+        }}
+      >
+        {avatarVisible === false && (
+          <div
+            className=""
+            style={{
+              position: "relative",
+            }}
+          >
+            {/* <MessageCenter /> */}
+            <NewMessageCenter />
+          </div>
+        )}
       </div>
     </div>
   );

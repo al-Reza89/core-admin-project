@@ -106,7 +106,7 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
                 }}
               >
                 <img
-                  src="images/peoples/Financio.png"
+                  src="/images/peoples/Financio.png"
                   alt="User Avatar"
                   className={styles.avatarLeft}
                 />
@@ -129,7 +129,7 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
                 }}
               >
                 <img
-                  src="images/content/avatar.jpg"
+                  src="/images/content/avatar.jpg"
                   alt="User Avatar"
                   className={styles.avatarRight}
                 />
