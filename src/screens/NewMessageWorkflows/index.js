@@ -1,15 +1,13 @@
 import React, { useContext, useState } from "react";
 import styles from "./NewMessageWorkflows.module.sass";
 import cn from "classnames";
-import Card from "../../components/Card";
-import Table from "./Table";
 import Dropdown from "../../components/Dropdown";
 import { headerDropdownAtom } from "../../atoms/headerDropdownAtom";
 import { useRecoilValue } from "recoil";
-import NewMessageWorkflowContextProvider, {
-  newMessageWorkflowContext,
-} from "./workflowContext";
+import { newMessageWorkflowContext } from "./workflowContext";
+import NewMessageWorkflowContextProvider from "./workflowContext";
 import NewMessageCard from "./NewMessageCard";
+import Table from "./Table";
 
 const items = [
   {
@@ -80,13 +78,7 @@ const intervals = [
   "Last 28 days",
   "Last 56 days",
 ];
-const NewMessageWorkflows = ({
-  title,
-  showButton,
-  foot,
-  tableHeader,
-  // items,
-}) => {
+const NewMessageWorkflows = ({ title, showButton, foot, tableHeader }) => {
   const useHeaderDropdownActive = useRecoilValue(headerDropdownAtom);
   const { activeTab, setActiveTab } = useContext(newMessageWorkflowContext);
   const [sorting, setSorting] = useState(intervals[0]);
@@ -137,7 +129,7 @@ const NewMessageWorkflows = ({
         </>
       }
     >
-      <div className={cn(styles.nav, "mobile-show")}>
+      {/* <div className={cn(styles.nav, "mobile-show")}>
         {navigation.map((x, index) => (
           <button
             className={cn(
@@ -156,7 +148,7 @@ const NewMessageWorkflows = ({
             {x}
           </button>
         ))}
-      </div>
+      </div> */}
       <Table items={items} foot={foot} tableHeader={tableHeader} />
     </NewMessageCard>
   );
@@ -167,16 +159,14 @@ const NewMessageWorkflowsWrapper = ({
   showButton,
   foot,
   tableHeader,
-  items,
 }) => {
   return (
     <NewMessageWorkflowContextProvider>
       <NewMessageWorkflows
         title={title}
-        showButton={showButton}
+        showButto={showButton}
         foot={foot}
         tableHeader={tableHeader}
-        // items={items}
       />
     </NewMessageWorkflowContextProvider>
   );

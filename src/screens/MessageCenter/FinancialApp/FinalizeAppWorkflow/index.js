@@ -1,5 +1,6 @@
 import React from "react";
 import NewMessageWorkflowsWrapper from "../../../NewMessageWorkflows";
+import WorkflowsWrapper from "../../../Workflows";
 
 const tableHeader = [
   {
@@ -43,12 +44,18 @@ const FinalizeAppWorkflow = () => {
         // backgroundColor: "#f5f5f5",
       }}
     >
-      <NewMessageWorkflowsWrapper
+      {/* <NewMessageWorkflowsWrapper
         title="card title"
         showButton={false}
         foot={false}
         tableHeader={tableHeader}
         items={items}
+      /> */}
+      <NewMessageWorkflowsWrapper
+        title="card title"
+        showButton={false}
+        foot={false}
+        tableHeader={tableHeader}
       />
     </div>
   );

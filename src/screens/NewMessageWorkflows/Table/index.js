@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Market.module.sass";
-import Icon from "../../../components/Icon";
 import Row from "./Row";
-import TableValue from "./TableValue";
+import Icon from "../../../components/Icon";
 
 const Table = ({ items, foot, tableHeader }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -17,23 +16,20 @@ const Table = ({ items, foot, tableHeader }) => {
 
   return (
     <div className={styles.market}>
-      <div
-        style={{
-          width: "100%",
-        }}
-        className={styles.table}
-      >
-        <div className={styles.header} style={{}}>
-          <div style={{}} className={styles.row}>
-            {tableHeader &&
-              tableHeader.map((x, index) => (
-                <div key={index} className={styles.col}>
-                  {x.title}
-                </div>
-              ))}
-          </div>
+      <div className={styles.table}>
+        <div className={styles.row}>
+          {/* <div className={styles.col}>S. No.</div>
+          <div className={styles.col}>Name</div>
+          <div className={styles.col}>Run Schedule</div>
+          <div className={styles.col}>Total Runs</div>
+          <div className={styles.col}>Tasks/Run</div>
+          <div className={styles.col}></div> */}
+          {tableHeader.map((x, index) => (
+            <div className={styles.col} key={index}>
+              {x.title}
+            </div>
+          ))}
         </div>
-
         {items.map((x, index) => (
           <Row
             item={x}
@@ -44,9 +40,6 @@ const Table = ({ items, foot, tableHeader }) => {
             index={index}
           />
         ))}
-        {/* {items.map((item, index) => (
-          <TableValue item={item} />
-        ))} */}
       </div>
       {foot && (
         <div className={styles.foot}>
