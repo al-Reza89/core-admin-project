@@ -21,7 +21,7 @@ const AiWorker = () => {
         alignItems: "center",
         height: "100vh",
         width: "100vw",
-        backgroundColor: "#000000",
+        backgroundColor: "#141718",
       }}
     >
       <StartChat buttons={aiWorkersButtons} selectedButton={selectedButton} />
