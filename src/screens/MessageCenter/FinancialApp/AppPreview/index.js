@@ -8,7 +8,7 @@ const AppPreview = () => {
 
   return (
     <div>
-      <div>
+      <div className={styles.paragraph}>
         <span>Click below to check the app preview.</span>
         <br />
         <span>

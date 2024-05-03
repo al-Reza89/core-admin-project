@@ -27,7 +27,8 @@ const FinalizeAppWorkflow = () => {
       }}
     >
       <div className={styles.paragraph}>
-        Describe your workflow in detail so I can help you build it.
+        Okay, now help me finalize the workflow steps so I can build the
+        application UI & backend.
       </div>
       <div
         style={{
