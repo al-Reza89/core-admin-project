@@ -178,17 +178,25 @@ const ConfigureApp = () => {
   return (
     <div
       style={{
-        width: "100%",
-        // backgroundColor: "#f5f5f5",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
       }}
     >
-      <ConfigureAppWorkfowsWrapper
-        title="Configure your App"
-        showButton={true}
-        foot={false}
-        tableHeader={tableHeader}
-        items={items}
-      />
+      <div
+        style={{
+          width: "100%",
+          // backgroundColor: "#f5f5f5",
+        }}
+      >
+        <ConfigureAppWorkfowsWrapper
+          title="Configure your App"
+          showButton={true}
+          foot={false}
+          tableHeader={tableHeader}
+          items={items}
+        />
+      </div>
     </div>
   );
 };

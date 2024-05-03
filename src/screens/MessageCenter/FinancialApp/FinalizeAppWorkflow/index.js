@@ -36,7 +36,7 @@ const FinalizeAppWorkflow = () => {
         }}
       >
         <NewMessageWorkflowsWrapper
-          title="card title"
+          title="Finalize app"
           showButton={false}
           foot={false}
           tableHeader={tableHeader}

@@ -4,12 +4,12 @@ import cn from "classnames";
 import Dropdown from "../../components/Dropdown";
 import { headerDropdownAtom } from "../../atoms/headerDropdownAtom";
 import { useRecoilValue } from "recoil";
-import NewMessageCard from "./NewMessageCard";
 import Table from "./Table";
 import ConfigureAppWorkflowsContextProvider, {
   configureAppWorkflowsContext,
 } from "./workflowContext";
 import { useNavigationButton } from "../../context/NavigationContext";
+import NewMessageCard from "./NewMessageCard";
 
 const intervals = [
   "Last 24 hours",
