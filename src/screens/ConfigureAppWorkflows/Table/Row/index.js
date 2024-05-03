@@ -111,16 +111,14 @@ const Row = ({ item, index, icons, buttons }) => {
         </div> */}
         {item.accesspoint && (
           <div className={styles.col}>
-            <span
+            <button
+              className={cn("button", styles.button)}
               style={{
-                border: "1px solid #6F767E",
                 padding: "5px",
-                borderRadius: "6px",
-                cursor: "pointer",
               }}
             >
               {item.accesspoint}
-            </span>
+            </button>
           </div>
         )}
 
