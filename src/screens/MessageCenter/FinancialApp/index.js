@@ -6,6 +6,7 @@ import { FaCirclePause } from "react-icons/fa6";
 import Loader from "../../../components/Loader";
 import FinalizeAppWorkflow from "./FinalizeAppWorkflow";
 import AppPreview from "./AppPreview";
+import ConfigureApp from "./ConfigureApp";
 
 const FinancialApp = ({ isLoading, setIsLoading }) => {
   const [renderedMessages, setRenderedMessages] = useState([]);
@@ -45,7 +46,22 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
           ),
           time: "12:04",
           user: "user1",
-          // button: "Finalize app",
+          button: "Finalize app",
+        },
+      ]);
+    }
+    if (button === "Finalize app") {
+      setRenderedMessages([
+        ...renderedMessages,
+        {
+          id: 6,
+          text: (
+            <div style={{}}>
+              <ConfigureApp />
+            </div>
+          ),
+          time: "12:05",
+          user: "user1",
         },
       ]);
     }

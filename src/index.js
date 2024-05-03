@@ -5,11 +5,11 @@ import { RecoilRoot } from "recoil";
 
 import App from "./App";
 import { StepsProvider } from "./context/StepContext";
-import { MessageProvider } from "./context/MessageContext";
+import { NavigationProvider } from "./context/NavigationContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MessageProvider>
+    <NavigationProvider>
       <StepsProvider>
         <RecoilRoot>
           <BrowserRouter>
@@ -17,6 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </BrowserRouter>
         </RecoilRoot>
       </StepsProvider>
-    </MessageProvider>
+    </NavigationProvider>
   </React.StrictMode>
 );

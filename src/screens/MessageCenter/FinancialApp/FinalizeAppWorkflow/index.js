@@ -17,25 +17,6 @@ const tableHeader = [
   },
 ];
 
-const items = [
-  {
-    title: "Shop Name & Description",
-    description: "Description is goes here",
-    value: "Weekly",
-    location: "Monday, 09:00 AM, PST",
-    button1: "Add Step Below",
-    button2: "Delete",
-  },
-  {
-    title: "Shop Name & Description",
-    description: "Description is goes here",
-    value: "Weekly",
-    location: "Monday, 09:00 AM, PST",
-    button1: "Add Step Below",
-    button2: "Delete",
-  },
-];
-
 const FinalizeAppWorkflow = () => {
   return (
     <div
