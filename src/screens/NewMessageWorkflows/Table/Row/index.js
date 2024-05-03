@@ -19,34 +19,47 @@ const Row = ({ item, index }) => {
   const [visibleModalDeactivate, setVisibleModalDeactivate] = useState(false);
   const [visibleActions, setVisibleActions] = useState(false);
   const options = [
+    // {
+    //   title: "Tasks/Run",
+    //   icon: "repeat",
+    //   action: () => setVisibleModalRunLimit(true),
+    // },
+    // {
+    //   title: "Schedule",
+    //   icon: "calendar",
+    //   action: () => setVisibleModalSchedule(true),
+    // },
+    // {
+    //   title: 'Deactivate',
+    //   icon: 'powerOff',
+    //   action: () => setVisibleModalDeactivate(true),
+    // },
     {
-      title: "Tasks/Run",
-      icon: "repeat",
+      title: "Add",
+      icon: "add",
       action: () => setVisibleModalRunLimit(true),
     },
     {
-      title: "Schedule",
-      icon: "calendar",
-      action: () => setVisibleModalSchedule(true),
+      title: "Edit title & description",
+      icon: "edit",
+      action: () => console.log("Edit title & description"),
     },
     {
-      title: "Team access",
-      icon: "team",
-      action: () => setVisibleModalTeamAccess(true),
+      title: "Delete forever",
+      icon: "trash",
+      action: () => console.log("Delete forever"),
     },
   ];
   return (
     <>
       <div className={styles.row}>
-        {/* <div className={styles.col}>{index + 1}</div> */}
-
         <div className={styles.col}>
           <div className={styles.item}>
             <div className={styles.details}>
-              <div className={styles.product}>{item.name.title}</div>
+              <div className={styles.product}>{item.title}</div>
               <div className={styles.wrap}>
                 {/* <div className={styles.price}>${item.name.title}</div> */}
-                <div className={styles.category}>{item.name.description}</div>
+                <div className={styles.category}>{item.description}</div>
               </div>
             </div>
           </div>
@@ -63,7 +76,8 @@ const Row = ({ item, index }) => {
               <div className={styles.wrap}>
                 {/* <div className={styles.price}>${item.run_schedule.title}</div> */}
                 <div className={styles.category}>
-                  <ActionInput value={item.action.description} />
+                  {/* <ActionInput value={item.action.description} /> */}
+                  {item.actionDescription}
                 </div>
               </div>
             </div>

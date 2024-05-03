@@ -17,6 +17,39 @@ const tableHeader = [
   },
 ];
 
+const items = [
+  {
+    title: "Automated Invoice receive",
+    description: "Description comes here. Description comes here.  ",
+    location: {
+      color: "#EFEFEF",
+      counter: "Gmail",
+    },
+    actionDescription:
+      "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
+  },
+  {
+    title: "Automated Invoice receive",
+    description: "Description comes here. Description comes here.  ",
+    location: {
+      color: "#EFEFEF",
+      counter: "Gmail",
+    },
+    actionDescription:
+      "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
+  },
+  {
+    title: "Automated Invoice receive",
+    description: "Description comes here. Description comes here.  ",
+    location: {
+      color: "#EFEFEF",
+      counter: "Gmail",
+    },
+    actionDescription:
+      "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
+  },
+];
+
 const FinalizeAppWorkflow = () => {
   return (
     <div
@@ -41,6 +74,7 @@ const FinalizeAppWorkflow = () => {
           showButton={false}
           foot={false}
           tableHeader={tableHeader}
+          items={items}
         />
       </div>
     </div>

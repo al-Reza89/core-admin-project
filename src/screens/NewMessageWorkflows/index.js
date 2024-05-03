@@ -9,53 +9,6 @@ import NewMessageWorkflowContextProvider from "./workflowContext";
 import NewMessageCard from "./NewMessageCard";
 import Table from "./Table";
 
-const items = [
-  {
-    name: {
-      title: "Automated Invoice receive",
-      description: "Description comes here. Description comes here.  ",
-    },
-    action: {
-      title: "Weekly",
-      description:
-        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
-    },
-    location: {
-      color: "#EFEFEF",
-      counter: "Gmail",
-    },
-  },
-  {
-    name: {
-      title: "Automated Invoice receive",
-      description: "Description comes here. Description comes here.  ",
-    },
-    action: {
-      title: "Weekly",
-      description:
-        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
-    },
-    location: {
-      color: "#EFEFEF",
-      counter: "Gmail",
-    },
-  },
-  {
-    name: {
-      title: "Automated Invoice receive",
-      description: "Description comes here. Description comes here.  ",
-    },
-    action: {
-      title: "Weekly",
-      description:
-        "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
-    },
-    location: {
-      color: "#EFEFEF",
-      counter: "Gmail",
-    },
-  },
-];
 const intervals = [
   "Last 24 hours",
   "Last 7 days",
@@ -63,7 +16,13 @@ const intervals = [
   "Last 28 days",
   "Last 56 days",
 ];
-const NewMessageWorkflows = ({ title, showButton, foot, tableHeader }) => {
+const NewMessageWorkflows = ({
+  title,
+  showButton,
+  foot,
+  tableHeader,
+  items,
+}) => {
   const useHeaderDropdownActive = useRecoilValue(headerDropdownAtom);
   const { activeTab, setActiveTab } = useContext(newMessageWorkflowContext);
   const [sorting, setSorting] = useState(intervals[0]);
@@ -144,6 +103,7 @@ const NewMessageWorkflowsWrapper = ({
   showButton,
   foot,
   tableHeader,
+  items,
 }) => {
   return (
     <NewMessageWorkflowContextProvider>
@@ -152,6 +112,7 @@ const NewMessageWorkflowsWrapper = ({
         showButto={showButton}
         foot={foot}
         tableHeader={tableHeader}
+        items={items}
       />
     </NewMessageWorkflowContextProvider>
   );
