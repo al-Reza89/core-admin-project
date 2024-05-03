@@ -35,6 +35,7 @@ const ConfigureAppWorkflows = ({
     "Actions",
     "Dashboard",
     "Integration",
+    "Settings",
   ];
 
   return (

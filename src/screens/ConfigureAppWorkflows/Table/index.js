@@ -33,6 +33,7 @@ const Table = ({ items, foot, tableHeader }) => {
             onChange={() => handleChange(x.id)}
             index={index}
             icons={x.icons}
+            buttons={x.buttons}
           />
         ))}
       </div>

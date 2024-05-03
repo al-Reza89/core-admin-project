@@ -75,13 +75,20 @@ const Row = ({ item, index }) => {
         </div> */}
 
         <div style={{}} className={styles.col}>
-          <Control
-            className={styles.control}
-            visibleActions={visibleActions}
-            setVisibleActions={setVisibleActions}
-            // up={up}
-            options={options}
-          />
+          <div
+            style={{
+              position: "relative",
+              top: "35px",
+            }}
+          >
+            <Control
+              className={styles.control}
+              visibleActions={visibleActions}
+              setVisibleActions={setVisibleActions}
+              // up={up}
+              options={options}
+            />
+          </div>
         </div>
       </div>
       <RunLimit
