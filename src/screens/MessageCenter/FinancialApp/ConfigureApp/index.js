@@ -38,7 +38,7 @@ const workflowsItems = [
     actionDescription:
       "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
 
-    icons: ["repeat", "calendar", "team"],
+    icons: ["add", "edit", "trash"],
   },
 ];
 

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import styles from "./Market.module.sass";
 import Row from "./Row";
 import Icon from "../../../components/Icon";
+import { useNavigationButton } from "../../../context/NavigationContext";
 
 const Table = ({ items, foot, tableHeader }) => {
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const { activeButton } = useNavigationButton();
 
   const handleChange = (id) => {
     if (selectedFilters.includes(id)) {
@@ -19,7 +21,13 @@ const Table = ({ items, foot, tableHeader }) => {
       <div className={styles.table}>
         <div className={styles.row}>
           {tableHeader.map((x, index) => (
-            <div className={styles.col} key={index}>
+            <div
+              className={`${styles.col} ${
+                activeButton && styles[activeButton.toLowerCase()]
+              }`}
+              key={index}
+              activeButton={activeButton}
+            >
               {x.title}
             </div>
           ))}
