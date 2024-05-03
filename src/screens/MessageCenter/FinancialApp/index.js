@@ -111,7 +111,11 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
             })}
           >
             <div className={styles.messageContent}>
-              <div>{message.text}</div>
+              {typeof message.text === "string" ? (
+                <div className={styles.paragraph}>{message.text}</div>
+              ) : (
+                <div style={{}}>{message.text}</div>
+              )}
             </div>
             {message.user === "user1" && (
               <div

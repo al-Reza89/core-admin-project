@@ -1,6 +1,6 @@
 import React from "react";
 import NewMessageWorkflowsWrapper from "../../../NewMessageWorkflows";
-import WorkflowsWrapper from "../../../Workflows";
+import styles from "./FinalizeAppWorkflow.module.sass";
 
 const tableHeader = [
   {
@@ -21,23 +21,27 @@ const FinalizeAppWorkflow = () => {
   return (
     <div
       style={{
-        width: "100%",
-        // backgroundColor: "#f5f5f5",
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
       }}
     >
-      {/* <NewMessageWorkflowsWrapper
-        title="card title"
-        showButton={false}
-        foot={false}
-        tableHeader={tableHeader}
-        items={items}
-      /> */}
-      <NewMessageWorkflowsWrapper
-        title="card title"
-        showButton={false}
-        foot={false}
-        tableHeader={tableHeader}
-      />
+      <div className={styles.paragraph}>
+        Describe your workflow in detail so I can help you build it.
+      </div>
+      <div
+        style={{
+          width: "100%",
+          // backgroundColor: "#f5f5f5",
+        }}
+      >
+        <NewMessageWorkflowsWrapper
+          title="card title"
+          showButton={false}
+          foot={false}
+          tableHeader={tableHeader}
+        />
+      </div>
     </div>
   );
 };

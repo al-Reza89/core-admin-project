@@ -3,17 +3,13 @@ import Questions from "../screens/MessageCenter/FinancialApp/Questions";
 export const messages = [
   {
     id: 1,
-    text: (
-      <div>
-        Describe your application workflow in detail so I can help you build it.
-      </div>
-    ),
+    text: "Describe your application workflow in detail so I can help you build it.",
     time: "12:00",
     user: "user1",
   },
   {
     id: 2,
-    text: <div>Inventory Management tool for ecommerce with Shopify.</div>,
+    text: "Inventory Management tool for ecommerce with Shopify.",
     time: "12:02",
     user: "user2",
   },
