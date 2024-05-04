@@ -42,7 +42,7 @@ const Row = ({ item, index }) => {
     {
       title: "Edit title & description",
       icon: "edit",
-      action: () => console.log("Edit title & description"),
+      action: () => setVisibleModalRunLimit(true),
     },
     {
       title: "Delete forever",
@@ -108,6 +108,7 @@ const Row = ({ item, index }) => {
       <RunLimit
         open={visibleModalRunLimit}
         onClose={() => setVisibleModalRunLimit(false)}
+        item={item}
       />
 
       <ActiveDeactivateAlert
