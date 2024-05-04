@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Row.module.sass";
 import Control from "../../../../components/Control";
-import Item from "../Item";
+import cn from "classnames";
 
 const Dashboard = ({
   item,
@@ -40,8 +40,6 @@ const Dashboard = ({
               display: "flex",
               flexDirection: "row",
               gap: "5px",
-              justifyContent: "center",
-              alignItems: "center",
             }}
           >
             {buttons.map((button, index) => (
@@ -62,6 +60,13 @@ const Dashboard = ({
           </div>
         </div>
       )}
+      <div className={styles.col}>
+        {item.pageStatus === "Active" ? (
+          <div className={cn("status-green", styles.status)}>Active</div>
+        ) : (
+          <div className={cn("status-red", styles.status)}>Deactive</div>
+        )}
+      </div>
       {icons && icons.length > 0 && (
         <div style={{}} className={styles.col}>
           <div

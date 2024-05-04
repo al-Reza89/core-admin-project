@@ -15,6 +15,7 @@ import Pages from "./Pages";
 import Actions from "./Actions";
 import Dashboard from "./Dashboard";
 import Integration from "./Integration";
+import Settings from "./Settings";
 
 const Row = ({ item, index, icons, buttons }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -111,21 +112,26 @@ const Row = ({ item, index, icons, buttons }) => {
         />
       )}
 
-      {activeButton === "Integration" && <Integration item={item} />}
+      {activeButton === "Integration" && (
+        <Integration
+          item={item}
+          icons={icons}
+          className={styles.control}
+          visibleActions={visibleActions}
+          setVisibleActions={setVisibleActions}
+          options={options}
+        />
+      )}
 
       {activeButton === "Settings" && (
-        <div className={styles.row}>
-          <div className={styles.col}>
-            <div className={styles.item}>
-              <div className={styles.details}>
-                <div className={styles.product}>{item.title}</div>
-                <div className={styles.wrap}>
-                  <div className={styles.category}>{item.description}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Settings
+          item={item}
+          icons={icons}
+          className={styles.control}
+          visibleActions={visibleActions}
+          setVisibleActions={setVisibleActions}
+          options={options}
+        />
       )}
       <RunLimit
         open={visibleModalRunLimit}

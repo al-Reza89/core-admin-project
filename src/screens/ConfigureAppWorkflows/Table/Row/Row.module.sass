@@ -196,3 +196,32 @@
 
 .teamAccessModalWidth
     max-width: 500px
+
+.head
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 13px
+    font-weight: 500
+    min-height: 30px
+    padding: 8px
+    border-radius: 5px
+    border: 2px solid $n3
+    cursor: pointer
+    transition: all .2s
+    svg
+        flex-shrink: 0
+        margin-right: 12px
+        fill: $n4
+        transition: fill .2s
+    
+    &.selected
+        border-color: $p1
+
+    +dark
+        color: $n
+        border-color: $n5
+        &.selected
+            border-color: $p1
+    &:hover
+        border-color: $p1

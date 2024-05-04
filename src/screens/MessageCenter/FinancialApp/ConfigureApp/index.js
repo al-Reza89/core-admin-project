@@ -40,6 +40,29 @@ const workflowsItems = [
 
     icons: ["add", "edit", "trash"],
   },
+  {
+    title: "Validate data against purchase orders and contracts",
+    description:
+      "Description comes here, Description comes here,Description comes here,",
+    location: {
+      color: "#EFEFEF",
+      counter: "SAP",
+    },
+    actionDescription: "Check PO number and value from SAP ",
+
+    icons: ["add", "edit", "trash"],
+  },
+  {
+    title: "Route for approval based on pre-defined rules",
+    description: "Description comes here. Description comes here.  ",
+    location: {
+      color: "#EFEFEF",
+      counter: "Slack",
+    },
+    actionDescription: "Apr 12, 2021 at 12:55 PM",
+
+    icons: ["add", "edit", "trash"],
+  },
 ];
 
 const pagesHeader = [
@@ -48,23 +71,39 @@ const pagesHeader = [
     key: "name",
   },
   {
-    title: "Page Status",
-    key: "status",
+    title: "Page Features",
+    key: "feature",
   },
   {
-    title: "Relation to other pages",
-    key: "relation",
+    title: "Page Status",
+    key: "status",
   },
 ];
 
 const pagesItems = [
   {
-    title: "Automated Invoice receive",
-    description: "Description comes here. Description comes here.  ",
-    actionDescription:
-      "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
-    buttons: ["Add", "Delete"],
-    icons: ["repeat"],
+    title: "Invoice List",
+    description:
+      "List view of all  invoices with details like Vendor name, amount, date of recieving, Approval status",
+    buttons: ["Add Invoice", "Delete Invoice"],
+    pageStatus: "Active",
+    icons: ["edit"],
+  },
+  {
+    title: "Invoice Details View",
+    description:
+      "Open invoice attachment, details of each invoice captured, extracted details, Approval history etc.",
+    buttons: ["Add Invoice", "Delete Invoice"],
+    pageStatus: "Deactive",
+    icons: ["edit"],
+  },
+  {
+    title: "Invoice List",
+    description:
+      "List view of all  invoices with details like Vendor name, amount, date of recieving, Approval status",
+    buttons: ["Add Invoice", "Delete Invoice"],
+    pageStatus: "Active",
+    icons: ["edit"],
   },
 ];
 
@@ -89,7 +128,17 @@ const actionsItems = [
       "View & Edit invoice data and attachments.",
       "Request clarifications on rejected invoices.",
     ],
-    icons: ["calendar"],
+    icons: ["edit"],
+  },
+  {
+    title: "Manager",
+    description: "Description of manager",
+
+    bulletList: [
+      "Approve or reject invoices.",
+      "All other privileges of “User” Role",
+    ],
+    icons: ["edit"],
   },
 ];
 
@@ -97,6 +146,10 @@ const dashboardHeader = [
   {
     title: "Component Name & Type",
     key: "role",
+  },
+  {
+    title: "Type",
+    key: "type",
   },
   {
     title: "Data",
@@ -115,7 +168,26 @@ const dashboardItems = [
       "Data: Metrics of  all key invoice workflow related data. Invoices received, Approved, Pending, Rejected",
     actionDescription: "Data chart ",
     buttons: ["Received", "Approved"],
-    icons: ["repeat"],
+    pageStatus: "Active",
+    icons: ["edit"],
+  },
+  {
+    title: "Invoice Volume",
+    description:
+      "Number of invoices processed over a chosen timeframe (e.g., Daily, Weekly, Monthly",
+    actionDescription: "Bar chart ",
+    buttons: ["Received", "Pending"],
+    pageStatus: "Deactive",
+    icons: ["edit"],
+  },
+  {
+    title: "Workflow Overview Metrics",
+    description:
+      "Data: Metrics of  all key invoice workflow related data. Invoices received, Approved, Pending, Rejected",
+    actionDescription: "pie chart ",
+    buttons: ["Received", "Approved"],
+    pageStatus: "Active",
+    icons: ["edit"],
   },
 ];
 
@@ -132,9 +204,6 @@ const integrationHeader = [
     title: "Action details",
     key: "action",
   },
-  {
-    title: "Add Access Point",
-  },
 ];
 
 const integrationItems = [
@@ -147,8 +216,60 @@ const integrationItems = [
     },
     actionDescription:
       "Whenever email with Invoice as subject is received. Or attachment/body contains “Invoice” ",
-    accesspoint: "Add Gmail Access",
-    icons: [],
+    icons: ["edit"],
+  },
+  {
+    title: "Validate data against purchase orders and contracts",
+    description:
+      "Description comes here, Description comes here,Description comes here,",
+    location: {
+      color: "#EFEFEF",
+      counter: "SAP",
+    },
+    actionDescription: "Check PO number and value from SAP ",
+
+    icons: ["edit"],
+  },
+  {
+    title: "Route for approval based on pre-defined rules",
+    description: "Description comes here. Description comes here.  ",
+    location: {
+      color: "#EFEFEF",
+      counter: "Slack",
+    },
+    actionDescription: "Apr 12, 2021 at 12:55 PM",
+
+    icons: ["edit"],
+  },
+];
+
+const settingsHeader = [
+  {
+    title: "Setting Type",
+    key: "type",
+  },
+  {
+    title: "configure",
+    key: "configure",
+  },
+  {
+    title: "Description",
+    key: "description",
+  },
+];
+
+const settingsItems = [
+  {
+    title: "Brand Color",
+    description: "Choose app color theme",
+    button1: "primary",
+    button2: "secondary",
+    button1Description:
+      "Default color used for majority of components like buttons, icons, headings, and other interactive or prominent UI elements  ",
+    button2Description:
+      "Secondary colors add visual interest and help differentiate various components within the design.",
+
+    icons: [""],
   },
 ];
 
@@ -173,6 +294,9 @@ const ConfigureApp = () => {
   } else if (activeButton === "Integration") {
     tableHeader = integrationHeader;
     items = integrationItems;
+  } else if (activeButton === "Settings") {
+    tableHeader = settingsHeader;
+    items = settingsItems;
   }
 
   return (

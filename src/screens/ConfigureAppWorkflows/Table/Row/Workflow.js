@@ -44,7 +44,7 @@ const Workflow = ({
           <div
             style={{
               position: "relative",
-              top: "35px",
+              top: "30px",
             }}
           >
             <Control

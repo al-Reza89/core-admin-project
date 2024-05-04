@@ -4,7 +4,14 @@ import Control from "../../../../components/Control";
 import Item from "../Item";
 import cn from "classnames";
 
-const Integration = ({ item }) => {
+const Integration = ({
+  item,
+  icons,
+  className,
+  visibleActions,
+  setVisibleActions,
+  options,
+}) => {
   return (
     <div className={styles.row}>
       <div className={styles.col}>
@@ -29,16 +36,23 @@ const Integration = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className={styles.col}>
-        <button
-          className={cn("button", styles.button)}
-          style={{
-            padding: "5px",
-          }}
-        >
-          {item.accesspoint}
-        </button>
-      </div>
+      {icons && icons.length > 0 && (
+        <div style={{}} className={styles.col}>
+          <div
+            style={{
+              position: "relative",
+              top: "35px",
+            }}
+          >
+            <Control
+              className={styles.control}
+              visibleActions={visibleActions}
+              setVisibleActions={setVisibleActions}
+              options={options}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
