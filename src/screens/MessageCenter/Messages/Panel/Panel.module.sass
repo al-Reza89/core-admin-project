@@ -95,3 +95,21 @@
     transition: fill .2s
     &:hover
         fill: $p1
+
+.iconButton
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n3
+    margin-left: 24px
+    svg
+        fill: $n7
+        transition: transform .2s
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+    &:hover
+        svg
+            transform: rotate(90deg)

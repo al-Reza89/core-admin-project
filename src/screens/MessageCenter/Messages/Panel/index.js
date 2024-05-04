@@ -39,22 +39,16 @@ const Panel = ({
       </div>
       {avatarVisible === false ? (
         <div
-          onClick={() => setAvatarVisible(true)}
           style={{
             marginRight: "20px",
-            paddingRight: "10px",
-            paddingLeft: "10px",
-            paddingTop: "10px",
-            paddingBottom: "10px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#000000",
-            borderRadius: "50%",
-            cursor: "pointer",
           }}
         >
-          <RxCross2 fill="#6F767E" className={styles.icon} />
+          <button
+            className={styles.iconButton}
+            onClick={() => setAvatarVisible(true)}
+          >
+            <Icon name="close" size="20" />
+          </button>
         </div>
       ) : (
         <div
