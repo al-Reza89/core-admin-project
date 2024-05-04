@@ -166,14 +166,14 @@ const Row = ({ item, index, icons, buttons }) => {
         <DashboardRunLimit
           open={visibleModalRunLimit}
           onClose={() => setVisibleModalRunLimit(false)}
-          title={activeButton}
+          item={item}
         />
       )}
       {activeButton === "Integration" && (
         <IntegrationsRunLimit
           open={visibleModalRunLimit}
           onClose={() => setVisibleModalRunLimit(false)}
-          title={activeButton}
+          item={item}
         />
       )}
       {activeButton === "Settings" && (
