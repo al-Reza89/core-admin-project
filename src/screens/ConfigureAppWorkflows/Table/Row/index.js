@@ -152,7 +152,7 @@ const Row = ({ item, index, icons, buttons }) => {
         <PagesRunLimit
           open={visibleModalRunLimit}
           onClose={() => setVisibleModalRunLimit(false)}
-          title={activeButton}
+          item={item}
         />
       )}
       {activeButton === "Actions" && (
