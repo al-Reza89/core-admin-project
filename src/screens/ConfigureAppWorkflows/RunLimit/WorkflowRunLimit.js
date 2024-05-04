@@ -38,8 +38,9 @@ const WorkflowRunLimit = ({ onClose, open, item }) => {
               className={styles.field}
               label="Step Description"
               name="title"
+              textarea={true}
               type="text"
-              value={item.title}
+              value={item.description}
               tooltip="Tasks per run"
               required
             />
@@ -57,6 +58,7 @@ const WorkflowRunLimit = ({ onClose, open, item }) => {
           <TextInput
             className={styles.field}
             label="Action Details"
+            textarea={true}
             value={item.actionDescription}
             name="title"
             type="text"

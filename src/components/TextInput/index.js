@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./TextInput.module.sass";
 import Icon from "../Icon";
@@ -14,9 +14,41 @@ const TextInput = ({
   currency,
   tooltip,
   place,
+  textarea,
   value,
   ...props
 }) => {
+  const [textareaHeight, setTextareaHeight] = useState("90px");
+  const [input, setInput] = useState(value);
+
+  const maxTextareaHeight = "200px"; // Change as per your requirement
+
+  const handleTextareaChange = (e) => {
+    setInput(e.target.value);
+    const height = e.target.scrollHeight;
+    const newHeight =
+      height > parseInt(maxTextareaHeight)
+        ? `${maxTextareaHeight}`
+        : `${height}px`;
+    setTextareaHeight(newHeight);
+  };
+
+  const scrollbarStyles = {
+    WebkitScrollbar: {
+      width: "8px",
+    },
+    WebkitScrollbarTrack: {
+      background: "#f1f1f1",
+    },
+    WebkitScrollbarThumb: {
+      background: "#888",
+      borderRadius: "4px",
+    },
+    WebkitScrollbarThumbHover: {
+      background: "#555",
+    },
+  };
+
   return (
     <div
       className={cn(
@@ -41,11 +73,33 @@ const TextInput = ({
         </div>
       )}
       <div className={styles.wrap}>
-        <input
-          value={value}
-          className={cn(classInput, styles.input)}
-          {...props}
-        />
+        {textarea ? (
+          <div className={styles.inputfield}>
+            <div className={styles.inputContainer}>
+              <textarea
+                className={styles.input}
+                value={input}
+                onChange={handleTextareaChange}
+                style={{
+                  height: textareaHeight,
+                  maxHeight: maxTextareaHeight,
+                  overflowY: "auto",
+                  resize: "none",
+                  ...scrollbarStyles,
+                }}
+                placeholder="Type your answer here"
+              />
+            </div>
+          </div>
+        ) : (
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className={cn(classInput, styles.input)}
+            {...props}
+          />
+        )}
+
         {icon && (
           <div className={styles.icon}>
             <Icon name={icon} size="24" />{" "}
