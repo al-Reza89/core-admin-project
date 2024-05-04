@@ -112,7 +112,7 @@ const FinancialApp = ({ isLoading, setIsLoading }) => {
           >
             <div className={styles.messageContent}>
               {typeof message.text === "string" ? (
-                <div className={styles.paragraph}>{message.text}</div>
+                <div className={styles.messgeText}>{message.text}</div>
               ) : (
                 <div style={{}}>{message.text}</div>
               )}

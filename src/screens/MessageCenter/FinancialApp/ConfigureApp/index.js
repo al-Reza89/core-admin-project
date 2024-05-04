@@ -307,6 +307,9 @@ const ConfigureApp = () => {
         gap: "10px",
       }}
     >
+      <div className={styles.paragraph}>
+        Lets finish configuring the app design
+      </div>
       <div
         style={{
           width: "100%",
