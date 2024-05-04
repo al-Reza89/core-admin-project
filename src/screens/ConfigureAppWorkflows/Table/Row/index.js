@@ -16,6 +16,12 @@ import Actions from "./Actions";
 import Dashboard from "./Dashboard";
 import Integration from "./Integration";
 import Settings from "./Settings";
+import WorkflowRunLimit from "../../RunLimit/WorkflowRunLimit";
+import PagesRunLimit from "../../RunLimit/PagesRunLimit";
+import ActionsRunLimit from "../../RunLimit/ActionsRunLimit";
+import DashboardRunLimit from "../../RunLimit/DashboardRunLimit";
+import IntegrationsRunLimit from "../../RunLimit/IntegrationsRunLimit";
+import SettingsRunLimit from "../../RunLimit/SettingsRunLimit";
 
 const Row = ({ item, index, icons, buttons }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -34,7 +40,7 @@ const Row = ({ item, index, icons, buttons }) => {
     {
       title: "Tasks/Run",
       icon: "repeat",
-      action: () => setVisibleModalRunLimit(true),
+      action: () => setVisibleModalSchedule(true),
     },
     {
       title: "Schedule",
@@ -49,12 +55,12 @@ const Row = ({ item, index, icons, buttons }) => {
     {
       title: "Add",
       icon: "add",
-      action: () => setVisibleModalRunLimit(true),
+      action: () => setVisibleModalDeactivate(true),
     },
     {
       title: "Edit title & description",
       icon: "edit",
-      action: () => console.log("Edit title & description"),
+      action: () => setVisibleModalRunLimit(true),
     },
     {
       title: "Delete forever",
@@ -133,10 +139,50 @@ const Row = ({ item, index, icons, buttons }) => {
           options={options}
         />
       )}
-      <RunLimit
-        open={visibleModalRunLimit}
-        onClose={() => setVisibleModalRunLimit(false)}
-      />
+
+      {activeButton === "Workflows" && (
+        <WorkflowRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          item={item}
+        />
+      )}
+
+      {activeButton === "Pages" && (
+        <PagesRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          title={activeButton}
+        />
+      )}
+      {activeButton === "Actions" && (
+        <ActionsRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          title={activeButton}
+        />
+      )}
+      {activeButton === "Dashboard" && (
+        <DashboardRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          title={activeButton}
+        />
+      )}
+      {activeButton === "Integration" && (
+        <IntegrationsRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          title={activeButton}
+        />
+      )}
+      {activeButton === "Settings" && (
+        <SettingsRunLimit
+          open={visibleModalRunLimit}
+          onClose={() => setVisibleModalRunLimit(false)}
+          title={activeButton}
+        />
+      )}
 
       <ActiveDeactivateAlert
         open={visibleModalDeactivate}

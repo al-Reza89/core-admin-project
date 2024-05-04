@@ -14,6 +14,7 @@ const TextInput = ({
   currency,
   tooltip,
   place,
+  value,
   ...props
 }) => {
   return (
@@ -40,7 +41,11 @@ const TextInput = ({
         </div>
       )}
       <div className={styles.wrap}>
-        <input className={cn(classInput, styles.input)} {...props} />
+        <input
+          value={value}
+          className={cn(classInput, styles.input)}
+          {...props}
+        />
         {icon && (
           <div className={styles.icon}>
             <Icon name={icon} size="24" />{" "}

@@ -5,7 +5,7 @@ import styles from "./RunLimit.module.sass";
 import TextInput from "../../../components/TextInput";
 import ConfigureModal from "../../../components/ConfigureModal";
 
-const RunLimit = ({ onClose, open, title }) => {
+const PagesRunLimit = ({ onClose, open, title }) => {
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
@@ -47,4 +47,4 @@ const RunLimit = ({ onClose, open, title }) => {
   );
 };
 
-export default RunLimit;
+export default PagesRunLimit;

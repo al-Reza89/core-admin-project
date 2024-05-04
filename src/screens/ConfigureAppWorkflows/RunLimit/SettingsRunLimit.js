@@ -5,7 +5,7 @@ import styles from "./RunLimit.module.sass";
 import TextInput from "../../../components/TextInput";
 import ConfigureModal from "../../../components/ConfigureModal";
 
-const RunLimit = ({ onClose, open, title }) => {
+const SettingsRunLimit = ({ onClose, open, title }) => {
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
@@ -13,14 +13,6 @@ const RunLimit = ({ onClose, open, title }) => {
         <div className={styles.note}>
           Set maximum task Run Limit for each run.
         </div>
-        <TextInput
-          className={styles.field}
-          label="Tasks per run"
-          name="title"
-          type="number"
-          tooltip="Tasks per run"
-          required
-        />
         <TextInput
           className={styles.field}
           label="Tasks per run"
@@ -47,4 +39,4 @@ const RunLimit = ({ onClose, open, title }) => {
   );
 };
 
-export default RunLimit;
+export default SettingsRunLimit;
