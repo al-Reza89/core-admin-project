@@ -105,7 +105,7 @@ const PagesRunLimit = ({ onClose, open, item }) => {
                       width: "16px",
                       height: "16px",
                       borderRadius: "50%",
-                      backgroundColor: isActive ? "#fff" : "fff",
+                      backgroundColor: isActive ? "#fff" : "#fff",
                       transition: "transform 0.3s",
                       transform: isActive
                         ? "translateX(20px)"
