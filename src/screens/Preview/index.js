@@ -16,9 +16,8 @@ const Preview = () => {
   return (
     <div
       style={{
-        width: "1200px",
+        width: "100vw",
         height: "100vh",
-        margin: "auto",
       }}
     >
       <div
@@ -29,10 +28,10 @@ const Preview = () => {
         }}
       >
         <img
-          src="/images/screen2.png"
+          src="/images/screen.png"
           alt="placeholder"
           style={{
-            objectFit: "cover",
+            objectFit: "fill",
             width: "100%",
             height: "100%",
           }}
@@ -42,9 +41,10 @@ const Preview = () => {
             onClick={handleAvatarClick}
             style={{
               position: "absolute",
-              bottom: "0",
-              left: "0",
+              bottom: "20px",
+              left: "20px",
               padding: "10px",
+              cursor: "pointer",
             }}
           >
             <img
@@ -60,13 +60,7 @@ const Preview = () => {
           </div>
         )}
       </div>
-      <div
-        style={{
-          bottom: "50px",
-          left: "50px",
-          position: "absolute",
-        }}
-      >
+      <div className={styles.messengerIcon} style={{}}>
         {avatarVisible === false && (
           <div className="" style={{}}>
             <NewMessageCenter
