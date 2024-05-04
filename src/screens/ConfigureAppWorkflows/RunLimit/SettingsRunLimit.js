@@ -30,7 +30,7 @@ const SettingsRunLimit = ({ onClose, open, title }) => {
           required
         />
         <div className={styles.btns}>
-          <button className={cn("button")}>
+          <button onClick={onClose} className={cn("button")}>
             <span>Set Limit</span>
           </button>
         </div>

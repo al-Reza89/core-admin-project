@@ -67,7 +67,7 @@ const IntegrationsRunLimit = ({ onClose, open, item }) => {
           />
         </div>
         <div className={styles.btns}>
-          <button className={cn("button")}>
+          <button onClick={onClose} className={cn("button")}>
             <span>Reschedule</span>
           </button>
         </div>
