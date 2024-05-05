@@ -18,32 +18,34 @@ const Table = ({ items, foot, tableHeader }) => {
 
   return (
     <div className={styles.market}>
-      <div className={styles.table}>
-        <div className={styles.row}>
-          {tableHeader.map((x, index) => (
-            <div
-              className={`${styles.col} ${
-                activeButton && styles[activeButton.toLowerCase()]
-              }`}
+      <div className={styles.tableWrapper}>
+        <div className={styles.table}>
+          <div className={styles.row}>
+            {tableHeader.map((x, index) => (
+              <div
+                className={`${styles.col} ${
+                  activeButton && styles[activeButton.toLowerCase()]
+                }`}
+                key={index}
+                activeButton={activeButton}
+              >
+                {x.title}
+              </div>
+            ))}
+          </div>
+          {items.map((x, index) => (
+            <Row
+              item={x}
               key={index}
-              activeButton={activeButton}
-            >
-              {x.title}
-            </div>
+              up={items.length - index <= 2}
+              value={selectedFilters.includes(x.id)}
+              onChange={() => handleChange(x.id)}
+              index={index}
+              icons={x.icons}
+              buttons={x.buttons}
+            />
           ))}
         </div>
-        {items.map((x, index) => (
-          <Row
-            item={x}
-            key={index}
-            up={items.length - index <= 2}
-            value={selectedFilters.includes(x.id)}
-            onChange={() => handleChange(x.id)}
-            index={index}
-            icons={x.icons}
-            buttons={x.buttons}
-          />
-        ))}
       </div>
       {foot && (
         <div className={styles.foot}>
