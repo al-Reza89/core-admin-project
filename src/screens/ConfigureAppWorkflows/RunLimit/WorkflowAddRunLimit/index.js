@@ -1,8 +1,8 @@
 import React from "react";
 import cn from "classnames";
 import styles from "./WorkflowAddRunLimit.module.sass";
-import ConfigureModal from "../../../components/ConfigureModal";
-import TextInput from "../../../components/TextInput";
+import ConfigureModal from "../../../../components/ConfigureModal";
+import TextInput from "../../../../components/TextInput";
 
 const WorkflowAddRunLimit = ({ onClose, open }) => {
   return (

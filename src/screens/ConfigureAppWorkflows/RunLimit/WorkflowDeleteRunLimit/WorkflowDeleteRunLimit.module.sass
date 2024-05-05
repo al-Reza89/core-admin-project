@@ -1,4 +1,5 @@
-@import ../../../styles/helpers.sass
+@import ../../../../styles/helpers.sass
+
 .alertWrapper
     padding:10px
 
@@ -18,16 +19,16 @@
 .btns
     display: flex
     gap: 10px
-    margin-top: 62px
-    justify-content: flex-end
-    align-items: flex-end
-    +w
-        margin-top: 32px
-
-    
+    margin-top: 32px
 .button_red
     background: $p3
     box-shadow: none !important
     &:hover
         background: darken($p3, 10)
+        box-shadow: none !important
+.button_green
+    background: $p2
+    box-shadow: none !important
+    &:hover
+        background: darken($p2, 10)
         box-shadow: none !important

@@ -22,13 +22,16 @@ import ActionsRunLimit from "../../RunLimit/ActionsRunLimit";
 import DashboardRunLimit from "../../RunLimit/DashboardRunLimit";
 import IntegrationsRunLimit from "../../RunLimit/IntegrationsRunLimit";
 import SettingsRunLimit from "../../RunLimit/SettingsRunLimit";
-import WorkflowAddRunLimit from "../../WorkflowAddRunLimit";
+import WorkflowAddRunLimit from "../../RunLimit/WorkflowAddRunLimit";
+import WorkflowDeleteRunLimit from "../../RunLimit/WorkflowDeleteRunLimit";
 
 const Row = ({ item, index, icons, buttons }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [startTime, setStartTime] = useState(new Date());
   const [visibleModalRunLimit, setVisibleModalRunLimit] = useState(false);
   const [visibleModalAddRunLimit, setVisibleModalAddRunLimit] = useState(false);
+  const [visibleModalDeleteRunLimit, setVisibleModalDeleteRunLimit] =
+    useState(false);
   const [visibleModalSchedule, setVisibleModalSchedule] = useState(false);
   const [visibleModalTeamAccess, setVisibleModalTeamAccess] = useState(false);
   const [visibleModalDeactivate, setVisibleModalDeactivate] = useState(false);
@@ -67,7 +70,7 @@ const Row = ({ item, index, icons, buttons }) => {
     {
       title: "Delete forever",
       icon: "trash",
-      action: () => console.log("Delete forever"),
+      action: () => setVisibleModalDeleteRunLimit(true),
     },
   ];
 
@@ -154,6 +157,13 @@ const Row = ({ item, index, icons, buttons }) => {
         <WorkflowAddRunLimit
           open={visibleModalAddRunLimit}
           onClose={() => setVisibleModalAddRunLimit(false)}
+        />
+      )}
+
+      {activeButton === "Workflows" && (
+        <WorkflowDeleteRunLimit
+          open={visibleModalDeleteRunLimit}
+          onClose={() => setVisibleModalDeleteRunLimit(false)}
         />
       )}
 
