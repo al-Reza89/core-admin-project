@@ -16,6 +16,7 @@ const IntegrationsRunLimit = ({ onClose, open, item }) => {
             display: "flex",
             flexDirection: "row",
             gap: "20px",
+            width: "100%",
           }}
         >
           <div
@@ -23,48 +24,67 @@ const IntegrationsRunLimit = ({ onClose, open, item }) => {
               display: "flex",
               flexDirection: "column",
               gap: "30px",
+              width: "100%",
+            }}
+          >
+            <div style={{}}>
+              <TextInput
+                className={styles.field}
+                label="Step Name "
+                name="title"
+                type="text"
+                textarea={true}
+                value={item.title}
+                tooltip="Tasks per run"
+                required
+              />
+            </div>
+            <div style={{}}>
+              <TextInput
+                className={styles.field}
+                label="Step Description"
+                name="title"
+                textarea={true}
+                type="text"
+                value={item.description}
+                tooltip="Tasks per run"
+                required
+              />
+            </div>
+          </div>
+
+          <div
+            style={{
+              width: "100%",
             }}
           >
             <TextInput
               className={styles.field}
-              label="Step Name "
-              name="title"
-              type="text"
-              value={item.title}
-              tooltip="Tasks per run"
-              required
-            />
-            <TextInput
-              className={styles.field}
-              label="Step Description"
+              label="Destination"
               name="title"
               textarea={true}
+              value={item.location.counter}
               type="text"
-              value={item.description}
               tooltip="Tasks per run"
               required
             />
           </div>
-
-          <TextInput
-            className={styles.field}
-            label="Destination"
-            name="title"
-            value={item.location.counter}
-            type="text"
-            tooltip="Tasks per run"
-            required
-          />
-          <TextInput
-            className={styles.field}
-            label="Action Details"
-            textarea={true}
-            value={item.actionDescription}
-            name="title"
-            type="text"
-            tooltip="Tasks per run"
-            required
-          />
+          <div
+            style={{
+              width: "100%",
+            }}
+          >
+            <TextInput
+              className={styles.field}
+              label="Action Details"
+              textarea={true}
+              value={item.actionDescription}
+              name="title"
+              type="text"
+              tooltip="Tasks per run"
+              required
+            />
+          </div>
         </div>
         <div className={styles.btns}>
           <button onClick={onClose} className={cn("button")}>
