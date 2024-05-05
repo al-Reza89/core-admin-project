@@ -1,10 +1,10 @@
 import React from "react";
 import cn from "classnames";
-import styles from "./RunLimit.module.sass";
+import styles from "./AddRunLimit.module.sass";
 import ConfigureModal from "../../../components/ConfigureModal";
 import TextInput from "../../../components/TextInput";
 
-const RunLimit = ({ onClose, open, item }) => {
+const AddRunLimit = ({ onClose, open }) => {
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
@@ -91,7 +91,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 name="title"
                 textarea={true}
                 type="text"
-                value={item.title}
+                value={""}
                 tooltip="Tasks per run"
                 required
               />
@@ -120,7 +120,7 @@ const RunLimit = ({ onClose, open, item }) => {
                   label="Destination"
                   name="title"
                   textarea={true}
-                  value={item.location.counter}
+                  value={""}
                   type="text"
                   tooltip="Tasks per run"
                   required
@@ -182,7 +182,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 className={styles.field}
                 label="Action Details"
                 textarea={true}
-                value={item.actionDescription}
+                value={""}
                 name="title"
                 type="text"
                 tooltip="Tasks per run"
@@ -202,4 +202,4 @@ const RunLimit = ({ onClose, open, item }) => {
   );
 };
 
-export default RunLimit;
+export default AddRunLimit;

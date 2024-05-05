@@ -1,0 +1,33 @@
+@import ../../../styles/helpers.sass
+.alertWrapper
+    padding:10px
+
+.title
+    padding-right: 48px
+
+.note
+    margin-top: 24px
+    margin-bottom: 24px
+    padding-top: 24px
+    border-top: 1px solid $n3
+    font-weight: 500
+    color: $n4
+    +dark
+        border-color: $n6
+
+.btns
+    display: flex
+    gap: 10px
+    margin-top: 62px
+    justify-content: flex-end
+    align-items: flex-end
+    +w
+        margin-top: 32px
+
+    
+.button_red
+    background: $p3
+    box-shadow: none !important
+    &:hover
+        background: darken($p3, 10)
+        box-shadow: none !important

@@ -6,33 +6,23 @@ import Item from "./Item";
 import { newMessageWorkflowContext } from "../workflowContext";
 
 const ActiveDeactivate = ({ onClose, open }) => {
-  const { activeTab } = useContext(newMessageWorkflowContext);
-  const title =
-    activeTab === "Active" ? "Deactivate Workflow" : "Activate Workflow";
-  const description =
-    activeTab === "Active"
-      ? "Are you sure you want to Deactivate workflow?"
-      : "Are you sure you want to Activate workflow?";
+  const activeTab = "Active";
+  const description = "Are you sure you want to delete this step";
   return (
     <Modal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
-        <div className={cn("title-primary", styles.title)}>{title}</div>
+        <div className={cn("title-primary", styles.title)}>Delete Step</div>
         <div className={styles.note}>{description}</div>
 
-        <Item
-          className={styles.item}
-          category="Workflow"
-          icon="workflow"
-          value="Workflow name"
-        />
         <div className={styles.btns}>
           <button
+            onClick={onClose}
             className={cn(
               "button-stroke",
               activeTab === "Active" ? styles.button_red : styles.button_green
             )}
           >
-            <span>{activeTab === "Active" ? "Deactivate" : "Activate"}</span>
+            <span>Delete</span>
           </button>
           <button
             onClick={onClose}

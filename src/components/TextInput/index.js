@@ -18,10 +18,10 @@ const TextInput = ({
   value,
   ...props
 }) => {
-  const [textareaHeight, setTextareaHeight] = useState("90px");
+  const [textareaHeight, setTextareaHeight] = useState("50px");
   const [input, setInput] = useState(value);
 
-  const maxTextareaHeight = "200px"; // Change as per your requirement
+  const maxTextareaHeight = "150px"; // Change as per your requirement
 
   const handleTextareaChange = (e) => {
     setInput(e.target.value);

@@ -9,11 +9,13 @@ import TeamAccess from "../../TeamAccess";
 import ActiveDeactivateAlert from "../../ActiveDeactivateAlert";
 import RunLimit from "../../RunLimit";
 import ActionInput from "../ActionInput";
+import AddRunLimit from "../../AddRunLimit";
 
 const Row = ({ item, index }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [startTime, setStartTime] = useState(new Date());
   const [visibleModalRunLimit, setVisibleModalRunLimit] = useState(false);
+  const [visibleModalAddRunLimit, setVisibleModalAddRunLimit] = useState(false);
   const [visibleModalSchedule, setVisibleModalSchedule] = useState(false);
   const [visibleModalTeamAccess, setVisibleModalTeamAccess] = useState(false);
   const [visibleModalDeactivate, setVisibleModalDeactivate] = useState(false);
@@ -37,7 +39,7 @@ const Row = ({ item, index }) => {
     {
       title: "Add",
       icon: "add",
-      action: () => setVisibleModalRunLimit(true),
+      action: () => setVisibleModalAddRunLimit(true),
     },
     {
       title: "Edit title & description",
@@ -47,7 +49,7 @@ const Row = ({ item, index }) => {
     {
       title: "Delete forever",
       icon: "trash",
-      action: () => console.log("Delete forever"),
+      action: () => setVisibleModalDeactivate(true),
     },
   ];
   return (
@@ -109,6 +111,11 @@ const Row = ({ item, index }) => {
         open={visibleModalRunLimit}
         onClose={() => setVisibleModalRunLimit(false)}
         item={item}
+      />
+
+      <AddRunLimit
+        open={visibleModalAddRunLimit}
+        onClose={() => setVisibleModalAddRunLimit(false)}
       />
 
       <ActiveDeactivateAlert
