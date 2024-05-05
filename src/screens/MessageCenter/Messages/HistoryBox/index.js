@@ -21,7 +21,7 @@ const HistoryBox = ({ users, setVisible, setSelectedUser }) => {
         value={search}
         setValue={setSearch}
         onSubmit={() => handleSearchSubmit()}
-        placeholder="Search for products"
+        placeholder="Search for chats"
         type="text"
         name="search"
         icon="search"

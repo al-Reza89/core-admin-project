@@ -13,7 +13,9 @@ const Filters = ({ className, children, title, customeIcon }) => {
     >
       {customeIcon ? (
         <div className={styles.file} onClick={() => setVisible(true)}>
-          <FaHistory className={styles.historyIcon} />
+          <button className={styles.button}>
+            <Icon name="calendar" size="24" />
+          </button>
         </div>
       ) : (
         <button

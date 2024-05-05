@@ -81,3 +81,20 @@
         fill: $n7
         +dark
             fill: $p1
+
+.button
+    flex-shrink: 0
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n1
+    +t
+        display: none
+    +dark
+        background: $n7
+    svg
+        fill: $n4
+        transition: fill .2s
+    &:hover
+        svg
+            fill: $p1
