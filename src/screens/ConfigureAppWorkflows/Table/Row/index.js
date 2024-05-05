@@ -22,11 +22,13 @@ import ActionsRunLimit from "../../RunLimit/ActionsRunLimit";
 import DashboardRunLimit from "../../RunLimit/DashboardRunLimit";
 import IntegrationsRunLimit from "../../RunLimit/IntegrationsRunLimit";
 import SettingsRunLimit from "../../RunLimit/SettingsRunLimit";
+import WorkflowAddRunLimit from "../../WorkflowAddRunLimit";
 
 const Row = ({ item, index, icons, buttons }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [startTime, setStartTime] = useState(new Date());
   const [visibleModalRunLimit, setVisibleModalRunLimit] = useState(false);
+  const [visibleModalAddRunLimit, setVisibleModalAddRunLimit] = useState(false);
   const [visibleModalSchedule, setVisibleModalSchedule] = useState(false);
   const [visibleModalTeamAccess, setVisibleModalTeamAccess] = useState(false);
   const [visibleModalDeactivate, setVisibleModalDeactivate] = useState(false);
@@ -55,7 +57,7 @@ const Row = ({ item, index, icons, buttons }) => {
     {
       title: "Add",
       icon: "add",
-      action: () => setVisibleModalDeactivate(true),
+      action: () => setVisibleModalAddRunLimit(true),
     },
     {
       title: "Edit title & description",
@@ -145,6 +147,13 @@ const Row = ({ item, index, icons, buttons }) => {
           open={visibleModalRunLimit}
           onClose={() => setVisibleModalRunLimit(false)}
           item={item}
+        />
+      )}
+
+      {activeButton === "Workflows" && (
+        <WorkflowAddRunLimit
+          open={visibleModalAddRunLimit}
+          onClose={() => setVisibleModalAddRunLimit(false)}
         />
       )}
 
