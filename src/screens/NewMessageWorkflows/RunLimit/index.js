@@ -6,7 +6,7 @@ import ConfigureModal from "../../../components/ConfigureModal";
 import { useItems } from "../../../context/WorkflowContext";
 
 const RunLimit = ({ onClose, open, item }) => {
-  console.log("itemId", item.id);
+  // console.log("itemId", item.id);
 
   const { dispatch } = useItems();
   const [editedItem, setEditedItem] = useState(item);

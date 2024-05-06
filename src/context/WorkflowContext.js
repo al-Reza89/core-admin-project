@@ -68,6 +68,17 @@ const reducer = (state, action) => {
         ...state,
         items: [...state.items, action.payload.item],
       };
+
+    case ActionTypes.ADD_ITEM_AFTER_ID:
+      const index = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      const newArray = [...state.items];
+      newArray.splice(index + 1, 0, action.payload.newItem);
+      return {
+        ...state,
+        items: newArray,
+      };
     default:
       return state;
   }

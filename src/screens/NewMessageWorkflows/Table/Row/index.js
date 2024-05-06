@@ -116,6 +116,7 @@ const Row = ({ item, index }) => {
       <AddRunLimit
         open={visibleModalAddRunLimit}
         onClose={() => setVisibleModalAddRunLimit(false)}
+        item={item}
       />
 
       <ActiveDeactivateAlert
