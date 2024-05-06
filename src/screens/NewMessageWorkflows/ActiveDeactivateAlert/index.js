@@ -1,26 +1,30 @@
-import React, { useContext } from "react";
+import React from "react";
 import cn from "classnames";
 import styles from "./ActiveDeactivateAlert.module.sass";
 import Modal from "../../../components/Modal";
-import Item from "./Item";
-import { newMessageWorkflowContext } from "../workflowContext";
+import { useItems } from "../../../context/WorkflowContext";
 
-const ActiveDeactivate = ({ onClose, open }) => {
-  const activeTab = "Active";
-  const description = "Are you sure you want to delete this step";
+const ActiveDeactivate = ({ onClose, open, item }) => {
+  const { dispatch } = useItems();
+
+  const handleDelete = () => {
+    // Dispatch action to delete item from global state
+    dispatch({ type: "DELETE_ITEM", payload: { id: item.id } });
+    onClose(); // Close modal after deletion
+  };
+
   return (
     <Modal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
         <div className={cn("title-primary", styles.title)}>Delete Step</div>
-        <div className={styles.note}>{description}</div>
+        <div className={styles.note}>
+          Are you sure you want to delete this step?
+        </div>
 
         <div className={styles.btns}>
           <button
-            onClick={onClose}
-            className={cn(
-              "button-stroke",
-              activeTab === "Active" ? styles.button_red : styles.button_green
-            )}
+            onClick={handleDelete}
+            className={cn("button-stroke", styles.button_red)}
           >
             <span>Delete</span>
           </button>

@@ -121,6 +121,7 @@ const Row = ({ item, index }) => {
       <ActiveDeactivateAlert
         open={visibleModalDeactivate}
         onClose={() => setVisibleModalDeactivate(false)}
+        item={item}
       />
 
       <Modal
