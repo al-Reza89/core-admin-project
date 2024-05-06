@@ -18,12 +18,6 @@ const Table = ({ items, foot, tableHeader }) => {
     <div className={styles.market}>
       <div className={styles.table}>
         <div className={styles.row}>
-          {/* <div className={styles.col}>S. No.</div>
-          <div className={styles.col}>Name</div>
-          <div className={styles.col}>Run Schedule</div>
-          <div className={styles.col}>Total Runs</div>
-          <div className={styles.col}>Tasks/Run</div>
-          <div className={styles.col}></div> */}
           {tableHeader.map((x, index) => (
             <div className={styles.col} key={index}>
               {x.title}

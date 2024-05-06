@@ -1,6 +1,7 @@
 import React from "react";
 import NewMessageWorkflowsWrapper from "../../../NewMessageWorkflows";
 import styles from "./FinalizeAppWorkflow.module.sass";
+import { useItems } from "../../../../context/WorkflowContext";
 
 const tableHeader = [
   {
@@ -19,6 +20,7 @@ const tableHeader = [
 
 const items = [
   {
+    id: 1,
     title: "Automated Invoice receive",
     description: "Description comes here. Description comes here.  ",
     location: {
@@ -29,6 +31,7 @@ const items = [
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
   },
   {
+    id: 2,
     title: "Automated Invoice receive",
     description: "Description comes here. Description comes here.  ",
     location: {
@@ -39,6 +42,7 @@ const items = [
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
   },
   {
+    id: 3,
     title: "Automated Invoice receive",
     description: "Description comes here. Description comes here.  ",
     location: {
@@ -51,6 +55,10 @@ const items = [
 ];
 
 const FinalizeAppWorkflow = () => {
+  const { state } = useItems();
+
+  console.log({ state: state });
+
   return (
     <div
       style={{
@@ -74,7 +82,7 @@ const FinalizeAppWorkflow = () => {
           showButton={false}
           foot={false}
           tableHeader={tableHeader}
-          items={items}
+          items={state.items}
         />
       </div>
     </div>

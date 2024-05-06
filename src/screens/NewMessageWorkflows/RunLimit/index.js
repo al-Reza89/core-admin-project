@@ -1,10 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./RunLimit.module.sass";
 import TextInput from "../../../components/TextInput";
 import ConfigureModal from "../../../components/ConfigureModal";
+import { useItems } from "../../../context/WorkflowContext";
 
 const RunLimit = ({ onClose, open, item }) => {
+  console.log("itemId", item.id);
+
+  const { dispatch } = useItems();
+  const [editedItem, setEditedItem] = useState(item);
+
+  const handleChange = (value, name) => {
+    console.log("value", value);
+    console.log("name", name);
+    if (name === "counter") {
+      setEditedItem((prevItem) => ({
+        ...prevItem,
+        location: {
+          ...prevItem.location,
+          [name]: value,
+        },
+      }));
+    } else {
+      setEditedItem((prevItem) => ({
+        ...prevItem,
+        [name]: value,
+      }));
+    }
+
+    console.log("editedItem", editedItem);
+  };
+
+  const handleSave = () => {
+    dispatch({
+      type: "UPDATE_ITEM",
+      payload: { id: item.id, update: editedItem },
+    });
+    onClose();
+  };
+
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
@@ -89,6 +124,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 className={styles.field}
                 label="Step Name "
                 name="title"
+                handleChange={handleChange}
                 textarea={true}
                 type="text"
                 value={item.title}
@@ -118,8 +154,9 @@ const RunLimit = ({ onClose, open, item }) => {
                 <TextInput
                   className={styles.field}
                   label="Destination"
-                  name="title"
+                  name="counter"
                   textarea={true}
+                  handleChange={handleChange}
                   value={item.location.counter}
                   type="text"
                   tooltip="Tasks per run"
@@ -139,7 +176,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 <TextInput
                   className={styles.field}
                   label="Email/API Key"
-                  name="title"
+                  name="email"
                   textarea={true}
                   value={""}
                   type="text"
@@ -159,7 +196,7 @@ const RunLimit = ({ onClose, open, item }) => {
                   className={styles.field}
                   label="Password"
                   textarea={true}
-                  name="title"
+                  name="password"
                   value={""}
                   type="Password"
                   tooltip="Tasks per run"
@@ -183,7 +220,8 @@ const RunLimit = ({ onClose, open, item }) => {
                 label="Action Details"
                 textarea={true}
                 value={item.actionDescription}
-                name="title"
+                name="actionDescription"
+                handleChange={handleChange}
                 type="text"
                 tooltip="Tasks per run"
                 required
@@ -193,7 +231,7 @@ const RunLimit = ({ onClose, open, item }) => {
         </div>
 
         <div className={styles.btns}>
-          <button onClick={onClose} className={cn("button")}>
+          <button onClick={handleSave} className={cn("button")}>
             <span>Save</span>
           </button>
         </div>

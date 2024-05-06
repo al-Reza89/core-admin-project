@@ -11,6 +11,8 @@ const TextInput = ({
   label,
   icon,
   copy,
+  handleChange,
+  name,
   currency,
   tooltip,
   place,
@@ -31,6 +33,10 @@ const TextInput = ({
         ? `${maxTextareaHeight}`
         : `${height}px`;
     setTextareaHeight(newHeight);
+
+    if (handleChange) {
+      handleChange(e.target.value, name);
+    }
   };
 
   const scrollbarStyles = {
