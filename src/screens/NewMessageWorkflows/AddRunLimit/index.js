@@ -6,7 +6,6 @@ import TextInput from "../../../components/TextInput";
 import { useItems } from "../../../context/WorkflowContext";
 
 const AddRunLimit = ({ onClose, open, item }) => {
-  console.log("itemId", item.id);
   const { dispatch } = useItems();
   const [addItem, setAddItem] = useState({
     id: Date.now(),
@@ -37,7 +36,10 @@ const AddRunLimit = ({ onClose, open, item }) => {
   };
 
   const handleSave = () => {
-    dispatch({ type: "ADD_ITEM", payload: { item: addItem } });
+    dispatch({
+      type: "ADD_ITEM",
+      payload: { item: addItem, afterId: item.id },
+    });
     onClose();
   };
   return (
