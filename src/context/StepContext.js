@@ -12,7 +12,7 @@ export const StepsProvider = ({ children }) => {
 
   const handleFileUpload = (name) => {
     setFileName(name);
-    moveToNextStep();
+    // moveToNextStep();
   };
 
   const resetSteps = () => {
