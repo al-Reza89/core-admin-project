@@ -1,3 +1,4 @@
+import UploadDocument from "../screens/MessageCenter/DocumentWorkflow/UploadDocument";
 import Questions from "../screens/MessageCenter/FinancialApp/Questions";
 
 export const messages = [
@@ -22,6 +23,20 @@ export const messages = [
     ),
     button: "Generate Workflow",
     time: "12:02",
+    user: "user1",
+  },
+];
+
+export const adminMessages = [
+  {
+    id: 1,
+    time: "10:10",
+    text: (
+      <div>
+        <UploadDocument />
+      </div>
+    ),
+    button: "Upload Document",
     user: "user1",
   },
 ];

@@ -6,14 +6,14 @@ import Tooltip from "../Tooltip";
 import { useSteps } from "../../context/StepContext";
 
 const File = ({ className, label, tooltip, title }) => {
-  const { moveToNextStep, handleFileUpload, currentStep } = useSteps();
+  const { handleFileUpload, currentStep } = useSteps();
 
   const handleFile = (event) => {
     const file = event.target.files[0];
     console.log("file", file);
     if (file) {
       handleFileUpload(file.name);
-      moveToNextStep();
+      // moveToNextStep();
       console.log("current-Step", currentStep);
     }
   };
