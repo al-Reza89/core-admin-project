@@ -31,7 +31,7 @@ const DocumentWorkflow = () => {
       >
         <div
           style={{
-            width: currentStep === 2 ? "80%" : "100%",
+            width: currentStep === 2 ? "fit-content" : "100%",
           }}
           className={cn(styles.message, {
             [styles.leftMessage]: true,
