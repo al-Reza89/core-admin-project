@@ -43,69 +43,13 @@ const RunLimit = ({ onClose, open, item }) => {
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
-        <div className={cn("title-primary", styles.title)}>Workflows</div>
+        <div className={cn("title-primary", styles.title)}>Edit Step</div>
         <div className={styles.note}></div>
-        {/* <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "20px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "30px",
-            }}
-          >
-            <TextInput
-              className={styles.field}
-              label="Step Name "
-              name="title"
-              type="text"
-              value={item.title}
-              tooltip="Tasks per run"
-              required
-            />
-            <TextInput
-              className={styles.field}
-              label="Step Description"
-              name="title"
-              textarea={true}
-              type="text"
-              value={item.description}
-              tooltip="Tasks per run"
-              required
-            />
-          </div>
-
-          <TextInput
-            className={styles.field}
-            label="Destination"
-            name="title"
-            value={item.location.counter}
-            type="text"
-            tooltip="Tasks per run"
-            required
-          />
-          <TextInput
-            className={styles.field}
-            label="Action Details"
-            textarea={true}
-            value={item.actionDescription}
-            name="title"
-            type="text"
-            tooltip="Tasks per run"
-            required
-          />
-        </div> */}
-
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            gap: "30px",
+            gap: "20px",
             width: "100%",
             justifyContent: "space-between",
           }}
@@ -118,7 +62,7 @@ const RunLimit = ({ onClose, open, item }) => {
               width: "100%",
             }}
           >
-            <div>Add Step Name</div>
+            <div className={styles.paragraph}>Add Step Name</div>
             <div>
               <TextInput
                 className={styles.field}
@@ -133,7 +77,7 @@ const RunLimit = ({ onClose, open, item }) => {
               />
             </div>
           </div>
-
+          <div className={styles.border}></div>
           <div
             style={{
               display: "flex",
@@ -149,7 +93,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 gap: "20px",
               }}
             >
-              <div>Add Platform URL</div>
+              <div className={styles.paragraph}>Add Platform URL</div>
               <div>
                 <TextInput
                   className={styles.field}
@@ -171,7 +115,7 @@ const RunLimit = ({ onClose, open, item }) => {
                 gap: "20px",
               }}
             >
-              <div>Add Access Login</div>
+              <div className={styles.paragraph}>Add Access Login</div>
               <div>
                 <TextInput
                   className={styles.field}
@@ -205,6 +149,7 @@ const RunLimit = ({ onClose, open, item }) => {
               </div>
             </div>
           </div>
+          <div className={styles.border}></div>
           <div
             style={{
               display: "flex",
@@ -213,7 +158,7 @@ const RunLimit = ({ onClose, open, item }) => {
               width: "100%",
             }}
           >
-            <div>Add actions to be done</div>
+            <div className={styles.paragraph}>Add actions to be done</div>
             <div>
               <TextInput
                 className={styles.field}

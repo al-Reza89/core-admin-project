@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./FinancialApp.module.sass";
 import cn from "classnames";
 import { messages } from "../../../utils/messages";
-import { FaCirclePause } from "react-icons/fa6";
 import Loader from "../../../components/Loader";
 import FinalizeAppWorkflow from "./FinalizeAppWorkflow";
 import AppPreview from "./AppPreview";
