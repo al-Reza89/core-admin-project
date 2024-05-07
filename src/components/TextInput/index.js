@@ -14,6 +14,7 @@ const TextInput = ({
   handleChange,
   name,
   currency,
+  copyText,
   tooltip,
   place,
   textarea,
@@ -98,12 +99,15 @@ const TextInput = ({
             </div>
           </div>
         ) : (
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            className={cn(classInput, styles.input)}
-            {...props}
-          />
+          <div>
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className={cn(classInput, styles.input)}
+              {...props}
+            />
+            {copyText && <div>copy</div>}
+          </div>
         )}
 
         {icon && (

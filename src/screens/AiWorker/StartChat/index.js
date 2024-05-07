@@ -98,7 +98,7 @@ const StartChat = ({ selectedButton, buttons }) => {
             padding: "0 0",
           }}
           className={cn("button", styles.button)}
-          onClick={() => navigate("/new-message-center")}
+          onClick={() => navigate("/invite")}
         >
           <span style={{}}>Continue</span>
         </button>

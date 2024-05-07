@@ -38,6 +38,7 @@ import AiWorker from "./screens/AiWorker";
 import MessageCenterPage from "./components/messageCenterPage";
 import NewMessageCenter from "./screens/NewMessageCenter";
 import Preview from "./screens/Preview";
+import Invite from "./screens/Invite";
 
 function App() {
   return (
@@ -265,6 +266,8 @@ function App() {
             </MessageCenterPage>
           }
         />
+        <Route path="invite" element={<Invite />} />
+
         <Route
           path="explore-creators"
           element={
