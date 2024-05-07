@@ -8,13 +8,13 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
   return (
     <ConfigureModal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
-        <div className={cn("title-primary", styles.title)}>Workflows</div>
+        <div className={cn("title-primary", styles.title)}>Add New Step</div>
         <div className={styles.note}></div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            gap: "30px",
+            gap: "20px",
             width: "100%",
             justifyContent: "space-between",
           }}
@@ -27,7 +27,7 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
               width: "100%",
             }}
           >
-            <div>Add Step Name</div>
+            <div className={styles.paragraph}> Add Step Name</div>
             <div>
               <TextInput
                 className={styles.field}
@@ -41,6 +41,7 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
               />
             </div>
           </div>
+          <div className={styles.border}></div>
 
           <div
             style={{
@@ -57,7 +58,7 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
                 gap: "20px",
               }}
             >
-              <div>Add Platform URL</div>
+              <div className={styles.paragraph}>Add Platform URL</div>
               <div>
                 <TextInput
                   className={styles.field}
@@ -78,7 +79,7 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
                 gap: "20px",
               }}
             >
-              <div>Add Access Login</div>
+              <div className={styles.paragraph}>Add Access Login</div>
               <div>
                 <TextInput
                   className={styles.field}
@@ -112,6 +113,8 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
               </div>
             </div>
           </div>
+          <div className={styles.border}></div>
+
           <div
             style={{
               display: "flex",
@@ -120,7 +123,7 @@ const WorkflowAddRunLimit = ({ onClose, open }) => {
               width: "100%",
             }}
           >
-            <div>Add actions to be done</div>
+            <div className={styles.paragraph}>Add actions to be done</div>
             <div>
               <TextInput
                 className={styles.field}
