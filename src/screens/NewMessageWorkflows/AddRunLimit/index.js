@@ -40,6 +40,16 @@ const AddRunLimit = ({ onClose, open, item }) => {
       type: "ADD_ITEM",
       payload: { item: addItem, afterId: item.id },
     });
+    setAddItem({
+      id: Date.now(),
+      title: "",
+      description: "",
+      location: {
+        color: "#EFEFEF",
+        counter: "",
+      },
+      actionDescription: "",
+    });
     onClose();
   };
   return (
