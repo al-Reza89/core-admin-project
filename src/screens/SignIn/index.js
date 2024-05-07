@@ -22,7 +22,7 @@ const SignIn = () => {
           /> */}
           <Image
             className={styles.pic}
-            src="/images/Wiyse_Logo_White.svg"
+            src="/images/Wiyse_Logo_Dark.svg"
             srcDark="/images/Wiyse_Logo_White.svg"
             alt="Core"
           />
