@@ -5,6 +5,7 @@ import styles from "./ScheduledModal.module.sass";
 import Image from "../../../components/Image";
 import { useNavigate } from "react-router-dom";
 import { aiWorkersButtons } from "../../../utils/aiWorkersButtons";
+import { toast } from "react-hot-toast";
 
 const ScheduledModal = () => {
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ const ScheduledModal = () => {
       // setVisibleModalProduct(true);
     } else {
       console.log("Please select a button before proceeding.");
-      alert("Please select a button before proceeding.");
+      // alert("Please select a button before proceeding.");
+      toast.error("select a button before proceeding.");
     }
   };
 
