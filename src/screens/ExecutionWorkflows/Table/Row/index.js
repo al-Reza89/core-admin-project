@@ -93,8 +93,17 @@ const Row = ({ item, index }) => {
         <div className={styles.col}>
           {item.status === "Active" ? (
             <div className={cn("status-green", styles.status)}>Active</div>
-          ) : (
+          ) : item.status === "Deactive" ? (
             <div className={cn("status-red", styles.status)}>Deactive</div>
+          ) : (
+            <div
+              style={{
+                backgroundColor: "#232627",
+              }}
+              className={cn("status", styles.status)}
+            >
+              Pending
+            </div>
           )}
         </div>
 

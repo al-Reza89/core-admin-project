@@ -34,6 +34,28 @@ const items = [
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
     status: "Active",
   },
+  {
+    id: 2,
+    title: "Automated Invoice receive",
+    location: {
+      color: "#EFEFEF",
+      counter: "Gmail",
+    },
+    actionDescription:
+      "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
+    status: "Deactive",
+  },
+  {
+    id: 3,
+    title: "Automated Invoice receive",
+    location: {
+      color: "#EFEFEF",
+      counter: "Gmail",
+    },
+    actionDescription:
+      "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
+    status: "Pending",
+  },
 ];
 
 const ExecutionDetails = () => {
@@ -56,7 +78,7 @@ const ExecutionDetails = () => {
         }}
       >
         <ExecutionWorkflowWrapper
-          title="Approval Required"
+          title="Executing Steps"
           showButton={false}
           foot={false}
           tableHeader={tableHeader}
