@@ -8,6 +8,7 @@ import PrebuildTemplate from "../../MessageCenter/PrebuildTemplate";
 import Panel from "../../MessageCenter/Messages/Panel";
 import ChatApprovals from "../../MessageCenter/ChatAprovals";
 import ExecutingSteps from "../../MessageCenter/ExecutingSteps";
+import DocumentCapture from "../../MessageCenter/DocumentCapture";
 
 const Messages = ({
   className,
@@ -179,6 +180,7 @@ const Messages = ({
                     className={styles.boxContainer}
                   >
                     <button
+                      onClick={() => setClickedMessage("document-capture")}
                       className={cn("button")}
                       style={{
                         paddingLeft: "20px",
@@ -201,6 +203,7 @@ const Messages = ({
           )}
           {clickedMessage === "chat-approvals" && <ChatApprovals />}
           {clickedMessage === "executing-steps" && <ExecutingSteps />}
+          {clickedMessage === "document-capture" && <DocumentCapture />}
         </div>
         <Send />
         {clickedMessage === "financial-app" && isLoading && (

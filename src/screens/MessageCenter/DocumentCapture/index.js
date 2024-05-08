@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./ChatApprovals.module.sass";
+import styles from "./DocumentCapture.module.sass";
 import cn from "classnames";
-import { chatApprovalsMessages } from "../../../utils/messages";
+import { documentCaptureMessages } from "../../../utils/messages";
 
-const ChatApprovals = () => {
+const DocumentCapture = () => {
   const [renderedMessages, setRenderedMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
@@ -63,7 +63,7 @@ const ChatApprovals = () => {
   };
 
   useEffect(() => {
-    const sortedMessages = chatApprovalsMessages.sort(
+    const sortedMessages = documentCaptureMessages.sort(
       (a, b) => new Date(a.time) - new Date(b.time)
     );
     setRenderedMessages(sortedMessages);
@@ -156,4 +156,4 @@ const ChatApprovals = () => {
   );
 };
 
-export default ChatApprovals;
+export default DocumentCapture;
