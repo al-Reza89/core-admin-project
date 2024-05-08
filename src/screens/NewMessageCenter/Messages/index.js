@@ -6,6 +6,7 @@ import Send from "../../MessageCenter/Messages/Send";
 import Loader from "../../../components/Loader";
 import PrebuildTemplate from "../../MessageCenter/PrebuildTemplate";
 import Panel from "../../MessageCenter/Messages/Panel";
+import ChatApprovals from "../../MessageCenter/ChatAprovals";
 
 const Messages = ({
   className,
@@ -52,7 +53,7 @@ const Messages = ({
           {clickedMessage === null && (
             <div
               style={{
-                paddingTop: "40px",
+                paddingTop: "20px",
               }}
             >
               <div style={{}} className={cn("h4", styles.title)}>
@@ -81,7 +82,6 @@ const Messages = ({
                     style={{
                       display: "flex",
                       flexDirection: "column",
-                      gap: "20px",
                       padding: "20px",
                     }}
                     className={styles.boxContainer}
@@ -96,6 +96,45 @@ const Messages = ({
                       }}
                     >
                       Choose from pre-build app template
+                    </button>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      padding: "20px",
+                    }}
+                    className={styles.boxContainer}
+                  >
+                    <button
+                      onClick={() => setClickedMessage("chat-approvals")}
+                      className={cn("button")}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Chat Approvals
+                    </button>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      padding: "20px",
+                    }}
+                    className={styles.boxContainer}
+                  >
+                    <button
+                      className={cn("button")}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Execution Of Steps
                     </button>
                   </div>
                 </div>
@@ -128,6 +167,26 @@ const Messages = ({
                       Build a new financial app
                     </button>
                   </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "20px",
+                      padding: "20px",
+                    }}
+                    className={styles.boxContainer}
+                  >
+                    <button
+                      className={cn("button")}
+                      style={{
+                        paddingLeft: "20px",
+                        width: "100%",
+                        paddingRight: "20px",
+                      }}
+                    >
+                      Document Capture Details
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,6 +197,7 @@ const Messages = ({
           {clickedMessage === "pre-build" && (
             <PrebuildTemplate setClickedMessage={setClickedMessage} />
           )}
+          {clickedMessage === "chat-approvals" && <ChatApprovals />}
         </div>
         <Send />
         {clickedMessage === "financial-app" && isLoading && (

@@ -1,3 +1,4 @@
+import ApproveDetails from "../screens/MessageCenter/ChatAprovals/ApproveDeatils";
 import UploadDocument from "../screens/MessageCenter/DocumentWorkflow/UploadDocument";
 import Questions from "../screens/MessageCenter/FinancialApp/Questions";
 
@@ -38,5 +39,19 @@ export const adminMessages = [
     ),
     button: "Upload Document",
     user: "user1",
+  },
+];
+
+export const chatApprovalsMessages = [
+  {
+    id: 1,
+    text: (
+      <div>
+        <ApproveDetails />
+      </div>
+    ),
+    time: "12:00",
+    user: "user1",
+    button: "Preview app UI",
   },
 ];

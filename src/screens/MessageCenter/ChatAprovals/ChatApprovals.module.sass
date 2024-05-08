@@ -1,0 +1,80 @@
+@import "../../../styles/helpers"
+
+.message 
+  position: relative
+  padding-top: 10px
+  padding-bottom: 30px
+  padding-left: 20px
+  padding-right: 10px
+  border-radius: 15px
+  margin-bottom: 8px
+
+.header
+    padding-top: 20px
+    padding-bottom: 20px
+    text-align: center
+    +w 
+        padding-top: 10px
+        padding-bottom: 10px
+
+
+.messageContent 
+  width: 100%
+  padding-right: 50px 
+
+.leftMessage 
+  align-self: flex-start
+  background-color: $n2
+  margin-top: 20px
+  margin-bottom: 60px
+  +dark
+    background-color: $n8
+
+.rightMessage 
+  align-self: flex-end
+  background-color: $n2
+  color: white
+  margin-top: 20px
+  margin-bottom: 60px
+  margin-right: 10px
+  +dark
+    background-color: $n6
+
+.avatarLeft 
+  height: 45px
+  width: 45px
+  border-radius: 20%
+  position: absolute
+  bottom: -18px
+  left: 20px
+
+.avatarRight
+  height: 45px
+  width: 45px
+  border-radius: 20%
+  position: absolute
+  bottom: -18px
+  right: 20px
+
+.markLeft
+  position: absolute
+  font-size: 11px
+  background-color: $n2
+  padding: 4px 8px
+  border-radius: 2px
+  bottom: -35px
+  right: 0px
+  color: #000000
+  cursor: pointer
+  +dark
+    background-color: $n8
+    color: #e6e6e6
+
+.messgeText
+  margin-bottom: 10px
+  padding-top: 5px
+  font-size: 10px
+  +title1-m
+  color: $n4
+  +m
+    font-size: 14px
