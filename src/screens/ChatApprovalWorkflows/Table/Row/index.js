@@ -10,6 +10,7 @@ import ActiveDeactivateAlert from "../../ActiveDeactivateAlert";
 import RunLimit from "../../RunLimit";
 import ActionInput from "../ActionInput";
 import AddRunLimit from "../../AddRunLimit";
+import LinkModal from "../LinkModal";
 
 const Row = ({ item, index }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -107,8 +108,7 @@ const Row = ({ item, index }) => {
               <div className={styles.wrap}>
                 {/* <div className={styles.price}>${item.run_schedule.title}</div> */}
                 <div className={styles.category}>
-                  {/* <ActionInput value={item.action.description} /> */}
-                  {item.link}
+                  <LinkModal link={item.link} />
                 </div>
               </div>
             </div>

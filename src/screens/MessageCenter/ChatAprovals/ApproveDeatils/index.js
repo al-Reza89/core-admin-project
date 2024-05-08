@@ -49,8 +49,7 @@ const ApproveDetails = () => {
       }}
     >
       <div className={styles.paragraph}>
-        Okay, now help me finalize the workflow steps so I can build the
-        application UI & backend.
+        Hi, 1 invoice (s) assigned to you. Your Approval is required.
       </div>
       <div
         style={{
