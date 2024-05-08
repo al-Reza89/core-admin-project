@@ -2,6 +2,7 @@ import React from "react";
 import cn from "classnames";
 import styles from "./DocumentDetails.module.sass";
 import CaptureWorkflowWrapper from "../../../CaptureWorkflows";
+import DocumentCaptureRun from "../../../DocumentCaptureRun";
 
 const tableHeader = [
   {
@@ -93,13 +94,14 @@ const DocumentDetails = () => {
           // backgroundColor: "#f5f5f5",
         }}
       >
-        <CaptureWorkflowWrapper
+        {/* <CaptureWorkflowWrapper
           title="Document Capture"
           showButton={false}
           foot={false}
           tableHeader={tableHeader}
           items={items}
-        />
+        /> */}
+        <DocumentCaptureRun footer={false} />
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
               onClick={() => setVisibleModalAccept(true)}
               className={cn("status-green", styles.status)}
             >
-              Active
+              Accept
             </div>
             <div
               style={{
@@ -70,7 +70,7 @@ const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
               onClick={() => setVisibleModalReject(true)}
               className={cn("status-red", styles.status)}
             >
-              Deactive
+              Reject
             </div>
           </div>
         </div>
