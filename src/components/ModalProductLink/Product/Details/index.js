@@ -1,12 +1,18 @@
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./Details.module.sass";
 import Icon from "../../../Icon";
 import Overview from "./Overview";
 import Products from "./Products";
+import ActiveDeactivateAlert from "../../../../screens/ChatApprovalWorkflows/ActiveDeactivateAlert";
+import RejectAlert from "../../../../screens/ChatApprovalWorkflows/RejectAlert";
 
 const navigation = ["Review", "Comment"];
 
 const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
+  const [visibleModalAccept, setVisibleModalAccept] = useState(false);
+  const [visibleModalReject, setVisibleModalReject] = useState(false);
+
   const handleClick = (index) => {
     setActiveIndex(index);
     index === 0 && setValue(false);
@@ -52,6 +58,7 @@ const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
               style={{
                 cursor: "pointer",
               }}
+              onClick={() => setVisibleModalAccept(true)}
               className={cn("status-green", styles.status)}
             >
               Active
@@ -60,6 +67,7 @@ const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
               style={{
                 cursor: "pointer",
               }}
+              onClick={() => setVisibleModalReject(true)}
               className={cn("status-red", styles.status)}
             >
               Deactive
@@ -69,6 +77,14 @@ const Details = ({ className, setValue, activeIndex, setActiveIndex }) => {
       </div>
       <Overview />
       {/* <Products /> */}
+      <ActiveDeactivateAlert
+        open={visibleModalAccept}
+        onClose={() => setVisibleModalAccept(false)}
+      />
+      <RejectAlert
+        open={visibleModalReject}
+        onClose={() => setVisibleModalReject(false)}
+      />
     </div>
   );
 };

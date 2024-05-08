@@ -1,21 +1,21 @@
 import React from "react";
 import cn from "classnames";
-import styles from "./ActiveDeactivateAlert.module.sass";
+import styles from "./RejectAlert.module.sass";
 import Modal from "../../../components/Modal";
 
-const ActiveDeactivate = ({ onClose, open, item }) => {
+const RejectAlert = ({ onClose, open, item }) => {
   return (
     <Modal onClose={onClose} visible={open}>
       <div className={styles.alertWrapper}>
-        <div className={cn("title-primary", styles.title)}>Accept</div>
-        <div className={styles.note}>Are you sure you want to Accept?</div>
+        <div className={cn("title-primary", styles.title)}>Reject</div>
+        <div className={styles.note}>Are you sure you want to Reject?</div>
 
         <div className={styles.btns}>
           <button
             onClick={onClose}
-            className={cn("button-stroke", styles.button_green)}
+            className={cn("button-stroke", styles.button_red)}
           >
-            <span>Accept</span>
+            <span>Reject</span>
           </button>
           <button
             onClick={onClose}
@@ -29,4 +29,4 @@ const ActiveDeactivate = ({ onClose, open, item }) => {
   );
 };
 
-export default ActiveDeactivate;
+export default RejectAlert;
