@@ -7,6 +7,7 @@ import Loader from "../../../components/Loader";
 import PrebuildTemplate from "../../MessageCenter/PrebuildTemplate";
 import Panel from "../../MessageCenter/Messages/Panel";
 import ChatApprovals from "../../MessageCenter/ChatAprovals";
+import ExecutingSteps from "../../MessageCenter/ExecutingSteps";
 
 const Messages = ({
   className,
@@ -127,6 +128,7 @@ const Messages = ({
                     className={styles.boxContainer}
                   >
                     <button
+                      onClick={() => setClickedMessage("executing-steps")}
                       className={cn("button")}
                       style={{
                         paddingLeft: "20px",
@@ -198,6 +200,7 @@ const Messages = ({
             <PrebuildTemplate setClickedMessage={setClickedMessage} />
           )}
           {clickedMessage === "chat-approvals" && <ChatApprovals />}
+          {clickedMessage === "executing-steps" && <ExecutingSteps />}
         </div>
         <Send />
         {clickedMessage === "financial-app" && isLoading && (

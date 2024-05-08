@@ -1,0 +1,51 @@
+@import ../../../../../styles/helpers
+
+
+.DaySelector
+    width: 280px
+    padding: 24px
+    +d
+        width: 100%
+.top
+    display: flex
+    align-items: center
+    margin-bottom: 24px
+    padding-bottom: 23px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.subtitle
+    margin-right: auto
+    +title1-s
+
+.close
+    width: 36px
+    height: 36px
+    border-radius: 50%
+    background: $n3
+    font-size: 0
+    svg
+        fill: $n5
+        transition: transform .2s
+    +dark
+        background: $n6
+        svg
+            fill: $n1
+    &:hover
+        svg
+            transform: rotate(90deg)
+    
+.dayItem
+    display: flex
+    gap: 5px
+    padding: 0 12px
+    margin-bottom: 12px
+
+.dayItem label
+    font-size: 15px !important
+    font-weight: 600
+    color: $n4
+
+.dayItem label.active
+    color: $n

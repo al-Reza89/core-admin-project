@@ -1,5 +1,6 @@
 import ApproveDetails from "../screens/MessageCenter/ChatAprovals/ApproveDeatils";
 import UploadDocument from "../screens/MessageCenter/DocumentWorkflow/UploadDocument";
+import ExecutionDetails from "../screens/MessageCenter/ExecutingSteps/ExecutionDetails";
 import Questions from "../screens/MessageCenter/FinancialApp/Questions";
 
 export const messages = [
@@ -48,6 +49,20 @@ export const chatApprovalsMessages = [
     text: (
       <div>
         <ApproveDetails />
+      </div>
+    ),
+    time: "12:00",
+    user: "user1",
+    button: "Preview app UI",
+  },
+];
+
+export const executingStepsMessages = [
+  {
+    id: 1,
+    text: (
+      <div>
+        <ExecutionDetails />
       </div>
     ),
     time: "12:00",
