@@ -7,6 +7,7 @@ import Modal from "../../../../components/Modal";
 import Schedule from "../Schedule";
 import TeamAccess from "../../TeamAccess";
 import ActiveDeactivateAlert from "../../ActiveDeactivateAlert";
+import Loader from "../../../../components/Loader";
 import RunLimit from "../../RunLimit";
 import ActionInput from "../ActionInput";
 import AddRunLimit from "../../AddRunLimit";
@@ -91,7 +92,57 @@ const Row = ({ item, index }) => {
         </div> */}
 
         <div className={styles.col}>
-          {item.status === "Active" ? (
+          <div
+            style={{
+              display: "flex",
+              gap: "10px",
+            }}
+          >
+            {item.status &&
+              item.status.map((x, index) =>
+                x === "Active" ? (
+                  <div
+                    key={index}
+                    className={cn("status-green", styles.status)}
+                  >
+                    Active
+                  </div>
+                ) : x === "Deactive" ? (
+                  <div key={index} className={cn("status-red", styles.status)}>
+                    Deactive
+                  </div>
+                ) : x === "Executing" ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "20px",
+                    }}
+                  >
+                    <button
+                      className={cn(
+                        "button-stroke button-small",
+                        styles.button
+                      )}
+                    >
+                      <Loader className={styles.loader} />
+                      <span>Load more</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div
+                    key={index}
+                    style={{
+                      backgroundColor: "#232627",
+                    }}
+                    className={cn("status", styles.statuslast)}
+                  >
+                    Pending
+                  </div>
+                )
+              )}
+          </div>
+
+          {/* {item.status === "Active" ? (
             <div className={cn("status-green", styles.status)}>Active</div>
           ) : item.status === "Deactive" ? (
             <div className={cn("status-red", styles.status)}>Deactive</div>
@@ -104,7 +155,7 @@ const Row = ({ item, index }) => {
             >
               Pending
             </div>
-          )}
+          )} */}
         </div>
 
         <div style={{}} className={styles.col}>

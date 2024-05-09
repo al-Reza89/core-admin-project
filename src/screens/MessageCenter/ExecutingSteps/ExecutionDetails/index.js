@@ -32,7 +32,7 @@ const items = [
     },
     actionDescription:
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
-    status: "Active",
+    status: ["Active"],
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const items = [
     },
     actionDescription:
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
-    status: "Deactive",
+    status: ["Deactive"],
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const items = [
     },
     actionDescription:
       "whenever email with Invoice as subject is received. Or attachment/body contains “Invoice”",
-    status: "Pending",
+    status: ["Executing"],
   },
 ];
 
