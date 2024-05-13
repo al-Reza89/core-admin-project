@@ -12,7 +12,9 @@ export const login = async (data) => {
       accept: "application/json",
     },
   });
-  localStorage.setItem("token", resp.data.token);
+
+  // console.log(resp.data);
+  localStorage.setItem("token", resp.data.access_token);
   return resp.data;
 };
 

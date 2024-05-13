@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../components/TextInput";
 import Image from "../../components/Image";
 import { useRecoilState } from "recoil";
-import { login } from "../../api/rbac";
+import { getUser, login } from "../../api/rbac";
 import userAtom from "../../atoms/userAtom";
 import toast from "react-hot-toast";
 import Loader from "../../components/Loader";
@@ -30,8 +30,10 @@ const SignIn = () => {
 
     setLoading(true);
     try {
-      const user = await login(formData);
-      setUser({ ...user, loggedIn: true });
+      await login(formData);
+      const usr = await getUser();
+
+      setUser({ ...usr, loggedIn: true });
     } catch (e) {
       console.error(e);
       const msg =
