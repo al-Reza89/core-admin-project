@@ -4,6 +4,9 @@ import cn from "classnames";
 import OutsideClickHandler from "react-outside-click-handler";
 import styles from "./User.module.sass";
 import Icon from "../../Icon";
+import { useRecoilState, useResetRecoilState } from "recoil";
+import userAtom from "../../../atoms/userAtom";
+import { logout } from "../../../api/rbac";
 
 const items = [
   {
@@ -64,6 +67,12 @@ const items = [
 const User = ({ className }) => {
   const [visible, setVisible] = useState(false);
   const { pathname } = useLocation();
+  const [user, setUser] = useRecoilState(userAtom);
+  const resetUser = useResetRecoilState(userAtom);
+  const logoutUser = () => {
+    logout();
+    setUser({ loggedIn: false });
+  };
 
   return (
     <OutsideClickHandler onOutsideClick={() => setVisible(false)}>
@@ -86,7 +95,13 @@ const User = ({ className }) => {
                       [styles.active]: pathname === x.url,
                     })}
                     to={x.url}
-                    onClick={() => setVisible(false)}
+                    onClick={(e) => {
+                      if (x.title === "Log out") {
+                        e.preventDefault();
+                        logoutUser();
+                      }
+                      setVisible(false);
+                    }}
                     key={index}
                   >
                     {x.icon && <Icon name={x.icon} size="24" />}

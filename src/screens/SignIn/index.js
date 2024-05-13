@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./SignIn.module.sass";
 import { use100vh } from "react-div-100vh";
 import { Link, useNavigate } from "react-router-dom";
 import TextInput from "../../components/TextInput";
 import Image from "../../components/Image";
+import { useRecoilState } from "recoil";
+import { login } from "../../api/rbac";
+import userAtom from "../../atoms/userAtom";
+import toast from "react-hot-toast";
+import Loader from "../../components/Loader";
 
 const SignIn = () => {
-  const navigate = useNavigate();
   const heightWindow = use100vh();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [user, setUser] = useRecoilState(userAtom);
+  const [loading, setLoading] = useState(false);
+
+  const loginUser = async () => {
+    if (!formData.username || !formData.password) {
+      toast.error("Please fill all the fields", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const user = await login(formData);
+      setUser({ ...user, loggedIn: true });
+    } catch (e) {
+      console.error(e);
+      const msg =
+        e.response?.data?.message || "Something went wrong. Please try again.";
+      toast.error(msg, {
+        position: "top-center",
+      });
+    }
+    setLoading(false);
+  };
 
   return (
     <div className={styles.login} style={{ minHeight: heightWindow }}>
@@ -56,6 +89,8 @@ const SignIn = () => {
             placeholder="Your email"
             required
             icon="mail"
+            value={formData.username}
+            handleChange={(val) => setFormData({ ...formData, username: val })}
           />
           <TextInput
             className={styles.field}
@@ -64,12 +99,15 @@ const SignIn = () => {
             placeholder="Password"
             required
             icon="lock"
+            value={formData.password}
+            handleChange={(val) => setFormData({ ...formData, password: val })}
           />
           <button
-            onClick={() => navigate("/products/scheduled2")}
+            disabled={loading}
+            onClick={loginUser}
             className={cn("button", styles.button)}
           >
-            Sign in
+            {loading ? <Loader /> : "Sign in"}
           </button>
           <div className={styles.note}>
             This site is protected by reCAPTCHA and the Google Privacy Policy.

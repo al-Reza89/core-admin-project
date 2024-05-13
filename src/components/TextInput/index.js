@@ -102,7 +102,7 @@ const TextInput = ({
           <div>
             <input
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={handleTextareaChange}
               className={cn(classInput, styles.input)}
               {...props}
             />

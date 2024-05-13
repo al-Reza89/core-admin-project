@@ -1,10 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import styles from "./Entry.module.sass";
 import TextInput from "../../../components/TextInput";
 import Image from "../../../components/Image";
+import userAtom from "../../../atoms/userAtom";
+import { useRecoilState } from "recoil";
+import { register } from "../../../api/rbac";
+import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
+import Loader from "../../../components/Loader";
 
 const Entry = ({ onConfirm }) => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    user_name: "",
+    password: "",
+  });
+
+  const [user, setUser] = useRecoilState(userAtom);
+  const [loading, setLoading] = useState(false);
+
+  const registerUser = async () => {
+    if (!formData.user_name || !formData.password) {
+      toast.error("Please fill all the fields", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      console.log("formData", formData);
+      const user = await register(formData);
+      setUser({ ...user, loggedIn: true });
+      navigate("/onboarding");
+    } catch (e) {
+      console.error(e);
+      const msg =
+        e.response?.data?.detail || "Something went wrong. Please try again.";
+      toast.error(msg, {
+        position: "top-center",
+      });
+    }
+    setLoading(false);
+  };
+
   return (
     <div className={styles.entry}>
       <div className={styles.head}>
@@ -34,9 +74,25 @@ const Entry = ({ onConfirm }) => {
           placeholder="Your email"
           required
           icon="mail"
+          value={formData.user_name}
+          handleChange={(val) => setFormData({ ...formData, user_name: val })}
         />
-        <button className={cn("button", styles.button)} onClick={onConfirm}>
-          Continue
+        <TextInput
+          className={styles.field}
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+          icon="lock"
+          value={formData.password}
+          handleChange={(val) => setFormData({ ...formData, password: val })}
+        />
+        <button
+          disabled={loading}
+          className={cn("button", styles.button)}
+          onClick={registerUser}
+        >
+          {loading ? <Loader /> : "Continue"}
         </button>
         <div className={styles.note}>
           This site is protected by reCAPTCHA and the Google Privacy Policy.
