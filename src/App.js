@@ -80,7 +80,7 @@ function App() {
 
   return (
     <Routes>
-      {user.loggedIn || true ? (
+      {user.loggedIn? (
         <Route path="/">
           <Route index element={<Navigate to="home" />} />
           <Route
