@@ -122,7 +122,7 @@ const Sidebar = ({ className, onClose }) => {
             />
           </Link>
         </div>
-        <div className={styles.menu}>
+        {/* <div className={styles.menu}>
           {navigation.map((x, index) =>
             x.url ? (
               <NavLink
@@ -147,7 +147,7 @@ const Sidebar = ({ className, onClose }) => {
               />
             )
           )}
-        </div>
+        </div> */}
         <div className={styles.menu}>
           <NavLink
             className={cn(styles.item, {
@@ -181,7 +181,7 @@ const Sidebar = ({ className, onClose }) => {
           </NavLink>
           <NavLink
             className={cn(styles.item, {
-              [styles.active]: pathname === "/setting",
+              [styles.active]: pathname === "/settings",
             })}
             to="/settings"
             onClick={onClose}

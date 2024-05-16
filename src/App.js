@@ -43,6 +43,7 @@ import userAtom from "./atoms/userAtom";
 import Loader from "./components/Loader";
 import { useEffect } from "react";
 import { getUser } from "./api/rbac";
+import InviteContent from "./screens/Invite/InviteContent";
 
 function App() {
   const [user, setUser] = useRecoilState(userAtom);
@@ -79,16 +80,9 @@ function App() {
 
   return (
     <Routes>
-      {user.loggedIn ? (
+      {user.loggedIn || true ? (
         <Route path="/">
-          <Route
-            index
-            element={
-              <Page title="Dashboard">
-                <Home />
-              </Page>
-            }
-          />
+          <Route index element={<Navigate to="home" />} />
           <Route
             path="home"
             element={
@@ -186,19 +180,20 @@ function App() {
             }
           />
           <Route
-            path="onboarding"
+            path="products/scheduled"
             element={
               <Page title="Scheduled">
                 <Scheduled />
               </Page>
             }
           />
-          <Route path="products/scheduled2" element={<Scheduled2 />} />
+          <Route path="/onboarding" element={<Scheduled2 />} />
           <Route path="products/preview" element={<Preview />} />
           <Route
-            path="products/scheduled2/:aiWorkerName"
+            path="/onboarding/:aiWorkerName"
             element={<AiWorker />}
           />
+          <Route path="/invite" element={<InviteContent/>}/>
           <Route
             path="customers/overview"
             element={
@@ -319,6 +314,8 @@ function App() {
               </Page>
             }
           />
+
+          
 
           <Route path="sign-up" element={<Navigate to="/" />} />
           <Route path="sign-in" element={<Navigate to="/" />} />

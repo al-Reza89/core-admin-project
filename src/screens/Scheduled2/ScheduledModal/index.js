@@ -21,7 +21,7 @@ const ScheduledModal = () => {
       // console.log("Selected Button:", selectedButton);
 
       const hyphenatedTitle = selectedButton.title.replace(/\s+/g, "-");
-      navigate(`/products/scheduled2/${hyphenatedTitle}`);
+      navigate(`/onboarding/${hyphenatedTitle}`);
       // setVisibleModalProduct(true);
     } else {
       console.log("Please select a button before proceeding.");
